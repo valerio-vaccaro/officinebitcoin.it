@@ -36,7 +36,7 @@ Le raccolte di fondi e contributi ed il pagamento di oboli per seguire le lezion
 
 | Argomento                                           |
 |-----------------------------------------------------|
-| Mnemoniche & dadi: impara a creare la tua mnemonica |
+| [Mnemoniche & dadi: impara a creare la tua mnemonica](./lezioni/mnedad/)|
 | Fullnode ed hardware                                |
 | Linux ed amministrazione di sistema                 |
 | Electrum                                            |
