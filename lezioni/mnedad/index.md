@@ -1,4 +1,4 @@
-# Mnemoniche & Dadi: imapara a creare la tua mnemonica 
+# Mnemoniche & Dadi: impara a creare la tua mnemonica 
 
 ## Introduzione
 Creare la mnemonica sfruttando una propria fonte di entropia è ridurre la superficie di attacco di un wallet Bitcoin tuttavia occorre tenere conti di alcuni fattori:
