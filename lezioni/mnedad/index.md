@@ -1,4 +1,4 @@
-# Mnemoniche & Dadi: imapara a create la tua mnemonica 
+# Mnemoniche & Dadi: imapara a creare la tua mnemonica 
 
 ## Introduzione
 Creare la mnemonica sfruttando una propria fonte di entropia è ridurre la superficie di attacco di un wallet Bitcoin tuttavia occorre tenere conti di alcuni fattori:
@@ -21,6 +21,7 @@ L'ultima parola non è completamente decisa da noi ma contiene una parte di cont
 Mettiamo che la nostra ultima parola sia BACON corrispondente ai lanci 1, 9 e 11 (ricordiamo che il primo dado è SEMPRE quello da 8 facce), la tabella ci riporta anche Group 12 e Group 24 che ci permettono di raggruppare le parole considerando solo l'entropia dei primi due lanci (group 12) o sel solo primo lancio (group 24).
 
 Ipotizziamo di voler costruire una mnemonica a 12 parole, ciò vuol dire che il checksum sarà una parola tra le 16 possibili avente come gruppo 12 lo stesso di bacon ovvero 0001000, le parole possibili sono:
+
 |First|Second|Third|Index|Word	|Index in binary|Group 12	|Group 24|
 |---|---|---|-------|-----------|---------------|-----------|---|
 |1  |9	|1	|128	|avoid	    |00010000000	|0001000	|000|
