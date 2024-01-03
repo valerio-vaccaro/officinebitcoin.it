@@ -13,7 +13,7 @@ Si ricorda di NON condividere mai informazioni personali/mnemoniche ed altri seg
 Chiunque ne abbia le capacità. Hai un argomento di cui vuoi parlare? Crea la tua lezione.
 
 ## Come posso contribuire
-- Hai seguito le lezioni e ti senti particolarmente pronto su una tematica? Ottimo, puoi seguire tu una serie di lezioni sullo stesso argomento in modo da traferire la conoscenza ad altre persione,
+- Hai seguito le lezioni e ti senti particolarmente pronto su una tematica? Ottimo, puoi seguire tu una serie di lezioni sullo stesso argomento in modo da traferire la conoscenza ad altre persone,
 - Puoi anche suggerire nuovi argomenti e tematiche trovando magari anche un istruttore adatto a mantenere le lezioni
 - Ovviamente puoi anche aiutarci a far conoscere il progetto Officine Bitcoin
 

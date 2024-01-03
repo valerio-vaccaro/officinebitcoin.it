@@ -8,17 +8,17 @@ Creare la mnemonica sfruttando una propria fonte di entropia è ridurre la super
 - bisogna evitare l'uso di software/script/programmi a meno che non si abbia effettuato un accurato controllo del codice e di tutte le dipendenze,
 - differenti setup possono richiedere processi leggermente differenti.
 
-## Crezione delle parole
+## Creazione delle parole
 Il primo step è il calcolo delle 12 o 24 parole della mnemonica, 12 parole sono normalmente più che sufficienti per la sicurezza di un wallet Bitcoin.
 
-Per la generazione delle parole si può usare il metodo descritto in [TRGM](https://github.com/valerio-vaccaro/TRMG) facente uso di 3 dadi di cui 1 a 8 facce e 2 a 16 facce. Ad OGNI lancio dei dadi corrisponde UNA ED UNA SOLA parola, per trovarla basta scorrere la tabella del sito cercado la corrispondenza dei dadi con il lancio effettuato (il primo dado è SEMPRE quello da 8 facce). La colonna word contiene la parola cercata. 
+Per la generazione delle parole si può usare il metodo descritto in [TRGM](https://github.com/valerio-vaccaro/TRMG) facente uso di 3 dadi di cui 1 a 8 facce e 2 a 16 facce. Ad OGNI lancio dei dadi corrisponde UNA ED UNA SOLA parola, per trovarla basta scorrere la tabella del sito cercando la corrispondenza dei dadi con il lancio effettuato (il primo dado è SEMPRE quello da 8 facce). La colonna word contiene la parola cercata. 
 
 Il consiglio è di generare tutte le 12 o 24 parole ed eventualmente di correggere l'ultima o comunque di usare i dadi per generare l'entropia relativa all'ultima parola.
 
 ## Calcolo del checksum
-L'ultima parola non è completamente decisa da noi ma contiene una parte di controllo ovvero non possiamo scegliere pienamente tutti gli 11 bit di entropia che la compongono, potremo invece scegliere i primi 7 nel caso di mnemonica di 12 parole o i primi 3 nel caso di menmonica a 24.
+L'ultima parola non è completamente decisa da noi ma contiene una parte di controllo ovvero non possiamo scegliere pienamente tutti gli 11 bit di entropia che la compongono, potremo invece scegliere i primi 7 nel caso di mnemonica di 12 parole o i primi 3 nel caso di mnemonica a 24.
 
-Mettiamo che la nostra ultima parola sia BACON corrispondente ai lanci 1, 9 e 11 (ricordiamo che il primo dado è SEMPRE quello da 8 facce), la tabella ci riporta anche Group 12 e Group 24 che ci permettono di raggruppare le parole considerando solo l'entropia dei primi due lanci (group 12) o sel solo primo lancio (group 24).
+Mettiamo che la nostra ultima parola sia BACON corrispondente ai lanci 1, 9 e 11 (ricordiamo che il primo dado è SEMPRE quello da 8 facce), la tabella ci riporta anche Group 12 e Group 24 che ci permettono di raggruppare le parole considerando solo l'entropia dei primi due lanci (group 12) o solo primo lancio (group 24).
 
 Ipotizziamo di voler costruire una mnemonica a 12 parole, ciò vuol dire che il checksum sarà una parola tra le 16 possibili avente come gruppo 12 lo stesso di bacon ovvero 0001000, le parole possibili sono:
 
@@ -43,7 +43,7 @@ Ipotizziamo di voler costruire una mnemonica a 12 parole, ciò vuol dire che il 
 
 Come trovare tra le varie parole l'unica corretta? Dipende dal tuo setup, vediamo alcuni esempi:
 
-- bruteforce ovvero si provano tutte in sequenza fino a trovare quella corretta (molto arduo con menmoniche a 24 parole), questo è il metodo da usare con Ledger o con Electrum (assicurandosi di selezionare il flag BIP39),
+- bruteforce ovvero si provano tutte in sequenza fino a trovare quella corretta (molto arduo con mnemoniche a 24 parole), questo è il metodo da usare con Ledger o con Electrum (assicurandosi di selezionare il flag BIP39),
 - calcolare tutte le parole possibili con le prime 11 o 23 parole e ricercare l'unica che cade in questo insieme, questo metodo è quello utilizzabile con Jade e con altri hardware wallet capaci di calcolare tutte le possibili parole finali di una mnemonica,
 - inserire la mnemonica completa e lasciare che l'hardware wallet la sistemi per noi, come ad esempio fa in maniera molto elegante Specter-DIY.
 
@@ -51,14 +51,14 @@ Come trovare tra le varie parole l'unica corretta? Dipende dal tuo setup, vediam
 Fondamentale avere una buona politica di backup quindi:
 - multipli backup,
 - su multipli supporti e
-- eventuamente crittati o splittati (ma bisogna saperlo fare bene).
+- eventualmente criptati o splittati (ma bisogna saperlo fare bene).
 
 ## Bibliografia
 
 - [TRMG](https://github.com/valerio-vaccaro/TRMG)
 
 ## Ripetizioni
-Questa lezione è ripetitiva e verrà ripetuta ogni mese. Di seuito un elenco delle ripetizioni già effettuate.
+Questa lezione è ripetitiva e verrà ripetuta ogni mese. Di seguito un elenco delle ripetizioni già effettuate.
 
 | Data        | Note                                           |
 |-------------|------------------------------------------------|
