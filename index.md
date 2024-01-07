@@ -32,6 +32,11 @@ Rimane proibito creare lezioni su:
 ## Raccolte di fondi/pagamenti/oboli
 Le raccolte di fondi e contributi ed il pagamento di oboli per seguire le lezioni sono attività proibite, manteniamo Officine Bitcoin aperto a tutti e gratuito.
 
+## Licenze ed attribuzioni
+Il materiale prodotto durante le lezioni di Officine Bitcoin viene pubblicato con licenza Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode.it).
+
+Il [logo ufficiale di Officine Bitcoin](./logo/) è anch'esso coperto dalla medesima licenza.
+
 ## Lezioni
 
 | Argomento                                           |
