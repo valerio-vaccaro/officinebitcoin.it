@@ -43,6 +43,6 @@ Il [logo ufficiale di Officine Bitcoin](./logo/) è anch'esso coperto dalla mede
 |-----------------------------------------------------|
 | [Mnemoniche & dadi: impara a creare la tua mnemonica](./lezioni/mnedad/)|
 | [Fullnode ed hardware per un nodo](./lezioni/fulhar/)|
+| [HAN SOLOminer/Nerdminer](./lezioni/hansol/)        |
 | Linux ed amministrazione di sistema                 |
 | Electrum                                            |
-| HAN SOLOminer/Nerdminer                             |
