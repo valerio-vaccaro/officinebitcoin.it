@@ -69,7 +69,7 @@ Il risultato ci segnala che è stata trovata una corrispondenza per l'archivio s
 bitcoin-26.0-x86_64-linux-gnu.tar.gz: OK
 ```
 
-Verifichiamo ora le firme del file SHA256SUM, prima se necessario procuriamoci le chiavi ed importiamole.
+Verifichaimo ora le firme del file SHA256SUM, prima se necessario procuriamoci le chiavi ed importiamole.
 
 ```
 git clone https://github.com/bitcoin-core/guix.sigs
@@ -91,7 +91,7 @@ tar xzvf bitcoin-26.0-x86_64-linux-gnu.tar.gz
 sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-26.0/bin/*
 ```
 
-E ci siamo, ora abbiamo `bitcoind`, `bitcoin-cli` e le altre utilità pronte per essere lanciate.
+E ci siamo, ora abbiamo `bitcoind`, `bitcoin-cli` e le altre utility pronte per essere lanciate.
 
 Per ora lanciamo `bitcoind` e vedremo un po di log. Bitcoin incomincia a sincronizzarsi ed ora sarà present una directory con la blockchain e tutte le configurazioni in `~/.bitcoin/`.
 
