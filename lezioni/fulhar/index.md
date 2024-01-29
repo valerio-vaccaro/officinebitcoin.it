@@ -156,8 +156,8 @@ Molti wallet (green, electrum, specter, sparrow, ...) supportano testnet e posso
 
 Alcuni tool utili (autopromozione) per testnet:
 
-- [BTCBouncer](btcbouncer.com) consete di effettuare pagamenti a vari indirizzi e di ricevere i fondi (meno una fee) nell'arco di un paio di blocchi,
-- [BTCSigner](btcsigner.com) consete di sperimentare un multisig con un nodo core in testnet.
+- [BTCBouncer](http://btcbouncer.com) consete di effettuare pagamenti a vari indirizzi e di ricevere i fondi (meno una fee) nell'arco di un paio di blocchi,
+- [BTCSigner](http://btcsigner.com) consete di sperimentare un multisig con un nodo core in testnet.
 
 Ci sono molto altri tool e siti web che supportano testnet oltre ai più importanti block explorer.
 
