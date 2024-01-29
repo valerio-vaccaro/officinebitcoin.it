@@ -98,7 +98,68 @@ Per ora lanciamo `bitcoind` e vedremo un po di log. Bitcoin incomincia a sincron
 Da un altro terminale possiamo controllare il funzionamento di bitcoind lanciando il comando `tail -f ~/.bitcoin/debug.log`.
 
 ### Step 2 - Configurazione
-(ancora da realizzare)
+Come abbiamo già visto precedentemente la directory in cui Bitcoin core salva le configurazioni e la blockchain è directory `~/.bitcoin/` per quanto riguarda il sistema operativo Linux, nel caso si volesse cambiare la posizione di salvataggio si possono usare differenti approcci:
+
+- creare un link simbolico della directory su di un disco più grande mediante il comando `ln -s`,
+- usare da linea di comando o all'interno di bitcoin.conf il comando `datadir` specificando la directory di destinazione.
+
+Bitcoin Core supporta tre tipologie diverse di reti a cui connettersi:
+- `mainnet`, questa è la classica rete a cui tutti siamo abituati ed è il default per core,
+- `testnet`, questa rete è analoga a mainnet ma i token non hanno alcun valore, il mining viene sempre effettuato ma in caso di assenza di blocchi per 20 minuti la difficoltà viene fatta precipitare (soffre di reorg spesso importanti),
+- `regtest`, in questa modalità si ha una piccola blockchain privata che parte sempre da zero ed in cui è possibile minare a difficoltà minima (serve per test locali).
+
+Un altro comando utile è `daemon` che, se settato, non mantiene il log di bitcoin core collegato alla console attuale, per vedere il funzionamento sarà sempre possibile usare il comando `tail -f ~/.bitcoin/debug.log`.
+
+Tutte le configurazioni possono essere lanciate da linea di comando o tramite il file `~/.bitcoin/debug.log`, un file compatibile con un setup casalingo (ovvero in cui voglio mantenere il consumo di risorse al minimo) potrebbe essere il seguente.
+file di configurazione
+
+```
+daemon=1  
+blocksonly=1  
+maxconnections=20  
+maxuploadtarget=500  
+txindex=1  
+blockfilterindex=1
+```
+
+In cui il:
+
+- server è scolleato dalla console con `daemon=1`
+- vengono scaricati i solo blocchi e non la mempool `blocksonly=1`
+- sono permesse fino a venti connessioni `txindex=1`
+- si spediscono informazioni agli altri nodi in internet per un massimo di 500 megabyte al giorno `maxuploadtarget=500`
+- si mantiene un indice delle transazioni `txindex=1`
+- si mantiene un indice dei blockfilter `blockfilterindex=1`
+
+L'elenco completo delle funzionalità si può trovate su [https://jlopp.github.io/bitcoin-core-config-generator](https://jlopp.github.io/bitcoin-core-config-generator)
+
+Qualora si abbia a disposizione un altro nodo già sincronizzato si puo usare l'opzione `connect` per collegarsi SOLO ED ESCLUSIVAMENTE a questo nodo, se tale nodo è in rete locale si guadagna tempo e banda con questa semplice configurazione.
+
+Dalla release 26 core supporta crittazione delle comunicazioni tra i nodi con l'opzione `v2transport`.
+
+Tutte le configuarazioni mostrate sono relative a clearnet, le configurazioni per tor saranno oggetto di un'altra lezione.
+
+## Testnet
+Un utile rete per impratichirsi è `testnet` che differisce da `mainnet` in quanto:
+
+- i token non hanno valore e ci sono siti che vi offrono satoshi di testnet per effettuare le prove,
+- potete transare sempre al minimo delle fee,
+- il mining è fluttuante (anche perchè non ci si guadagna nulla),
+- in caso che un blocco non venga minato per 20 minuti la difficoltà precipita,
+- spesso ci sono reorg importanti (da questo punto di vista è peggiore rispetto a mainnet).
+
+Molti wallet (green, electrum, specter, sparrow, ...) supportano testnet e possono essere usati per:
+
+- imparare senza mettere a rischio i propri fondi,
+- per fini didattici,
+- per sperimentare cose nuove.
+
+Alcuni tool utili (autopromozione) per testnet:
+
+- [BTCBouncer](btcbouncer.com) consete di effettuare pagamenti a vari indirizzi e di ricevere i fondi (meno una fee) nell'arco di un paio di blocchi,
+- [BTCSigner](btcsigner.com) consete di sperimentare un multisig con un nodo core in testnet.
+
+Ci sono molto altri tool e siti web che supportano testnet oltre ai più importanti block explorer.
 
 ## Programma
 L'installazione del nodo è divisa su più lezioni, qui un elenco di quelle già tenute:
@@ -106,3 +167,6 @@ L'installazione del nodo è divisa su più lezioni, qui un elenco di quelle già
 | Data        | Note                                           |
 |-------------|------------------------------------------------|
 | 240108-2100 | Selezione dell'hardware                        |
+| 240115-2200 | Installazione di core e verifica firme         |
+| 240122-2200 | Configurazione minimale                        |
+| 240129-2200 | Testnet                                        |
