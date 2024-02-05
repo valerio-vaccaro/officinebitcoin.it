@@ -44,5 +44,7 @@ Il [logo ufficiale di Officine Bitcoin](./logo/) è anch'esso coperto dalla mede
 | [Mnemoniche & dadi: impara a creare la tua mnemonica](./lezioni/mnedad/)|
 | [Fullnode ed hardware per un nodo](./lezioni/fulhar/)|
 | [HAN SOLOminer/Nerdminer](./lezioni/hansol/)        |
-| Linux ed amministrazione di sistema                 |
+| [Terminali a caratteri](./lezioni/tercar/)          |
+| [Open source e licenze](./lezioni/openso/)          |
+| Blockstream Green e Jade                            |
 | Electrum                                            |
