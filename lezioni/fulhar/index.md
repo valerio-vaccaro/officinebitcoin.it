@@ -161,6 +161,87 @@ Alcuni tool utili (autopromozione) per testnet:
 
 Ci sono molto altri tool e siti web che supportano testnet oltre ai più importanti block explorer.
 
+## Bitcoind-cli
+Bitcoin-cli è l'utilità a line di comando per interagire con Bitcoin Core.
+
+I comandi hanno il formato:
+```
+bitcoin-cli [options] <command> [params]
+```
+e si può sempre usare `help` per avere la lista dei comandi o informazioni su di uno specifico comando.
+
+### Comandi informativi sulla blockchain Blockchain
+- getbestblockhash
+- getblock "blockhash"
+- getblockchaininfo
+- getblockcount
+- getblockhash height
+- getblockheader "blockhash"
+- getmempoolentry "txid"
+- getmempoolinfo
+- getrawmempool
+- gettxoutproof ["txid",...]
+- ...
+
+### Comandi di controllo
+- help ( "command" )
+- stop
+- uptime
+- ...
+
+### Comandi per il mining
+- getblocktemplate ( "template_request" )
+- submitblock "hexdata" ( "dummy" )
+- ...
+
+### Comandi per la rete
+- addnode "node" "command"
+- disconnectnode ( "address" nodeid )
+- getnetworkinfo
+- ...
+
+### Gestione Rawtransactions
+- analyzepsbt "psbt"
+- combinepsbt ["psbt",...]
+- combinerawtransaction ["hexstring",...]
+- createpsbt [{"txid":"hex","vout":n,"sequence":n},...] [{"address":amount,...},{"data":"hex"},...] ( locktime replaceable )
+- createrawtransaction [{"txid":"hex","vout":n,"sequence":n},...] [{"address":amount,...},{"data":"hex"},...] ( locktime replaceable )
+- decodepsbt "psbt"
+- decoderawtransaction "hexstring" ( iswitness )
+- finalizepsbt "psbt" ( extract )
+- getrawtransaction "txid" ( verbose "blockhash" )
+- sendrawtransaction "hexstring" ( maxfeerate )
+- signrawtransactionwithkey "hexstring" ["privatekey",...] ( [{"txid":"hex","vout":n,"scriptPubKey":"hex","redeemScript":"hex","witnessScript":"hex","amount":amount},...] "sighashtype" )
+- testmempoolaccept ["rawtx",...] ( maxfeerate )
+- ...
+
+### Utility
+- signmessagewithprivkey "privkey" "message"
+- validateaddress "address"
+- verifymessage "address" "signature" "message"
+- ...
+
+### Wallet
+- createwallet "wallet_name" ( disable_private_keys blank "passphrase" avoid_reuse descriptors load_on_startup external_signer )
+- getaddressinfo "address"
+- getbalance ( "dummy" minconf include_watchonly avoid_reuse )
+- getnewaddress ( "label" "address_type" )
+- gettransaction "txid" ( include_watchonly verbose )
+- getwalletinfo
+- importaddress "address" ( "label" rescan p2sh )
+- importdescriptors "requests"
+- importprivkey "privkey" ( "label" rescan )
+- listunspent ( minconf maxconf ["address",...] include_unsafe query_options )
+- lockunspent unlock ( [{"txid":"hex","vout":n},...] persistent )
+- rescanblockchain ( start_height stop_height )
+- send [{"address":amount,...},{"data":"hex"},...] ( conf_target "estimate_mode" fee_rate options )
+- sendmany "" {"address":amount,...} ( minconf "comment" ["address",...] replaceable conf_target "estimate_mode" fee_rate verbose )
+- sendtoaddress "address" amount ( "comment" "comment_to" subtractfeefromamount replaceable conf_target "estimate_mode" signmessage "address" "message"
+- signrawtransactionwithwallet "hexstring" ( [{"txid":"hex","vout":n,"scriptPubKey":"hex","redeemScript":"hex","witnessScript":"hex","amount":amount},...] "sighashtype" )
+- ...
+
+Un corso completo sull'uso di Bitcoin da linea di comandi si può trovare all'indirizzo [Learning-Bitcoin-from-the-Command-Line](https://github.com/BlockchainCommons/Learning-Bitcoin-from-the-Command-Line).
+
 ## Programma
 L'installazione del nodo è divisa su più lezioni, qui un elenco di quelle già tenute:
 
@@ -170,3 +251,4 @@ L'installazione del nodo è divisa su più lezioni, qui un elenco di quelle già
 | 240115-2200 | Installazione di core e verifica firme         |
 | 240122-2200 | Configurazione minimale                        |
 | 240129-2200 | Testnet                                        |
+| 240205-2200 | bitcoind-cli                                   |
