@@ -161,7 +161,7 @@ Alcuni tool utili (autopromozione) per testnet:
 
 Ci sono molto altri tool e siti web che supportano testnet oltre ai più importanti block explorer.
 
-## Bitcoind-cli
+## Bitcoin-cli
 Bitcoin-cli è l'utilità a line di comando per interagire con Bitcoin Core.
 
 I comandi hanno il formato:

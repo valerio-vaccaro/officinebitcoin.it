@@ -69,7 +69,7 @@ Per settare una variabile si usa il comando `=`, per usarla basta premettere il 
 VARIABILE="pippo"
 echo $VARIABILE > pippo.txt
 VARIABILE="pluto"
-echo $VARIABILE > pippo.txt
+echo $VARIABILE >> pippo.txt
 ```
 
 Crea un file con contenuto
