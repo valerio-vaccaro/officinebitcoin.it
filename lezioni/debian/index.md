@@ -185,3 +185,4 @@ L'installazione di Debian √® una lezione ripetitiva, qui un elenco di quelle gi√
 
 | Data        | Note                                           |
 |-------------|------------------------------------------------|
+| 240415-2200 | Prima lezione                                  |
