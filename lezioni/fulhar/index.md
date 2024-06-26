@@ -52,10 +52,12 @@ Un gruppo di continuità infine potrebbe salvare il nodo da bruschi cali di corr
 Scarichiamo core, gli hash e le firme.
 
 ```
-wget https://bitcoincore.org/bin/bitcoin-core-26.0/bitcoin-26.0-x86_64-linux-gnu.tar.gz
-wget https://bitcoincore.org/bin/bitcoin-core-26.0/SHA256SUMS
-wget https://bitcoincore.org/bin/bitcoin-core-26.0/SHA256SUMS.asc
+wget https://bitcoincore.org/bin/bitcoin-core-27.1/bitcoin-27.1-x86_64-linux-gnu.tar.gz
+wget https://bitcoincore.org/bin/bitcoin-core-27.1/SHA256SUMS
+wget https://bitcoincore.org/bin/bitcoin-core-27.1/SHA256SUMS.asc
 ```
+
+In caso si utilizzi una board dotata di architettura arm il pacchetto andrà corretto in `bitcoin-27.1-aarch64-linux-gnu.tar.gz` ovvero nel medesimo pacchetto ma compilato per l'architettura arm a 64 bit (aarch64) che è proprio quella utilizzata da odroid.
 
 A questo punto possiamo controllare che uno degli hash in SHA256SUM corrisponda all'archivio scaricato.
 
@@ -66,7 +68,7 @@ sha256sum --ignore-missing --check SHA256SUMS
 Il risultato ci segnala che è stata trovata una corrispondenza per l'archivio scaricato.
 
 ```
-bitcoin-26.0-x86_64-linux-gnu.tar.gz: OK
+bitcoin-27.1-x86_64-linux-gnu.tar.gz: OK
 ```
 
 Verifichiamo ora le firme del file SHA256SUM, prima se necessario procuriamoci le chiavi ed importiamole.
@@ -87,8 +89,8 @@ Se vedremo parecchie volte la scritta `gpg: Good signature from ...` vuol dire c
 Procediamo allo scompattamento e all'installazione 
 
 ```
-tar xzvf bitcoin-26.0-x86_64-linux-gnu.tar.gz 
-sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-26.0/bin/*
+tar xzvf bitcoin-27.1-x86_64-linux-gnu.tar.gz 
+sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-27.1/bin/*
 ```
 
 E ci siamo, ora abbiamo `bitcoind`, `bitcoin-cli` e le altre utilità pronte per essere lanciate.
