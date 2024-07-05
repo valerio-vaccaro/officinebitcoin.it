@@ -1,4 +1,5 @@
 # Fullnode ed hardware per un nodo
+
 Avere un nodo Bitcoin è fondamentale in quanto consente con la massima privacy di:
 
 - validare l'intera catena di Bitcoin,
@@ -99,7 +100,8 @@ Per ora lanciamo `bitcoind` e vedremo un po di log. Bitcoin incomincia a sincron
 
 Da un altro terminale possiamo controllare il funzionamento di bitcoind lanciando il comando `tail -f ~/.bitcoin/debug.log`.
 
-### Step 2 - Configurazione
+### Step 1b - Configuriamo Bitcoin
+
 Come abbiamo già visto precedentemente la directory in cui Bitcoin core salva le configurazioni e la blockchain è directory `~/.bitcoin/` per quanto riguarda il sistema operativo Linux, nel caso si volesse cambiare la posizione di salvataggio si possono usare differenti approcci:
 
 - creare un link simbolico della directory su di un disco più grande mediante il comando `ln -s`,
@@ -140,6 +142,81 @@ Qualora si abbia a disposizione un altro nodo già sincronizzato si puo usare l'
 Dalla release 26 core supporta crittazione delle comunicazioni tra i nodi con l'opzione `v2transport`.
 
 Tutte le configuarazioni mostrate sono relative a clearnet, le configurazioni per tor saranno oggetto di un'altra lezione.
+
+### Step 2 - Installiamo Electrs
+
+Installiamo `Electrs` che è un electrum server basato su `Rust`, il primo step è quindi installare tale linguaggio.
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+Installiamo anche clang ed il pacchetto build-essential.
+
+```
+apt update
+apt install clang cmake build-essential -y
+```
+
+Scarichiamo l'ultima versione (attualmente la 0.10.5) da Github.
+
+```
+VERSION="0.10.5"
+git clone --branch v$VERSION https://github.com/romanz/electrs.git
+cd electrs
+```
+
+Importiamo la chiave dello sviluppatore di `Electrs` e verifichiamo la firma dei commit Github.
+
+```
+curl https://romanzey.de/pgp.txt | gpg --import
+git verify-tag v$VERSION
+```
+
+Se la firma è corretta possiamo passare alla compilazione ...
+
+```
+cargo build --locked --release
+```
+
+e poi all'installazione.
+
+```
+sudo install -m 0755 -o root -g root -t /usr/local/bin ./target/release/electrs
+```
+
+### Step 2b - Configuriamo Electrs
+
+Per configurare `Electrs` creiamo il file `config.toml` con il seguente contenuto.
+
+```
+# bitcoin core configuration
+auth = "username:password"
+daemon_rpc_addr = "127.0.0.1:8332"
+daemon_p2p_addr = "127.0.0.1:8333"
+
+# electrs configuration
+db_dir = ".electrum"
+network = "bitcoin"
+electrum_rpc_addr = "127.0.0.1:50001"
+log_filters = "INFO"
+```
+
+Possiamo lanciare Elects con il comando
+
+```
+electrs --config config.toml
+```
+
+e aspettare che electrs finisca di indicizzare tutti i blocchi.
+
+### Step 3 - Installiamo CLN
+
+TBD
+
+### Step 3b - Configuriamo CLN
+
+TBD
 
 ## Testnet
 Un utile rete per impratichirsi è `testnet` che differisce da `mainnet` in quanto:
