@@ -114,7 +114,7 @@ Bitcoin Core supporta tre tipologie diverse di reti a cui connettersi:
 
 Un altro comando utile è `daemon` che, se settato, non mantiene il log di bitcoin core collegato alla console attuale, per vedere il funzionamento sarà sempre possibile usare il comando `tail -f ~/.bitcoin/debug.log`.
 
-Tutte le configurazioni possono essere lanciate da linea di comando o tramite il file `~/.bitcoin/debug.log`, un file compatibile con un setup casalingo (ovvero in cui voglio mantenere il consumo di risorse al minimo) potrebbe essere il seguente.
+Tutte le configurazioni possono essere lanciate da linea di comando o tramite il file `~/.bitcoin/bitcoin.conf`, un file compatibile con un setup casalingo (ovvero in cui voglio mantenere il consumo di risorse al minimo) potrebbe essere il seguente.
 file di configurazione
 
 ```
@@ -136,6 +136,19 @@ In cui il:
 - si mantiene un indice dei blockfilter `blockfilterindex=1`
 
 L'elenco completo delle funzionalità si può trovate su [https://jlopp.github.io/bitcoin-core-config-generator](https://jlopp.github.io/bitcoin-core-config-generator)
+
+Si può anche fare tutto con un singolo comando da terminale.
+
+```
+cat >bitcoin.conf <<EOL
+daemon=1  
+blocksonly=1  
+maxconnections=20  
+maxuploadtarget=500  
+txindex=1  
+blockfilterindex=1
+EOL
+```
 
 Qualora si abbia a disposizione un altro nodo già sincronizzato si puo usare l'opzione `connect` per collegarsi SOLO ED ESCLUSIVAMENTE a questo nodo, se tale nodo è in rete locale si guadagna tempo e banda con questa semplice configurazione.
 
@@ -202,10 +215,27 @@ electrum_rpc_addr = "127.0.0.1:50001"
 log_filters = "INFO"
 ```
 
+Si può anche fare tutto con un singolo comando da terminale.
+
+```
+cat >config.toml <<EOL
+# bitcoin core configuration
+auth = "username:password"
+daemon_rpc_addr = "127.0.0.1:8332"
+daemon_p2p_addr = "127.0.0.1:8333"
+
+# electrs configuration
+db_dir = ".electrum"
+network = "bitcoin"
+electrum_rpc_addr = "127.0.0.1:50001"
+log_filters = "INFO"
+EOL
+```
+
 Possiamo lanciare Elects con il comando
 
 ```
-electrs --config config.toml
+electrs --conf config.toml
 ```
 
 e aspettare che electrs finisca di indicizzare tutti i blocchi.
@@ -331,3 +361,4 @@ L'installazione del nodo è divisa su più lezioni, qui un elenco di quelle già
 | 240122-2200 | Configurazione minimale                        |
 | 240129-2200 | Testnet                                        |
 | 240205-2200 | bitcoind-cli                                   |
+| 240711-2200 | electrs                                        |
