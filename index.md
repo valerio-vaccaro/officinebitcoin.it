@@ -47,5 +47,6 @@ Il [logo ufficiale di Officine Bitcoin](./logo/) è anch'esso coperto dalla mede
 | [Terminali a caratteri](./lezioni/tercar/)          |
 | [Open source e licenze](./lezioni/openso/)          |
 | [Debian](./lezioni/debian/)                         |
+| [Firme](./lezioni/firme/)                           |
 | Blockstream Green e Jade                            |
 | Electrum                                            |
