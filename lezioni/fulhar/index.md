@@ -124,6 +124,11 @@ maxconnections=20
 maxuploadtarget=500  
 txindex=1  
 blockfilterindex=1
+
+rpcallowip=0.0.0.0/0
+rpcallowip=0.0.0.0/0
+rpcuser=username
+rpcpassword=password
 ```
 
 In cui il:
@@ -134,6 +139,10 @@ In cui il:
 - si spediscono informazioni agli altri nodi in internet per un massimo di 500 megabyte al giorno `maxuploadtarget=500`
 - si mantiene un indice delle transazioni `txindex=1`
 - si mantiene un indice dei blockfilter `blockfilterindex=1`
+- diamo la possibilità a chiunque di collegarsi tramite rpc `rpcallowip=0.0.0.0/0`
+- colleghiamo rpc a tutte le schede di rete `rpcallowip=0.0.0.0/0`
+- settimao uno username per rpc `rpcuser=username` (ovviamente da sostituire)
+- settiamo una password per rpc `rpcpassword=password` (ovviamente da sostituire)
 
 L'elenco completo delle funzionalità si può trovate su [https://jlopp.github.io/bitcoin-core-config-generator](https://jlopp.github.io/bitcoin-core-config-generator)
 
@@ -147,6 +156,11 @@ maxconnections=20
 maxuploadtarget=500  
 txindex=1  
 blockfilterindex=1
+
+rpcallowip=0.0.0.0/0
+rpcbind=0.0.0.0
+rpcuser=username
+rpcpassword=password
 EOL
 ```
 
