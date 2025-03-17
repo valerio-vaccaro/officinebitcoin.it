@@ -342,6 +342,99 @@ TBD
 
 TBD
 
+### Step 4 - Installiamo Mempool
+
+Installiamo `mariadb`.
+
+```
+sudo apt-get install mariadb-server mariadb-client
+```
+
+E creiamo db e utente.
+
+```
+sudo mysql -e "drop database mempool;"
+sudo mysql -e "create database mempool;"
+sudo mysql -e "grant all privileges on mempool.* to 'mempool'@'%' identified by 'mempool';"
+sudo mysql -e "flush privileges;"
+```
+
+Cloniamo il codice
+
+```
+git clone https://github.com/mempool/mempool
+cd mempool
+latestrelease=$(curl -s https://api.github.com/repos/mempool/mempool/releases/latest|grep tag_name|head -1|cut -d '"' -f4)
+git checkout $latestrelease
+
+```
+
+Assicuriamoci di usare node 20.x e l'ultima versione di npm.
+
+```
+sudo npm i -g npm
+sudo npm i -g node@20
+```
+
+Provvediamo a compilare e testare il backend
+
+```
+cd backend
+npm install --no-install-links # npm@9.4.2 and later can omit the --no-install-links
+npm run build
+
+cp mempool-config.sample.json mempool-config.json
+npm run start
+```
+
+Controllare attentamente le configurazionie di `mempool-config.json`.
+
+Passiamo al frontend.
+
+```
+cd ..
+
+cd frontend
+npm install
+npm run serve:local-prod
+```
+
+
+### Step 4b - Configuriamo Mempool
+
+La configurazione del backend si trova nel file `mempool-config.json`.
+
+### Step 4c - Lanciamo Mempool
+
+Possiamo lanciare Mempool con pm2, che va installato.
+
+```
+sudo npm i -g pm2
+pm2 startup 
+```
+
+Lanciamo il backend.
+
+```
+cd ..
+cd backend 
+pm2 start "npm run start"
+```
+
+Lanciamo poi il frontend.
+
+```
+cd ..
+cd frontend
+pm2 start "npm run serve:local-prod"
+```
+
+Salviamo il tutto.
+
+```
+pm2 save
+```
+
 ## Testnet
 Un utile rete per impratichirsi è `testnet` che differisce da `mainnet` in quanto:
 
