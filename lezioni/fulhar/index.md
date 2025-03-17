@@ -170,6 +170,46 @@ Dalla release 26 core supporta crittazione delle comunicazioni tra i nodi con l'
 
 Tutte le configuarazioni mostrate sono relative a clearnet, le configurazioni per tor saranno oggetto di un'altra lezione.
 
+### Step 1c - Lanciamo Bitcoin
+
+Lanciamo Bitcoin costruendo un file di lancio per systemd.
+
+```
+sudo  sh -c "cat > /etc/systemd/system/bitcoind.service <<EOL
+[Unit]
+Description=Bitcoin daemon
+After=network.target
+
+[Service]
+User=bitcoin
+Group=bitcoin
+Type=forking
+PIDFile=/home/bitcoin/.bitcoin/bitcoind.pid
+ExecStart=/usr/local/bin/bitcoind -pid=/home/bitcoin/.bitcoin/bitcoind.pid
+KillMode=process
+Restart=always
+TimeoutSec=120
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
+EOL"
+```
+Attenzione: in questo caso stiamo utilizzando l'utente `bitcoin` per far partire il software.
+
+Possiamo quindi regitrare lo script creato e lanciarlo.
+
+```
+sudo systemctl enable bitcoind
+sudo systemctl start bitcoind
+```
+
+Ogni volta che si vuole controllare lo stato del software si può utilizzare il seguente comando.
+
+```
+systemctl status bitcoind
+```
+
 ### Step 2 - Installiamo Electrs
 
 Installiamo `Electrs` che è un electrum server basato su `Rust`, il primo step è quindi installare tale linguaggio.
@@ -253,6 +293,46 @@ electrs --conf config.toml
 ```
 
 e aspettare che electrs finisca di indicizzare tutti i blocchi.
+
+### Step 2c - Lanciamo Eletrs
+
+Come per Bitcoin possiamo lanciare il software creando uno script per systemd.
+
+```
+sudo  sh -c "cat > /etc/systemd/system/electrs.service <<EOL
+[Unit]
+Description=Electrs daemon
+After=bitcoind.target
+
+[Service]
+User=bitcoin
+Group=bitcoin
+Type=forking
+ExecStart=/usr/local/bin/electrs --conf /home/bitcoin/electrs_config.toml
+KillMode=process
+Restart=always
+TimeoutSec=120
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
+EOL"
+```
+
+Attenzione: in questo caso stiamo utilizzando l'utente `bitcoin` per far partire il software.
+
+Possiamo quindi regitrare lo script creato e lanciarlo.
+
+```
+sudo systemctl enable electrs
+sudo systemctl start electrs
+```
+
+Ogni volta che si vuole controllare lo stato del software si può utilizzare il seguente comando.
+
+```
+systemctl status electrs
+```
 
 ### Step 3 - Installiamo CLN
 
