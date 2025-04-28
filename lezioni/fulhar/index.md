@@ -435,6 +435,67 @@ Salviamo il tutto.
 pm2 save
 ```
 
+## Bitcoin con connessione solo tramite tor
+Iniziamo con l'installare tor.
+
+
+```
+sudo apt install tor
+```
+
+ed impostiamo il file di configurazione di tor per creare un nuovo hidden service esportando la porta 8333 del nodo.
+
+
+```
+cat > /etc/tor/torrc <<EOL
+HiddenServiceDir /var/lib/tor/hidden_service/
+HiddenServicePort 8333 127.0.0.1:8333
+EOL
+```
+
+Possiamo riavviare tor per applicare le modifiche, questo ci permette di esportare la porta 8333 del nostro nodo ma non di limitare l'accesso al nodo solo ed esclusivamente tramite tor.
+
+```
+sudo systemctl restart tor
+``` 
+
+e ottenere l'indirizzo onion del nodo.
+
+```
+cat /var/lib/tor/hidden_service/hostname
+```
+
+Fatto ciò possiamo limitare l'accesso al nodo solo ed esclusivamente tramite tor modificando la configurazione di bitcoin.conf in questo modo:
+
+```
+proxy=127.0.0.1:9050
+listen=1
+bind=127.0.0.1:8333=onion
+externalip=tor_url.onion
+onlynet=onion
+```
+
+Dove `tor_url.onion` è l'indirizzo onion del nodo ottenuto in precedenza.
+
+
+Riavviando il nodo possiamo verificare che il nodo è accessibile solo ed esclusivamente tramite tor.
+
+```
+sudo systemctl restart bitcoind
+
+bitcoin-cli getnetworkinfo
+```
+
+Qui dovremmo vedere che il nodo è accessibile solo ed esclusivamente tramite tor, ovvero che solo la rete `onion` è `reachable`.
+
+Inoltre i nostri peer saranno tutti identificati da indirizzi onion.
+
+```
+bitcoin-cli getpeerinfo
+```
+
+Attenzione: tor è estremamente lento, tenete conto di ciò quando volete sincronizzare il nodo partendo da zero.
+
 ## Testnet
 Un utile rete per impratichirsi è `testnet` che differisce da `mainnet` in quanto:
 
