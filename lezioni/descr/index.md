@@ -45,10 +45,11 @@ Esperimenti possono essere fatti con:
 - BDK: libreria con interfaccia a riga di comando per gestire descriptor complessi.
 - Testnet/Signet: ambienti sicuri per testare senza rischiare fondi reali.
 
-#Riferimenti
+## Riferimenti
+
 - [BIP-380](https://github.com/bitcoin/bips/blob/master/bip-0380.mediawiki)
 - [Bitcoin Improvement Proposal 380](https://github.com/bitcoin/bips/blob/master/bip-0380.mediawiki)
 - [Bitcoin Improvement Proposal 380](https://github.com/bitcoin/bips/blob/master/bip-0380.mediawiki)
 
-#Programma
+# Programma
 Questa lezione è stata realizzata per un Satoshi Spritz Connect.
