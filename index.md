@@ -52,3 +52,4 @@ Il [logo ufficiale di Officine Bitcoin](./logo/) è anch'esso coperto dalla mede
 | [Jade con Electrum Wallet](./lezioni/jadeele/)      |
 | [Jade airgapped con Sparrow Wallet](./lezioni/jadespa/)|
 | [Il ciclo di vita di una transazione](./lezioni/ciclo/)|
+| [Mining](./lezioni/mining/)                          |
