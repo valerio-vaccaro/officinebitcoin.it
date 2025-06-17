@@ -54,3 +54,4 @@ Il [logo ufficiale di Officine Bitcoin](./logo/) è anch'esso coperto dalla mede
 | [Il ciclo di vita di una transazione](./lezioni/ciclo/)|
 | [Mining](./lezioni/mining/)                         |
 | [Descriptor](./lezioni/descr/)                      |
+| [Reti Mesh](./lezioni/mesh/)                        |
