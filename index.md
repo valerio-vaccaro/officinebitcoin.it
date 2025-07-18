@@ -55,3 +55,5 @@ Il [logo ufficiale di Officine Bitcoin](./logo/) è anch'esso coperto dalla mede
 | [Mining](./lezioni/mining/)                         |
 | [Descriptor](./lezioni/descr/)                      |
 | [Reti Mesh](./lezioni/mesh/)                        |
+| [Coin Control](./lezioni/coinco/)                   |
+| [GPG e Yubico](./lezioni/gpg/)                      |
