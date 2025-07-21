@@ -13,6 +13,7 @@ Si ricorda di NON condividere mai informazioni personali/mnemoniche ed altri seg
 Visto l'interesse per le lezioni di Officine Bitcoin gli appunti delle lezioni verranno tradotti anche in altre lingue, per ora sono disponibili le seguenti traduzioni:
 - [Italiano](./index.html)
 - [English](./index.en.html)
+- [Milanés](./index.mi.html)
 
 ## Chi tiene le lezioni?
 Chiunque ne abbia le capacità. Hai un argomento di cui vuoi parlare? Crea la tua lezione.

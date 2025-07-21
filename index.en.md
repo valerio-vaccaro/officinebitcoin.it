@@ -13,6 +13,7 @@ Remember to NEVER share personal information/mnemonics and other secrets with th
 Given the interest in Officine Bitcoin lessons, lesson notes will also be translated into other languages; for now, the following translations are available:
 - [Italiano](./index.html)
 - [English](./index.en.html)
+- [Milanés](./index.mi.html)
 
 ## Who holds the lessons?
 Anyone who has the skills. Do you have a topic you want to talk about? Create your lesson.
