@@ -14,6 +14,7 @@ Given the interest in Officine Bitcoin lessons, lesson notes will also be transl
 - [Italiano](./index.html)
 - [English](./index.en.html)
 - [Milanés](./index.mi.html)
+- [Veneto](./index.ve.html)
 
 ## Who holds the lessons?
 Anyone who has the skills. Do you have a topic you want to talk about? Create your lesson.

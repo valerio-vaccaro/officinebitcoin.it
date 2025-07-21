@@ -14,6 +14,7 @@ Vist l'interess per i lezion de Officine Bitcoin i appunt de lezion vegnarann tr
 - [Italiano](./index.html)
 - [English](./index.en.html)
 - [Milanés](./index.mi.html)
+- [Veneto](./index.ve.html)
 
 ## Chi ten i lezion?
 Chiunque che ghe n'abbia i capacità. Te gh'hee un argoment de cui te vöret parlà? Crea la tua lezion.
