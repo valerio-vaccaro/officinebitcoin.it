@@ -9,6 +9,11 @@ Le lezioni verranno tenute su telegram nel gruppo di [Officine Bitcoin](https://
 
 Si ricorda di NON condividere mai informazioni personali/mnemoniche ed altri segreti con la classe o con l'istruttore.
 
+## Lingue
+Visto l'interesse per le lezioni di Officine Bitcoin gli appunti delle lezioni verranno tradotti anche in altre lingue, per ora sono disponibili le seguenti traduzioni:
+- [Italiano](./index.html)
+- [English](./index.en.html)
+
 ## Chi tiene le lezioni?
 Chiunque ne abbia le capacità. Hai un argomento di cui vuoi parlare? Crea la tua lezione.
 
@@ -35,25 +40,25 @@ Le raccolte di fondi e contributi ed il pagamento di oboli per seguire le lezion
 ## Licenze ed attribuzioni
 Il materiale prodotto durante le lezioni di Officine Bitcoin viene pubblicato con licenza Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode.it).
 
-Il [logo ufficiale di Officine Bitcoin](./logo/) è anch'esso coperto dalla medesima licenza.
+Il [logo ufficiale di Officine Bitcoin](./logo/index.html) è anch'esso coperto dalla medesima licenza.
 
 ## Lezioni
 
 | Argomento                                           |
 |-----------------------------------------------------|
-| [Mnemoniche & dadi: impara a creare la tua mnemonica](./lezioni/mnedad/)|
-| [Fullnode ed hardware per un nodo](./lezioni/fulhar/)|
-| [HAN SOLOminer/Nerdminer](./lezioni/hansol/)        |
-| [Terminali a caratteri](./lezioni/tercar/)          |
-| [Open source e licenze](./lezioni/openso/)          |
-| [Debian](./lezioni/debian/)                         |
-| [Firme](./lezioni/firme/)                           |
-| [Jade Setup](./lezioni/jadeset/)                    |
-| [Jade con Electrum Wallet](./lezioni/jadeele/)      |
-| [Jade airgapped con Sparrow Wallet](./lezioni/jadespa/)|
-| [Il ciclo di vita di una transazione](./lezioni/ciclo/)|
-| [Mining](./lezioni/mining/)                         |
-| [Descriptor](./lezioni/descr/)                      |
-| [Reti Mesh](./lezioni/mesh/)                        |
-| [Coin Control](./lezioni/coinco/)                   |
-| [GPG e Yubico](./lezioni/gpg/)                      |
+| [Mnemoniche & dadi: impara a creare la tua mnemonica](./lezioni/mnedad/index.html)|
+| [Fullnode ed hardware per un nodo](./lezioni/fulhar/index.html)|
+| [HAN SOLOminer/Nerdminer](./lezioni/hansol/index.html)|
+| [Terminali a caratteri](./lezioni/tercar/index.html)|
+| [Open source e licenze](./lezioni/openso/index.html)|
+| [Debian](./lezioni/debian/index.html)|
+| [Firme](./lezioni/firme/index.html)|
+| [Jade Setup](./lezioni/jadeset/index.html)|
+| [Jade con Electrum Wallet](./lezioni/jadeele/index.html)|
+| [Jade airgapped con Sparrow Wallet](./lezioni/jadespa/index.html)|
+| [Il ciclo di vita di una transazione](./lezioni/ciclo/index.html)|
+| [Mining](./lezioni/mining/index.html)|
+| [Descriptor](./lezioni/descr/index.html)|
+| [Reti Mesh](./lezioni/mesh/index.html)|
+| [Coin Control](./lezioni/coinco/index.html)|
+| [GPG e Yubico](./lezioni/gpg/index.html)|
