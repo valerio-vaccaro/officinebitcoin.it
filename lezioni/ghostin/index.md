@@ -47,7 +47,7 @@ Il repository GitHub di Ghostinbox (https://github.com/valerio-vaccaro/ghostinbo
 - **Open-source**: Il codice pubblico consente agli sviluppatori di verificare l’integrità del sistema, contribuire con miglioramenti o ospitare un’istanza personalizzata.
 
 Punti di forza tecnici:
-- **Privacy assoluta**: La cancellazione delle email dopo 3 giorni ed il supporto per Tor garantiscono un’esperienza anonima e sicura.
+- **Privacy assoluta**: La cancellazione delle email dopo 30 giorni ed il supporto per Tor garantiscono un’esperienza anonima e sicura.
 - **Leggerezza**: L’implementazione in Flask è ottimizzata per basse risorse, rendendo il servizio scalabile e veloce.
 - **Trasparenza**: La licenza open-source permette audit del codice e personalizzazioni, aumentando la fiducia degli utenti.
 
