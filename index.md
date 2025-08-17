@@ -65,3 +65,4 @@ Il [logo ufficiale di Officine Bitcoin](./logo/index.html) è anch'esso coperto 
 | [Coin Control](./lezioni/coinco/index.html)|
 | [GPG e Yubico](./lezioni/gpg/index.html)|
 | [MemPush](./lezioni/mempush/index.html)|
+| [Ghostinbox](./lezioni/ghostin/index.html)|

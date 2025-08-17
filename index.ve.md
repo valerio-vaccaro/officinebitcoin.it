@@ -65,3 +65,4 @@ El [logo ufissiale de Officine Bitcoin](./logo/index.ve.html) xe anca lu covert 
 | [Coin Control](./lezioni/coinco/index.ve.html)|
 | [GPG e Yubico](./lezioni/gpg/index.ve.html)| 
 | [MemPush](./lezioni/mempush/index.mi.html)|
+| [Ghostinbox](./lezioni/ghostin/index.ve.html)|

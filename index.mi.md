@@ -65,3 +65,4 @@ El [logo ufficial de Officine Bitcoin](./logo/index.mi.html) l'è anca lù cover
 | [Coin Control](./lezioni/coinco/index.mi.html)|
 | [GPG e Yubico](./lezioni/gpg/index.mi.html)| 
 | [MemPush](./lezioni/mempush/index.mi.html)|
+| [Ghostinbox](./lezioni/ghostin/index.mi.html)|
