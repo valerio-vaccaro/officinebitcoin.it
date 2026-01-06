@@ -66,3 +66,4 @@ The [official Officine Bitcoin logo](./logo/index.en.html) is also covered by th
 | [GPG and Yubico](./lezioni/gpg/index.en.html)| 
 | [MemPush](./lezioni/mempush/index.en.html)|
 | [Ghostinbox](./lezioni/ghostin/index.en.html)|
+| [Bitcoin Starter Kit](./lezioni/start/index.en.html)|
