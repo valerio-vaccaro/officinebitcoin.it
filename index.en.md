@@ -67,3 +67,4 @@ The [official Officine Bitcoin logo](./logo/index.en.html) is also covered by th
 | [MemPush](./lezioni/mempush/index.en.html)|
 | [Ghostinbox](./lezioni/ghostin/index.en.html)|
 | [Bitcoin Starter Kit](./lezioni/start/index.en.html)|
+| [APK verification](./lezioni/verifica/index.en.html)|

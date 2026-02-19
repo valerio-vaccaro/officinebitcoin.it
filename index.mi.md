@@ -67,3 +67,4 @@ El [logo ufficial de Officine Bitcoin](./logo/index.mi.html) l'è anca lù cover
 | [MemPush](./lezioni/mempush/index.mi.html)|
 | [Ghostinbox](./lezioni/ghostin/index.mi.html)|
 | [Starter Kit Bitcoin](./lezioni/start/index.mi.html)|
+| [Verifica APK](./lezioni/verifica/index.mi.html)|

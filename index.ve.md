@@ -67,3 +67,4 @@ El [logo ufissiale de Officine Bitcoin](./logo/index.ve.html) xe anca lu covert 
 | [MemPush](./lezioni/mempush/index.ve.html)|
 | [Ghostinbox](./lezioni/ghostin/index.ve.html)|
 | [Starter Kit Bitcoin](./lezioni/start/index.ve.html)|
+| [Verifica APK](./lezioni/verifica/index.ve.html)|

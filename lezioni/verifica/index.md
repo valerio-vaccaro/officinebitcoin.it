@@ -1,4 +1,4 @@
-![cover](1cover.webp)
+![cover](https://officinebitcoin.it/lezioni/verifica/1cover.webp)
 La verifica delle firme crittografiche è una pratica di sicurezza fondamentale che **ogni utente di software open-source dovrebbe inserire nelle routine delle buone abitudini**.
 
 Open source è per sua natura modificabile e ciò significa che chiunque può, a livello teorico, introdurre backdoor, attacchi o codice malevolo nelle applicazioni che usi per esercitarti, intanto che impari il protocollo Bitcoin.
@@ -7,7 +7,7 @@ Come utente che sta approfondendo lo studio, hai la possibilità di verificare p
 
 Prima di iniziare, portiamo anche in Officine Bitcoin un classico delle presentazioni: il meme. Non sarà una presentazione pesante, ma decomprimiamo l'atmosfera già da subito.
 
-![meme](2meme.webp)
+![meme](https://officinebitcoin.it/lezioni/verifica/2meme.webp)
 
 ## Come fare?
 Gli sviluppatori rilasciano le nuove versioni di software accompagnandole sempre con una firma crittografica.
@@ -15,7 +15,7 @@ Significa che - oltre ad aver aggiornato il software - lo rilasciano certificand
 
 Tutto ciò di cui hai bisogno è la suite GPG per procedere alla verifica della firma.
 
-![img](3.webp)
+![img](https://officinebitcoin.it/lezioni/verifica/3.webp)
 
 # Pre requisiti per questa esercitazione
 - Un breve ripasso sulla crittografia asimmetrica
@@ -27,7 +27,7 @@ Tutto ciò di cui hai bisogno è la suite GPG per procedere alla verifica della 
   - un terminale (vale sia per Linux sia per Win)
 # Crittografia asimmetrica
 
-![img](4.webp)
+![img](https://officinebitcoin.it/lezioni/verifica/4.webp)
 
 Qui ci sono due chiavi correlate tra loro: una chiave pubblica e una privata. Come suggeriscono i nomi:
 - La chiave pubblica è disponibile liberamente e può essere condivisa con chiunque.
@@ -45,13 +45,13 @@ Ne fa un hash crittografico (e questo genera il `checksum`) e cifra il digest co
 
 Dopo tale processo, lo sviluppatore carica sul sito o su un repository Github entrambi i file. È lì che inizia il tuo download.
 
-![img](5.webp)
+![img](https://officinebitcoin.it/lezioni/verifica/5.webp)
 
 Poi ti servirà la chiave pubblica dello sviluppatore. A volte si trova nel repository Github, a volta su server pubblici (*keyserver*). Anche se la ricerca può richiedere sforzi, la chiave pubblica è un elemento indispensabile per verificare il software, quindi impegnati per ottenerla.
 
 In caso di difficoltà, fai domande sul gruppo Telegram di Officine Bitcoin, dove troverai le indicazioni per ottenere una specifica chiave pubblica.
 
-![img](6.webp)
+![img](https://officinebitcoin.it/lezioni/verifica/6.webp)
 
 Per verificare l'integrità dei dati, il destinatario decifra la firma utilizzando la chiave pubblica del mittente, ottenendo un risultato:
 
@@ -70,17 +70,17 @@ Usiamo ad esempio il download di Phoenix, wallet LN non-custodial, così da trat
 Se sei già stato sul sito di [Acinq](https://phoenix.acinq.co/), lo sviluppatore di Phoenix, sai già che il download è disponibile sugli store ufficiali per Android ed iOS.
 Magari non ci hai mai fatto caso, ma per Android è disponibile anche il file apk.
 
-![img](8.webp)
+![img](https://officinebitcoin.it/lezioni/verifica/8.webp)
 
 [Andiamoci!](https://github.com/ACINQ/phoenix/releases) per trovare file `apk` e `Signature` che scaricherai con `wget`.
 Nel caso di Phoenix il file che contiene la firma per la verifica è denominato **`SHA256SUMS.ASC`**.
 
-![img](9.webp)
+![img](https://officinebitcoin.it/lezioni/verifica/9.webp)
 
 Nello stesso repository ci sono anche le indicazioni per scaricare la chiave pubblica corrispondente alla *signing key E04E48E72C205463* (impronta digitale unica delle chiavi di Drouinf).
 Copia il link e scaricala con `wget`, oppure segui le istruzioni suggerite nell'apposita sezione del repo.
 
-![img](10.webp)
+![img](https://officinebitcoin.it/lezioni/verifica/10.webp)
 
 ---
 ⚠️**La chiave pubblica deve essere importata, oltre che scaricata**.
@@ -90,9 +90,9 @@ Copia il link e scaricala con `wget`, oppure segui le istruzioni suggerite nell'
 # Apri il terminale
 Con il terminale, posizionati nella directory dove sono stati scaricati l'apk e il file `SHA256SUMS.ASC` ed esegui i comandi nell'ordine.
 
-![img](11.webp)
+![img](https://officinebitcoin.it/lezioni/verifica/11.webp)
 
-![img](12.webp)
+![img](https://officinebitcoin.it/lezioni/verifica/12.webp)
 
 Quando la verifica ha restituito esito positivo, potrai trasferire l'apk sul cellulare e installare l'app.
 
@@ -111,15 +111,15 @@ Se invece utilizzi già Sparrow Wallet, puoi procedere a verificare i download c
 
 Lancia Sparrow wallet e cerca nel menu `Tools` -> `Verify Downloads`.
 
-![img](13.webp)
+![img](https://officinebitcoin.it/lezioni/verifica/13.webp)
 
 Si apre un'interfaccia che chiede di inserire i file appena scaricati. Cliccando su `Browse` si apre il file manager, per caricare ogni file nel campo richiesto.
 
-![img](14.webp)
+![img](https://officinebitcoin.it/lezioni/verifica/14.webp)
 
 A volte il form dell'interfaccia si completa da solo. Se non lo fa, riempi tutti i campi con i file appropriati.
 
-![img](15.webp)
+![img](https://officinebitcoin.it/lezioni/verifica/15.webp)
 
 L'esito, positivo, è mostrato graficamente dalle spunte verdi e dalla conferma *`Ready to install`* +  < nome file >.
 
@@ -129,12 +129,12 @@ Se te la sei persa **non disperare**: questi appunti servono appunto per recuper
 
 Per non perdere la prossima presentazione, unisciti al [gruppo Telegram](https://t.me/officinebitcoin), così da rimanere in aggiornamento costante.
 
-![img](17.webp)
+![img](https://officinebitcoin.it/lezioni/verifica/17.webp)
 
 Puoi inoltre cercare il [Satoshi Spritz](https://satoshispritz.it/) più vicino a te. Un Satoshi Spritz è un meetup locale dove si parla solo di Bitcoin, dove puoi portare le tue domande e farti rispondere da altri bitcoiner esperti. Al link troverai la mappa della penisola.
 
-![img](16.webp)
+![img](https://officinebitcoin.it/lezioni/verifica/16.webp)
 
 Infine, se non trovi il meetup vicino a te, puoi approfittare delle dirette settimanali di [SatoshiSpritz Connect](https://t.me/SatoshiSpritzConnect), un meetup virtuale creato per chi non può partecipare ai Satoshi Spritz, o per aiutare i meetup più piccolini a prendere appunti e trovare ispirazione per le proprie presentazioni.
 
-![img](18.webp)
+![img](https://officinebitcoin.it/lezioni/verifica/18.webp)
