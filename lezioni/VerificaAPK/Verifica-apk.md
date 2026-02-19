@@ -1,4 +1,4 @@
-![cover](slide-verifica-apk/1cover.webp)
+![cover](1cover.webp)
 La verifica delle firme crittografiche è una pratica di sicurezza fondamentale che **ogni utente di software open-source dovrebbe inserire nelle routine delle buone pratiche**.
 
 Open source è per sua natura modificabile e ciò significa che chiunque può, a livello teorico, introdurre backdoor, attacchi o codice malevolo nelle applicazioni che usi per esercitarti, intanto che impari il protocollo Bitcoin.
