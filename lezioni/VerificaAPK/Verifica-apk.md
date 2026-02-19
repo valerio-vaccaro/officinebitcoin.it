@@ -79,11 +79,11 @@ Nel caso di Phoenix il file che contiene la firma per la verifica è denominato 
 
 Nello stesso repository ci sono anche le indicazioni per scaricare la chiave pubblica corrispondente alla *signing key E04E48E72C205463* (impronta digitale unica delle chiavi di Drouinf).
 Copia il link e scaricala con `wget`, oppure segui le istruzioni suggerite nell'apposita sezione del repo.
-**La chiave pubblica deve essere importata, oltre che scaricata**.
 
 ![img](10.webp)
 
 ---
+⚠️**La chiave pubblica deve essere importata, oltre che scaricata**.
 ⚠️ Il download dei file deve avvenire nella stessa directory.
 
 ---
