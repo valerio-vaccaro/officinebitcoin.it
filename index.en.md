@@ -68,3 +68,4 @@ The [official Officine Bitcoin logo](./logo/index.en.html) is also covered by th
 | [Ghostinbox](./lezioni/ghostin/index.en.html)|
 | [Bitcoin Starter Kit](./lezioni/start/index.en.html)|
 | [APK verification](./lezioni/verifica/index.en.html)|
+| [Phoenix and LN channel](./lezioni/canale/index.en.html)|

@@ -68,3 +68,4 @@ Il [logo ufficiale di Officine Bitcoin](./logo/index.html) è anch'esso coperto 
 | [Ghostinbox](./lezioni/ghostin/index.html)|
 | [LN Starter Kit](./lezioni/start/index.html)|
 | [Verifica APK](./lezioni/verifica/index.html)|
+| [Phoenix e canale LN](./lezioni/canale/index.html)|
