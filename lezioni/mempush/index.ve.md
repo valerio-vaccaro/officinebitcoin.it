@@ -1,3 +1,14 @@
+---
+layout: default
+title: "MemPush: Mandar e gestir transazion Bitcoin ne la mempool co semplicità"
+---
+
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezion Bitcoin-only</span> <span>Sto progetto xe manteniu da valerio-vaccaro</span></p>
+
+## 🌍 Traduzioni
+
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
+
 # MemPush: Mandar e gestir transazion Bitcoin ne la mempool co semplicità
 
 MemPush (https://mempush.com/) xe na piataforma inovativa che rende el mandar e la gestión de le transazion Bitcoin ne la mempool sempia, sicura e acesibile. La mempool, el "serbatoio" temporaneo de le transazion Bitcoin in atesa de conferma su la blockchain, xe el cuor de sto servisio, che elimina le conplessità tecniche par utenti e svilupatori.

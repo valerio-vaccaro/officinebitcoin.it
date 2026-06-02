@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Il logo di Officine Bitcoin"
+---
+
 # Il logo di Officine Bitcoin
 
 Il logo di Officine Bitcoin è un ingranaggio in cui è inscritta il monogramma classico di Bitcoin ovvero ₿.

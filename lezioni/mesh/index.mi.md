@@ -1,246 +1,137 @@
-# Reti Mesh, LoRa e LoRaWAN
+---
+layout: default
+title: "Introduzion a i **Reti Mesh** e analisi particolar de LoRa e **LoRaWAN**"
+---
 
-## Introduzion
-Le reti mesh rappresenten una soluzion innovativa per la comunicazion decentralizzata, offrend una alternativa robusta e resiliente ai sistemi di comunicazion tradizional. In questa lezion, esplorerem i concett fondamental de le reti mesh, con particolare attenzion a LoRa e LoRaWAN, tecnologie che hann rivoluzionad el camp de le comunicazion a bassa potenza e longa distanza.
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezion Bitcoin-only</span> <span>Quest progett l'e mantegnuu da valerio-vaccaro</span></p>
 
-## Cossa hinn le Reti Mesh?
+## 🌍 Traduzion
 
-Una **rete mesh** l'è una topologia de rete dove i nod (dispositiv) hinn conness tra loro in una struttura a griglia, permettend la comunicazion diretta tra nod adiacend e la trasmission de messagg attraverso percors multipl. A differenza de le reti tradizional che dopren un nod central (come un router), le reti mesh hann una struttura distribuita e decentralizzata.
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
 
-### Caratteristiche principali
+# Introduzion a i **Reti Mesh** e analisi particolar de LoRa e **LoRaWAN**
 
-#### 1. **Resilienza**
-Le reti mesh hann una capacità innata de adattass ai cambiament e ai guast. Se un nod se disconnet o fallisc, la rete pö automaticament trová percors alternativ per mantenì la comunicazion.
+## Introduzion a le **Reti Mesh**
 
-#### 2. **Scalabilità**
-Le reti mesh poden cresc facilment aggiungend noeuv nod. Ogni noeuv dispositiv che se connet contribuiss a migliorà la copertura e la capacità de la rete.
+I **Reti Mesh** hinn un'architettura de rete in cui i nodi (dispositivi) hinn interconnessi in modo minga gerarchico, consentendo a ciascun nodo de comunicare direttamente con i altri senza passare attraverso on punto centrale, come on router o on gateway. Ogni nodo potenzialmente può agire sia come trasmettitore che come ricevitore, e i dati possono essere inoltrati attraverso più percorsi per raggiungere la destinazion. 
 
-#### 3. **Copertura estesa**
-Grazie alla capacità de ogni nod de funzionà come router, le reti mesh poden coprì aree molt vast, superand i limit de le reti tradizional.
+Questa struttura offre diversi vantaggi:
 
-#### 4. **Flessibilità**
-Le reti mesh poden vess configurad per divers tip de applicazion, da reti local a sistemi de sensori distribuid.
+- **Resilienza**: Se on nodo fallisce, i dati possono essere reindirizzati attraverso altri nodi, garantendo continuità nella comunicazion.
+- **Scalabilità**: I **Reti Mesh** possono espandersi facilmente aggiungendo nuovi nodi senza modifiche significative all'infrastruttura.
+- **Copertura estesa**: L'inoltro di dati consente de coprire aree più ampie rispetto a le reti tradizionali.
+- **Flessibilità**: Adatte a molteplici applicazion, dall'Internet of Things (IoT) a le reti domestiche e industriali.
 
-### Vantagg de le reti mesh
+Tuttavia, i **Reti Mesh** presentano anca alcune sfide:
 
-- **Alta affidabilità**: La ridondanza de percors assicura che la comunicazion continui anche se qualch nod fallisc
-- **Bass cost**: Le reti mesh poden vess implementad con hardware relativament econom
-- **Facilità de manutenzion**: I nod poden vess aggiunt o rimoss senza interromp la rete
-- **Autonomia**: Le reti mesh poden funzionà indipendentement da infrastruttur estern
+- **Complessità**: La gestion de più percorsi e la coordinazion tra nodi aumentano la complessità.
+- **Consumo energetico**: I nodi che inoltrano dati consumano più energia, riducendo la durata de la batteria.
+- **Capacità limitata**: In reti dense, la trasmissione multi-hop può introdurre latenza e ridurre la capacità complessiva.
 
-### Sfide de le reti mesh
+I **Reti Mesh** hinn utilizzate in tecnologie wireless come **Zigbee**, **Bluetooth** Mesh, **Thread** e, in alcuni casi, protocolli proprietari basati su LoRa. Ona di tecnologie più rilevanti per i reti a bassa potenza e lunga portata l'è **LoRaWAN**, che adotta on approccio diverso rispetto a la topologia mesh tradizionale.
 
-- **Complessità**: La gestión de una rete mesh pö vess compless, specialment per reti grand
-- **Consumo energetico**: I nod che funzionen come router consumen pù energia
-- **Capacità limitada**: Le reti mesh poden vess limitad in termin de bandwidth e velocità
-- **Latency**: I messagg che passen attraverso pù nod poden avè latency pù alt
+## **LoRa** e **LoRaWAN**: Contesto e Differenze
 
-## LoRa vs LoRaWAN
+### **LoRa**
 
-### Cossa l'è LoRa?
+**LoRa** (Long Range) l'è ona tecnologia de modulazion a spettro espanso derivata dalla tecnica Chirp Spread Spectrum (CSS), sviluppata da Cycleo (acquisita da Semtech nel 2012). 
 
-**LoRa** (Long Range) l'è una tecnica de modulazion proprietaria sviluppada da Semtech che permet la comunicazion a longa distanza con bassa potenza. LoRa l'è basad su **Chirp Spread Spectrum (CSS)**, una tecnica che codifica i dat in "chirp" (segnai che cambien frequenza nel temp).
+**LoRa** rappresenta el livello fisico (Physical Layer, PHY) de ona rete wireless, definendo come i dati vengono modulati e trasmessi su bande de frequenza senza licenza (es. 868 MHz in Europa, 915 MHz in Nord America, 433 MHz in alcune regioni). 
 
-#### Caratteristiche de LoRa
+I sue caratteristiche principali hinn:
+- Trasmissione su lunghe distanze (fino a 15 km in aree rurali, 2-5 km in aree urbane).
+- Consumo energetico estremamente basso, ideale per applicazion IoT con bassa velocità dati e lunga durata de la batteria.
 
-- **Longa distanza**: Poden raggiung distanz de diversi chilometri
-- **Bassa potenza**: Consum energizz molt bass, ideale per dispositiv alimentad a batteria
-- **Resistenza alle interferenz**: La tecnica CSS rend LoRa resistent a interferenz e rumore
-- **Bassa velocità**: Le velocità de trasmission hann bass (da 0.3 a 37.5 kbps)
+### **LoRaWAN**
 
-### Cossa l'è LoRaWAN?
+**LoRaWAN** (Long Range Wide Area Network) l'è on protocollo de livello MAC (Media Access Control) basato su LoRa, sviluppato dalla LoRa Alliance, on’associazion no-profit fondata nel 2015 con oltre 500 membri, tra cui Semtech, Cisco, IBM e Orange. 
 
-**LoRaWAN** (Long Range Wide Area Network) l'è un protocoll de rete che definiss come i dispositiv LoRa comunichen tra loro. LoRaWAN l'è sviluppad e mantenud da la LoRa Alliance, un consorzi de aziend che promoven el standard.
+**LoRaWAN** definisce:
+- L'architettura de rete.
+- El protocollo de comunicazion.
+- Aspetti come frequenza de trasmissione, velocità dati, sicurezza e interoperabilità.
 
-#### Architettura de LoRaWAN
+A differenza de LoRa, che gestisce domà la modulazion del segnale, **LoRaWAN** stabilisce come i dispositivi (nodi finali) comunicano con i gateway e come questi si collegano ai server de rete tramite connessioni backhaul (es. Ethernet, Wi-Fi o cellulare).
 
-LoRaWAN definiss una **topologia a stella** dove:
+#### Confronto tra **Reti Mesh** e **LoRaWAN**
 
-1. **End Devices**: I dispositiv che invien e riceven dat
-2. **Gateways**: I nod che riceven i messagg de i dispositiv e li inoltren al server
-3. **Network Server**: El server central che gestiss la rete e i dat
-4. **Application Server**: El server che processa i dat specific de l'applicazion
+A differenza di **Reti Mesh** tradizionali (es. **Zigbee**, **Bluetooth**), **LoRaWAN** utilizza ona topologia a stella, in cui i nodi finali comunicano direttamente con i gateway, che inoltrano i dati a on server de rete centrale. De seguito, on confronto dettagliato:
 
-### Differenz tra LoRa e LoRaWAN
+1. Topologia de Rete
+**Reti Mesh**: I nodi fungono da ripetitori, inoltrando dati per estendere la copertura. Ciò aumenta la complessità e el consumo energetico.
+**LoRaWAN**: Topologia a stella, con nodi che trasmettono direttamente ai gateway. Quest elimina i nodi ripetitori, semplificando la rete e riducendo el consumo energetico.
 
-| Aspett | LoRa | LoRaWAN |
-|--------|------|---------|
-| **Livell** | Fisic (modulazion) | MAC (protocoll de rete) |
-| **Topologia** | Punto-a-punto o mesh | A stella |
-| **Standard** | Proprietari (Semtech) | Apert (LoRa Alliance) |
-| **Interoperabilità** | Limitada | Alta |
-| **Complessità** | Bass | Media |
-| **Scalabilità** | Limitada | Alta |
+2. Consumo Energetico
+**Reti Mesh**: I nodi ripetitori consumano più energia, riducendo la durata de la batteria.
+**LoRaWAN**: I dispositivi finali trasmettono domà quand necessario (es. Classe A con ALOHA), consentendo ona durata de la batteria fino a 10-15 anni.
 
-## Implementazion de reti mesh basad su LoRa
+3. Portata e Copertura
+**Reti Mesh**: La portata l'è estesa tramite multi-hop, ma ogni hop può introdurre latenza e ridurre l’efficienza.
+**LoRaWAN**: Grazie a la modulazion CSS, offre ona portata fino a 15 km (rurale) o 2-5 km (urbano) senza nodi ripetitori.
 
-Mentre LoRaWAN l'è basad su una topologia a stella, l'è possibil implementà reti mesh doprand LoRa come tecnica de modulazion sottostante. Quest richied l'implementazion de protocoll mesh personalizzad sopra LoRa.
+4. Capacità e Scalabilità
+**Reti Mesh**: In reti dense, el multi-hop può cadoprà colli de bottiglia e ridurre la capacità.
+**LoRaWAN**: Supporta milioni de messaggi da migliaia de dispositivi, grazie a la ridondanza di gateway e a la topologia a stella.
 
-### Architettura de una rete mesh LoRa
+5. Sicurezza
+**Reti Mesh**: La sicurezza dipende dal protocollo (es. **Zigbee** usa AES-128). L’inoltro multi-hop può introdurre vulnerabilità.
+**LoRaWAN**: Crittografia end-to-end con ciav de sessione AES-128 (Network Session Key e Application Session Key).
 
-```
-[Device A] ←→ [Device B] ←→ [Device C]
-     ↑              ↑              ↑
-[Device D] ←→ [Device E] ←→ [Device F]
-     ↑              ↑              ↑
-[Device G] ←→ [Device H] ←→ [Device I]
-```
+6. Complessità e Costi
+**Reti Mesh**: La gestion di percorsi de inoltro aumenta la complessità. I costi possono crescere con l’aggiunta de nodi ripetitori.
+**LoRaWAN**: La topologia a stella l'è più sempliz. I gateway possono essere costosi, ma i sensori hinn economici e i bande ISM senza licenza riducono i costi.
 
-In questa configurazion:
-- Ogni dispositiv pö comunicà direttament con i dispositiv vicin
-- I messagg poden passà attraverso pù hop per raggiung destinazion lontan
-- La rete l'è resiliente: se un dispositiv fallisc, i alter poden trová percors alternativ
+## Analisi Particolare de **LoRa** e **LoRaWAN**
+### **LoRa**: Livello Fisico
+**LoRa** utilizza la modulazion Chirp Spread Spectrum (CSS), che codifica i dati con segnali sinusoidali a frequenza variabile, distribuendo el segnale su ona banda più ampia per migliorare la resistenza al rumore. Offre ona sensibilità elevata (-110 dBm a -140 dBm), ideale per ambienti rumorosi. 
 
-### Protocoll mesh per LoRa
+I parametri principali includono:
 
-Per implementà reti mesh su LoRa, hann staa sviluppad divers protocoll:
+- Spreading Factor (SF): Da 7 a 12, influenza velocità dati e portata. SF12 offre lunga portata ma basso bitrate (0,3 kbps); SF7 offre velocità maggiori (27 kbps) ma portata ridotta.
+- Larghezza de banda (BW): 125 kHz, 250 kHz o 500 kHz, influisce su bitrate e robustezza.
+- Frequenze ISM: 863-870 MHz (Europa), 902-928 MHz (Nord America), 433 MHz (altre regioni).
 
-#### 1. **Ripple**
-Un protocoll mesh sempliz che permet la comunicazion multi-hop tra dispositiv LoRa.
+LoRa l'è ideale per applicazion IoT con piccoli pacchetti de dati, come monitoraggio ambientale, smart metering e agricoltura intelligente.
 
-#### 2. **LoRaMesh**
-Un protocoll proprietari che implementa funzionalità mesh sopra LoRa.
-
-#### 3. **Protocoll personalizzad**
-Molti sviluppator hann creat protocoll mesh custom per le lor applicazion specific.
-
-### Vantagg de le reti mesh LoRa
-
-- **Copertura estesa**: Le reti mesh poden coprì aree molt vast
-- **Resilienza**: La ridondanza de percors assicura comunicazion affidabil
-- **Bass cost**: I dispositiv LoRa hann relativament econom
-- **Bass consumo**: I dispositiv poden funzionà per agn con una batteria
-
-### Sfide de le reti mesh LoRa
-
-- **Complessità**: La gestión de una rete mesh pö vess compless
-- **Latency**: I messagg che passen attraverso pù hop poden avè latency alt
-- **Interferenz**: Le reti mesh poden soffrì de interferenz tra dispositiv vicin
-- **Scalabilità**: Le reti grand poden avè problem de performance
-
-## Cas d'us pratici
-
-### 1. **Agricoltura intelligente**
-Le reti mesh LoRa poden vess doprad per monitorà sensori distribuid in camp agricol:
-- Sensori de umidità del terren
-- Sensori de temperatura
-- Sensori de luminosità
-- Controll de sistemi de irrigazion
-
-### 2. **Monitoraggio ambientale**
-Per monitorà parametri ambientali in aree remote:
-- Qualità dell'aria
-- Livell de inquinament
-- Monitoraggio meteorologic
-- Controll de rischi natural
-
-### 3. **Smart City**
-Per implementà soluzion intelligenti in città:
-- Illuminazion pubblica intelligente
-- Gestión del traffic
-- Monitoraggio de parcheggi
-- Controll de rifiuti
+## **LoRaWAN**: Protocollo e Architettura
 
-### 4. **Industria 4.0**
-Per l'automazion industriale:
-- Monitoraggio de macchinari
-- Controll de processi produttiv
-- Gestión de inventari
-- Manutenzion predittiva
+**LoRaWAN** definisce tre classi de dispositivi:
 
-## Implementazion pratica
+- Classe A: Dispositivi bidirezionali a basso consumo con trasmissioni uplink e brevi finestre de ricezion downlink (ALOHA). Ideale per sensori a batteria.
+- Classe B: Aggiunge finestre de ricezion programmate (ogni 128 secondi, sincronizzate tramite beacon GPS) per downlink pianificati.
+- Classe C: Dispositivi semper in ascolto per downlink, adatti a dispositivi alimentati dalla rete elettrica.
 
-### Hardware necessari
+L’architettura **LoRaWAN** include:
+- Nodi finali (End Devices): Sensori o dispositivi IoT che raccolgono e trasmettono dati.
+- Gateway: Ricevono dati dai nodi e li inoltrano al server de rete tramite backhaul.
+- Server de rete (Network Server): Gestisce la rete, elimina duplicati e seleziona el gateway per i downlink.
+- Server di applicazion (Application Server): Elabora i dati per analisi o visualizzazion.
 
-Per implementà una rete mesh LoRa, te gh'hee besogn de:
+## **Reti Mesh** con LoRa
+Sebbene **LoRaWAN** utilizzi ona topologia a stella, l'è possibile implementare ona rete mesh usando la modulazion LoRa con on protocollo esterno. In ona rete mesh LoRa, i nodi agiscono come ripetitori per estendere la copertura, utile in aree senza gateway. 
 
-1. **Dispositiv LoRa**: Come ESP32 con modul LoRa, o dispositiv dedicad
-2. **Antenne**: Per migliorà la copertura
-3. **Gateway**: Per connession con la rete internet (opzional)
-4. **Server**: Per la gestión de i dat
+Tuttavia, ciò richiede:
+- Protocollo personalizzato: **LoRaWAN** minga supporta nativamente el mesh.
+- Maggiore consumo energetico: I nodi ripetitori consumano più energia.
+- Complessità: Gestione di percorsi de inoltro e prevenzion di collisioni (es. CSMA-CA).
 
-### Software
+Esempio: moduli LoRa (es. SX1276 de Semtech) con microcontrollori come ESP32 per **Reti Mesh** private.
 
-Divers librerie e framework hann disponibil per sviluppà applicazion mesh LoRa:
+Vantaggi de **LoRaWAN**
 
-- **Arduino LoRa**: Libreria per Arduino
-- **ESP32 LoRa**: Librerie per ESP32
-- **LoRaMesh**: Framework per reti mesh
-- **Ripple**: Protocoll mesh open source
+- Efficienza energetica: Topologia a stella elimina i nodi ripetitori.
+- Semplicità: Comunicazion diretta con i gateway.
+- Scalabilità: Supporta migliaia de dispositivi e milioni de messaggi.
+- Sicurezza: Sicurezza robusta con crittografia AES-128.
+- Interoperabilità: Standard aperto de la LoRa Alliance.
 
-### Esempi de codice
+Limitazion de **LoRaWAN**
 
-#### Configurazion base per ESP32
+- Bassa velocità dati: 0,3-50 kbps, minga adatto per dati voluminosi.
+- Latenza: La Classe A introduce ritardi per i downlink.
+- Costo di gateway: Significativo per reti private.
 
-```cpp
-#include <SPI.h>
-#include <LoRa.h>
+# Conclusione
+I **Reti Mesh** offrono resilienza e flessibilità tramite inoltro multi-hop, ma hinn complesse e consumano più energia. **LoRaWAN**, con la sua topologia a stella e modulazion LoRa, l'è ideale per applicazion IoT a bassa potenza e lunga portata, grazie a semplicità, scalabilità e durata de la batteria fino a 15 anni.
 
-#define SS 18
-#define RST 14
-#define DIO0 26
-
-void setup() {
-  Serial.begin(115200);
-  
-  LoRa.setPins(SS, RST, DIO0);
-  
-  if (!LoRa.begin(433E6)) {
-    Serial.println("Errore nell'inizializzazione di LoRa");
-    while (1);
-  }
-  
-  LoRa.setSyncWord(0xF3);
-}
-
-void loop() {
-  // Invia messaggio
-  LoRa.beginPacket();
-  LoRa.print("Messaggio da dispositivo mesh");
-  LoRa.endPacket();
-  
-  delay(5000);
-}
-```
-
-## Considerazion de sicurezza
-
-### Minacce comuni
-
-1. **Intercettazion**: I messagg LoRa poden vess intercettad
-2. **Spoofing**: Un attaccant pö invià messagg fals
-3. **Jamming**: Interferenz deliberate per blocch la comunicazion
-4. **Replay attack**: Reinvio de messagg capturad
-
-### Misure de sicurezza
-
-1. **Criptazion**: Usa algoritmi de criptazion per protegg i dat
-2. **Autenticazion**: Implementa meccanism de autenticazion
-3. **Frequenza hopping**: Cambia frequenza per evità jamming
-4. **Validazion**: Verifica l'integrità de i messagg
-
-## Futur de le reti mesh LoRa
-
-### Sviluppi in cors
-
-1. **Standardizzazione**: Svilupp de standard per reti mesh LoRa
-2. **Interoperabilità**: Migliorament de la compatibilità tra dispositiv
-3. **Performance**: Ottimizzazion de protocoll per migliorà performance
-4. **Sicurezza**: Implementazion de misure de sicurezza pù avanzad
-
-### Opportunità
-
-1. **IoT**: Le reti mesh LoRa hann ideali per applicazion IoT
-2. **5G**: Integrazion con reti 5G per soluzion ibrid
-3. **Edge Computing**: Elaborazion de dat ai bord de la rete
-4. **AI**: Integrazion de intelligenza artificial per ottimizzazion automatica
-
-## Conclusión
-
-Le reti mesh, combinad con tecnologie come LoRa, rappresenten una soluzion potente per la comunicazion decentralizzata e resiliente. Mentre LoRaWAN fornis una soluzion standard per applicazion a stella, le reti mesh LoRa offren flessibilità e copertura estesa per cas d'us pù compless.
-
-La scelta tra LoRaWAN e reti mesh LoRa dipend dai requisit specific de l'applicazion:
-- **LoRaWAN**: Ideale per applicazion semplic con dispositiv che comunichen direttament con un gateway
-- **Reti mesh LoRa**: Ideale per applicazion compless che richieden comunicazion multi-hop e alta resilienza
-
-Con la continua evoluzion de queste tecnologie e l'aument de l'adopzion de IoT, le reti mesh LoRa hann destinaa a giocà un rol sempre pù important nel futur de le comunicazion wireless. 
+La scelta tra **Reti Mesh** e **LoRaWAN** dipende dai requisiti: i mesh per ambienti con nodi ravvicinati, **LoRaWAN** per comunicazion a lunga distanza con consumi minimi. Sebbene possibile con LoRa, el mesh l'è meno comune rispetto a **LoRaWAN**, che domina per la sua standardizzazion e supporto dalla LoRa Alliance.

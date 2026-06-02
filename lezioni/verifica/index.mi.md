@@ -1,3 +1,14 @@
+---
+layout: default
+title: "Pre requisit per quest esercitaziù"
+---
+
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezion Bitcoin-only</span> <span>Quest progett l'e mantegnud da valerio-vaccaro</span></p>
+
+## 🌍 Traduzioni
+
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
+
 ![cover](https://officinebitcoin.it/lezioni/verifica/1cover.webp)
 La verifica de le firm crittografich l'è una pratica de sicurezza fondamental che **ogni utent de software open-source el dovress inserì in la routine de le bon abitudin**.
 

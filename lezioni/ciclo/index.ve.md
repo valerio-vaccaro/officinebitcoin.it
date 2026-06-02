@@ -1,63 +1,39 @@
+---
+layout: default
+title: "El ciclo de vita de na transazion Bitcoin"
+---
+
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezion Bitcoin-only</span> <span>Sto progetto xe mantegnuo da valerio-vaccaro</span></p>
+
+## 🌍 Traduzion
+
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
+
 # El ciclo de vita de na transazion Bitcoin
 
-## Introduzion
-Na transazion Bitcoin xe na struttura de dati che descrive el trasferimento de valore da un o più indirisi (input) a un o più indirisi (output). El ciclo de vita de na transazion Bitcoin xe composto da diverse fasi che vanno da la creazion a la conferma definitiva.
+## Cos’xe na transazion Bitcoin
+Na transazion Bitcoin xe un’azione registrata sulla blockchain che trasferisce valore da uno o più input (fondi ricevuti in precedenza, chiamati UTXO - Unspent Transaction Outputs) a uno o più output (nuovi destinatari). 
+I input xe output de transazion passate no ancora spesi, mentre i output assegnano satoshi a indirizzi specifici. Un’eccezione xe la transazion "coinbase", la prima de ogni blocco, che genera nuovi bitcoin (ricompensa par i miner e fee) senza input. Se no tutti i fondi de un input vengono spesi, la differenza (change) torna al mittente tramite un output ulteriore o, se no gestita, xe persa par sempre.
 
 ## Fasi del ciclo de vita
+Sto xe el ciclo de vita de na transazion:
 
-### 1. Creazion
-La prima fase xe la creazion de la transazion. L'utente, tramite un wallet, crea na transazion specificando:
-- I input (UTXO da spender)
-- I output (indirisi de destinazion e quantità)
-- Le fee de transazion
+- Creazione: El wallet costruisce la transazion sielziendo i UTXO da spender in base all’importo da inviare e a la strategia par minimizzare le fee. Se l’input supera l’output, si genera un output de "change" (resto) che torna al mittente, aumentando però la dimensione de la transazion e i costi. Alcuni wallet cercano de evitarlo.
+- Firma: La transazion viene firmata co na o più firme digitali par ogni input, autenticandola. Sto passaggio xe cruciale par la validità e può coinvolgere più parti in caso de transazion multisig-.
+- Diffusione: La transazion firmata viene trasmessa a la rete ("broadcast") e inserita nella mempool del nodo locale. La mempool valida la transazion secondo le regole de consenso (es. firme valide, fondi disponibili) e regole locali (es. dimensione massima de 400 KB par evitare spam). Poi, el nodo la propaga ai peer, che la validano e la inseriscono nelle loro mempool, creando na diffusione a cascata. Le mempool variano tra nodi par configurazion o connessioni diverse.
+- Conferma: Un miner include la transazion in un blocco, confermandola sulla blockchain. Tuttavia, finché no ha più conferme (blocchi successivi), resta vulnerabile a sostituzioni o fork. Na transazion co fee basse può restare in mempool a lungo o essere scartata, ma potrebbe essere minata anca dopo mesi se i input restano no spesi.
 
-### 2. Firma
-Prima de esser inviada, la transazion deve esser firmada con le chiavi private corrispondenti ai input. La firma prova che l'utente xe el proprietario legitimo dei fondi.
+## Gestione de problemi
+- Transazione sparita dalla mempool: Se na transazion co fee basse viene rimossa (es. par picchi de traffico), si può ritrasmetterla manualmente (rebroadcast) usando el TXID, anca co script o explorer. Qualcuno potrebbe farlo par conto terzi.
+- Replace-by-Fee (RBF): Se la fee xe insufficiente, si può sostituire la transazion co na che paga de più, purché marcata co el flag RBF. Na proposta suggerisce che tutte le transazion siano implicitamente sostituibili, poiché i miner preferiscono comunque fee più alte.
+- Child Pays for Parent (CPFP): Se no si può doprar RBF (es. transazion no propria o fondi esauriti), si spende un output de la transazion bloccata co na nuova transazion che paga fee elevate, rendendo entrambe appetibili par i miner. Serve che la somma de le fee copra entrambe. Problemi sorgono se i nodi scartano la prima transazion, interrompendo la catena; un protocollo in sviluppo mira a trasmettere pacchetti de transazion par evitarlo.
 
-### 3. Broadcast
-Una volta firmada, la transazion xe inviada (broadcast) a la rete Bitcoin. El wallet la invia a uno o più nodi, che la propagano ulteriormente.
-
-### 4. Validazion
-I nodi de la rete validano la transazion verificando:
-- La correttezza de le firme
-- La disponibilità dei fondi
-- La conformità a le regole del protocollo
-- Le dimensioni e le fee
-
-### 5. Mempool
-Se valida, la transazion xe inserida nel mempool (memory pool) de i nodi. El mempool xe na coda temporanea de transazioni in attesa de esser incluse in un blocco.
-
-### 6. Mining
-I miner selezionano transazioni dal mempool par includerle in un blocco. Le transazioni con fee più alte hanno priorità maggiore.
-
-### 7. Conferma
-Quando un miner trova na soluzion valida, el blocco xe propagato a la rete. La transazion riceve la prima conferma.
-
-### 8. Conferme multiple
-Ogni blocco successivo che xe minato sopra el blocco che contien la transazion aggiunge na conferma. Più conferme = maggiore sicurezza.
-
-## Problemi e soluzioni
-
-### Transazioni non confermate
-Se na transazion rimane nel mempool par troppo tempo, può esser rimossa. Soluzioni:
-- **RBF (Replace By Fee)**: Crear na nova transazion con fee più alte
-- **CPFP (Child Pays For Parent)**: Crear na transazion figlia che paga fee più alte
-
-### Doppia spesa
-Teoricamente possibile ma praticamente impossibile con conferme sufficienti.
-
-## Tempi tipici
-- **Broadcast**: Secondi
-- **Prima conferma**: ~10 minuti (media)
-- **6 conferme**: ~1 ora (considerada sicura)
-- **Conferme definitive**: 100+ conferme
-
-## Monitoraggio
-I utenti possono monitorar le transazioni tramite:
-- Explorer de blocco
-- Wallet
-- API de nodi
-- Servizi online
+## Conferma finale
+Na transazion xe considerata definitiva solo co più conferme (blocchi sopra el suo). Na sola conferma no basta, poiché fork o doppie spese potrebbero invalidarla. El White Paper suggerisce 6 conferme (circa 60 minuti, co blocchi ogni 10 minuti in media), ma el numero varia in base all’importo e al rischio. La varianza nei tempi de blocco xe alta, ma la media si mantiene grazie a la difficoltà de mining.
 
 ## Conclusione
-El ciclo de vita de na transazion Bitcoin xe na combinazion de crittografia, economia e consenso distribuito che garantisce la sicurezza e l'immutabilità del sistema. 
+El ciclo si chiude co la transazion "scolpita" nella blockchain, registrando par sempre el spostamento de valore.
+
+## Programma
+Sta lezione xe stata realizzata par un Satoshi Spritz Connect.
+

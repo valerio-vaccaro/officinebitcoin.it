@@ -1,3 +1,14 @@
+---
+layout: default
+title: "Pre requisiti par sta esercitassion"
+---
+
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezion Bitcoin-only</span> <span>Sto progetto xe manteniu da valerio-vaccaro</span></p>
+
+## 🌍 Traduzioni
+
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
+
 ![cover](https://officinebitcoin.it/lezioni/verifica/1cover.webp)
 La verifica de le firme crittografiche xe na pratica de sicuresa fondamental che **ogni utente de software open-source el dovaria inserir ne le routine de le bone abitudini**.
 

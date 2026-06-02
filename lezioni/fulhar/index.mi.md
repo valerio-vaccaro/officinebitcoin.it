@@ -1,3 +1,14 @@
+---
+layout: default
+title: "Fullnode e hardware per un nod"
+---
+
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezion Bitcoin-only</span> <span>Quest progett l'è mantegnud da valerio-vaccaro</span></p>
+
+## 🌍 Traduzioni
+
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
+
 # Fullnode e hardware per un nod
 
 Avè un nod Bitcoin l'è fondamental poiché permet con la massima privacy de:
@@ -336,11 +347,11 @@ systemctl status electrs
 
 ### Step 3 - Installem CLN
 
-TBD
+De completà
 
 ### Step 3b - Configurem CLN
 
-TBD
+De completà
 
 ### Step 4 - Installem Mempool.space
 

@@ -1,4 +1,17 @@
-# Ghostinbox.it: Usà l'email sensa avègh n'email 
+---
+layout: default
+title: "Ghostinbox.it: usa l email senza avegh n email"
+---
+
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezion Bitcoin-only</span> <span>Quest progett l'e mantegnud da valerio-vaccaro</span></p>
+
+## 🌍 Traduzioni
+
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
+
+# Ghostinbox.it: usa l email senza avegh n email
+
+## Ghostinbox.it: Usà l'email sensa avègh n'email 
 Ghostinbox l'è una piattaforma web che permet a i utent de creà indirizz email temporanei per ricev i messagg sensa rivelà el sò indirizz email ver. El servisi l'è ideal per registrazion rapid, verifiche de account, test de deliverability de le email o qualsìa situaziù in cui se vogia evità el spam o protegg la propria identità.
 
 A differenza de i servisi email tradiziunai, Ghostinbox l'è minga necessari registràss nì memorizzà dat personal, rendendel una scelta eccellent per chi prioritizza la privacy. Inoltre, el suport per la re Tor permet de acced al servisi in manera anonima, nascondend l'indirizz IP de l'utent. La natura open-source del progett garantiss trasparenza e permet a i svilupador de esaminà el còdegh per eventual vulnerabilità o personalizaziù.

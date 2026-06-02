@@ -1,3 +1,14 @@
+---
+layout: default
+title: "Mnemoniche & Dadi: impara a creare la tua mnemonica"
+---
+
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezione Bitcoin-only</span> <span>This project is maintained by valerio-vaccaro</span></p>
+
+## 🌍 Traduzioni
+
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
+
 # Mnemoniche & Dadi: impara a creare la tua mnemonica 
 
 ## Introduzione

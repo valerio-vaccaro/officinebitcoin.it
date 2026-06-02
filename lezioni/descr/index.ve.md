@@ -1,126 +1,69 @@
-# Bitcoin Descriptor: Evoluzion de la gestione de wallet
+---
+layout: default
+title: "Descriptor Bitcoin"
+---
 
-## Introduzion
-I Bitcoin Descriptor xe na evoluzion importante nel modo de descriver e gestir i wallet Bitcoin. Invece de basarse solo su extended public key (xpub), i descriptor forniscono na descrizion completa e standardizzata de la struttura del wallet.
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezion Bitcoin-only</span> <span>Sto progetto xe mantegnuo da valerio-vaccaro</span></p>
 
-## Evoluzion de la gestione de wallet
+## 🌍 Traduzion
 
-### Prima de BIP-32
-- Chiavi individuali
-- Backup complicati
-- Nessuna gerarchia
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
 
-### BIP-32 - HD Wallet
-- Chiavi gerarchiche
-- Extended public key (xpub)
-- Backup semplificato
+# Descriptor Bitcoin
 
-### BIP-39 - Mnemoniche
-- Seed da 12/24 parole
-- Backup umanamente leggibile
-- Standardizzazione
+## Introduzione
 
-### BIP-44/49/84 - Path standard
-- Path de derivazion standard
-- Compatibilità tra wallet
-- Organizazion per scopo
+I descriptor xe un concetto relativamente nuovo e no ancora tanto diffuso, ma utile par descrivere la struttura dei wallet Bitcoin. I descriptor xe stringhe de caratteri leggibili (alfanumerici, esadecimali e alcuni simboli come parentesi), progettate par rappresentare in modo chiaro e standardizzato un wallet, ovvero l’insieme de ciavi publiche e private necessarie par calcolare saldi, ricevere e spender Bitcoin.
 
-## Perché i Descriptor?
+## Evoluzione de la gestion dei wallet
+Par contestualizzare i descriptor, el relatore ripercorre l’evoluzione dei wallet:
 
-### Problemi con xpub
-- Informazion incomplete
-- Dipendenza da convenzioni
-- Difficoltà par wallet complessi
+- Primi wallet (pre-BIP-32): nei primi tempi, co Bitcoin Core, i wallet erano file contenenti ciavi generate casualmente. Ogni volta che si esaurivano i indirizzi, ne venivano aggiunti de nuovi, rendendo necessario un backup frequente par no perdere fondi. Sto sistema era inefficiente.
+- BIP-32 (HD Wallet): co l’introduzione de la generazione gerarchica deterministica, un seed (seme) generava na chiave master, da cui derivavano tutti i indirizzi. Bastava fare el backup del seed, ma no era ancora na soluzione completa.
+- Mnemoniche (BIP-39): successivamente, el seed xe stato derivato da na sequenza de 12 o 24 parole (mnemonica), più facile da salvare. Tuttavia, par ricostruire un wallet, servivano anca informazioni sui percorsi de derivazione (es. Legacy, SegWit), altrimenti i fondi potevano risultare irreperibili.
 
-### Vantaggi de i Descriptor
-- Descrizion completa
-- Standardizzazione
-- Flessibilità
-- Compatibilità
+La sola mnemonica no basta, soprattutto par wallet complessi come i multisig (che richiedono più firme) o quelli co script avanzati (es. timelock o condizioni de eredità). Alcuni wallet tentano tutte le derivazioni possibili par trovare i fondi, mentre altri (es. Electrum) richiedono de specificare el tipo de wallet. Nei multisig, inoltre, servono le ciavi publiche dei altri partecipanti, complicando ulteriormente el backup.
 
-## Tipi de Descriptor
+## Cosa xe i Descriptor e perché servono
+I descriptor nascono par superare sti limiti, offrendo na descrizione completa e flessibile de la struttura de un wallet. No sostituiscono la mnemonica, ma la integrano, includendo:
 
-### Single-sig
-```
-wpkh([fingerprint/derivation]xpub.../0/*)
-```
+- Chiavi pubbliche estese (xpub, ypub, ecc.).
+- Percorsi de derivazione (es. m/44'/0'/0' par Legacy).
+- Eventuali script o condizioni de spesa (es. multisig, timelock).
 
-### Multi-sig
-```
-wsh(multi(2,[fingerprint/derivation]xpub1.../0/*,[fingerprint/derivation]xpub2.../0/*))
-```
+##Esempi pratici
+- Single-sig Legacy: Un descriptor semplice potrebbe essere `pk([fingerprint/derivation]xpub...)`, dove:
+1. pk indica na chiave pubblica.
+2. [fingerprint/derivation] specifica la chiave master e el percorso.
+3. xpub genera i indirizzi (es. 0/* par ricevere, 1/* par el change).
+- Multisig: Un esempio xe `sortedmulti(2, xpub1, xpub2, xpub3)`, che descrive un wallet 2-de-3, ordinando le ciavi par consistenza.
+- Script complessi: Co script come p2sh (pay to script hash) o p2wsh (pay to witness script hash), si possono includere condizioni avanzate, come timelock o combinazioni logiche (and, or).
 
-### Script complessi
-```
-wsh(andor(pk([fingerprint/derivation]xpub.../0/*),older(1000),pk([fingerprint/derivation]xpub.../1/*)))
-```
+## Descriptor e Taproot
+Un caso interessante xe el descriptor par Taproot (tr), che supporta due modalità de spesa:
 
-## Esempi pratici
+- Firma diretta co na chiave specifica.
+- Un albero de condizioni (es. eredità o timelock), mantenendo la complessità nascosta sulla blockchain fino a la spesa.
 
-### Single-sig Native SegWit
-```
-wpkh([a1b2c3d4/84h/0h/0h]xpub6.../0/*)
-```
+## Vantaggi dei Descriptor
+- Backup completo: racchiudono tutte le informazioni necessarie par ricostruire un wallet senza tentativi.
+- Compatibilità: ideali par wallet watch-only, dove si monitorano i fondi senza ciavi private.
+- Flessibilità: supportano single-sig, multisig e script complessi.
+- Privacy: no rivelano segreti e possono essere condivisi come na xpub.
 
-### 2-of-3 Multi-sig
-```
-wsh(multi(2,[a1b2c3d4/84h/0h/0h]xpub1.../0/*,[e5f6g7h8/84h/0h/0h]xpub2.../0/*,[i9j0k1l2/84h/0h/0h]xpub3.../0/*))
-```
+## Limiti e compatibilità
+No tutti i wallet supportano i descriptor pienamente. Ad esempio, Bitcoin Core ne implementa solo un sottoinsieme e richiede due descriptor separati par indirizzi e change. Software come Sparrow o Specter offrono un supporto migliore, permettendo de importare/esportare descriptor e visualizzarne la struttura.
 
-### Timelock
-```
-wsh(andor(pk([a1b2c3d4/84h/0h/0h]xpub.../0/*),older(1000),pk([e5f6g7h8/84h/0h/0h]xpub.../1/*)))
-```
+Esperimenti possono essere fatti co:
+- Sparrow: supporta i descriptor, co un’interfaccia grafica par crearli o analizzarli.
+- BDK: libreria co interfaccia a riga de comando par gestire descriptor complessi.
+- Testnet/Signet: ambienti sicuri par testare senza rischiare fondi reali.
 
-## Vantaggi de i Descriptor
+## Riferimenti
 
-### Backup completo
-- Tutte le informazion necessarie
-- Nessuna dipendenza da convenzioni
-- Ripristino affidabile
+- [BIP-380](https://github.com/bitcoin/bips/blob/master/bip-0380.mediawiki)
+- [Bitcoin Improvement Proposal 380](https://github.com/bitcoin/bips/blob/master/bip-0380.mediawiki)
+- [Bitcoin Improvement Proposal 380](https://github.com/bitcoin/bips/blob/master/bip-0380.mediawiki)
 
-### Compatibilità
-- Standardizzazione
-- Interoperabilità tra wallet
-- Support par wallet watch-only
-
-### Flessibilità
-- Script complessi
-- Timelock
-- Condizioni multiple
-
-## Limitazioni e compatibilità
-
-### Wallet che supportano Descriptor
-- Bitcoin Core
-- Sparrow Wallet
-- Specter Desktop
-- BDK (Bitcoin Development Kit)
-
-### Wallet con support limitato
-- Electrum (parcial)
-- Hardware wallet (varia)
-
-### Wallet senza support
-- Wallet legacy
-- Wallet mobile semplici
-
-## Best Practices
-
-### Backup
-- Salva i descriptor completi
-- Verifica la correttezza
-- Testa il ripristino
-
-### Organizazion
-- Usa label descrittive
-- Documenta la struttura
-- Mantien aggiornati i backup
-
-### Sicurezza
-- Protegi i descriptor
-- Usa hardware wallet
-- Verifica le transazioni
-
-## Conclusione
-I Bitcoin Descriptor rappresentano na evoluzion importante nella gestione de wallet Bitcoin. Forniscono na soluzion standardizzata e completa par descriver wallet complessi, migliorando la compatibilità e l'affidabilità del sistema. 
+## Programma
+Sta lezione xe stata realizzata par un Satoshi Spritz Connect.

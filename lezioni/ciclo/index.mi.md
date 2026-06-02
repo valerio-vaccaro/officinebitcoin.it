@@ -1,27 +1,39 @@
-# El cicl de vita de una transazion Bitcoin
+---
+layout: default
+title: "El cicl de vita de ona transazion Bitcoin"
+---
 
-## Cossa l'è una transazion Bitcoin
-Una transazion Bitcoin l'è un'azion registrada sulla blockchain che trasferiss valor de un o pù input (fond ricevuu in precedenza, ciamaa UTXO - Unspent Transaction Outputs) a un o pù output (noeuv destinatari). 
-I input hinn output de transazion passaa minga ancora spess, menter i output assegnen satoshi a indirizz specific. Un'eccezion l'è la transazion "coinbase", la prima de ogni blocch, che genera noeuv bitcoin (ricompensa per i miner e fee) sensa input. Se minga tutt i fond de un input vegnen spess, la differenza (change) torna al mittent tramit un output ulterior o, se minga gestida, l'è persa per semper.
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezion Bitcoin-only</span> <span>Quest progett l'e mantegnuu da valerio-vaccaro</span></p>
 
-## Fasi del cicl de vita
-Quest l'è el cicl de vita de una transazion:
+## 🌍 Traduzion
 
-- Creazion: El wallet costruiss la transazion scegliend i UTXO de spende in bas all'import da invià e alla strategia per minimizzà i fee. Se l'input supera l'output, se genera un output de "change" (rest) che torna al mittent, aumentand però la dimensión de la transazion e i cost. Qualch wallet cerchèn de evitall.
-- Firma: La transazion vegn firmada con una o pù firm digital per ogni input, autenticandla. Quest passagg l'è crucial per la validità e pö coinvolg pù part in cas de transazion multisig.
-- Diffusion: La transazion firmada vegn trasmessa alla ret ("broadcast") e inserida nella mempool del nod local. La mempool valida la transazion segond i regol de consens (es. firm valid, fond disponibil) e regol local (es. dimensión massima de 400 KB per evità spam). Poi, el nod la propaga ai peer, che la validen e la inserissen nelle lor mempool, creand una diffusion a cascada. I mempool varien tra nod per configurazion o connession divers.
-- Conferma: Un miner include la transazion in un blocch, confermandla sulla blockchain. Tuttavia, fin che la gh'ha minga pù conferm (blocch successiv), la resta vulnerabil a sostituzion o fork. Una transazion con fee bass pö restà in mempool a long o vess scartada, ma la pö vess minada anca dopo mes se i input resten minga spess.
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
 
-## Gestion de problem
-- Transazion sparida de la mempool: Se una transazion con fee bass vegn rimossa (es. per picch de traffic), se pö ritrasmetterla manualment (rebroadcast) doprand el TXID, anca con script o explorer. Qualchun la pö fà per cont terz.
-- Replace-by-Fee (RBF): Se la fee l'è insufficent, se pö sostituì la transazion con una che paga de pù, purché marcada con el flag RBF. Una proposta suggeriss che tutt le transazion sien implicitament sostituibil, poiché i miner preferissen comunque fee pù alt.
-- Child Pays for Parent (CPFP): Se se pö minga doprà RBF (es. transazion minga propria o fond esaurii), se spend un output de la transazion bloccada con una noeuva transazion che paga fee elevad, rendend entramb appetibil per i miner. Serv che la somma de le fee copra entramb. Problem sörgen se i nod scarten la prima transazion, interrompend la cadena; un protocoll in svilup mira a trasmetter pacchett de transazion per evitall.
+# El cicl de vita de ona transazion Bitcoin
 
-## Conferma final
-Una transazion l'è considerada definitiva domà con pù conferm (blocch sopra el so). Una sola conferma minga basta, poiché fork o doppi spess podarien invalidalla. El White Paper suggeriss 6 conferm (circa 60 minutt, con blocch ogni 10 minutt in media), ma el numer varia in bas all'import e al risch. La varianza nei temp de blocch l'è alta, ma la media se mantegn grazià alla difficoltà de mining.
+## Cos’l'è ona transazion Bitcoin
+Ona transazion Bitcoin l'è on’azion registrata sulla blockchain che trasferisce valore da uno o più input (fond ricevuti in precedenza, chiamati UTXO - Unspent Transaction Outputs) a uno o più output (nuovi destinatari). 
+I input hinn output de transazion passate minga ancora spesi, mentre i output assegnano satoshi a indirizzi specifici. On’eccezion l'è la transazion "coinbase", la prima de ogni blocco, che genera nuovi bitcoin (ricompensa per i miner e fee) senza input. Se minga tutti i fond de on input vengono spesi, la differenza (change) torna al mittente tramite on output ulteriore o, se minga gestita, l'è persa per semper.
 
-## Conclusión
-El cicl se sara con la transazion "scolpida" nella blockchain, registrand per semper el spostament de valor.
+## Fasi del ciclo de vita
+Quest l'è el ciclo de vita de ona transazion:
 
-## Program
-Questa lezion l'è stada realizzata per un Satoshi Spritz Connect. 
+- Creazion: El wallet costruisce la transazion sernissendo i UTXO da spend in base all’importo da inviare e a la strategia per minimizzare i fee. Se l’input supera l’output, si genera on output de "change" (resto) che torna al mittente, aumentando però la dimensione de la transazion e i costi. Alcuni wallet cercano de evitarlo.
+- Firma: La transazion viene firmata con ona o più firme digitali per ogni input, autentcandola. Quest passaggio l'è cruciale per la validità e può coinvolgere più parti in caso de transazion multisig-.
+- Diffusione: La transazion firmata viene trasmessa a la rete ("broadcast") e inserita nella mempool del nodo locale. La mempool valida la transazion secondo i regole de consenso (es. firme valide, fond disponibili) e regole locali (es. dimensione massima de 400 KB per evitare spam). Poi, el nodo la propaga ai peer, che la validano e la inseriscono nelle loro mempool, creando ona diffusione a cascata. I mempool variano tra nodi per configurazion o connessioni diverse.
+- Conferma: On miner include la transazion in on blocco, confermandola sulla blockchain. Tuttavia, finché minga ha più conferme (blocchi successivi), resta vulnerabile a sostituzion o fork. Ona transazion con fee basse può restare in mempool a lungo o essere scartata, ma potrebbe essere minata anca dopo mesi se i input restano minga spesi.
+
+## Gestione de problemi
+- Transazion sparita dalla mempool: Se ona transazion con fee basse viene rimossa (es. per picchi de traffico), si può ritrasmetterla manualmente (rebroadcast) usando el TXID, anca con script o explorer. Qualcuno potrebbe farlo per conto terzi.
+- Replace-by-Fee (RBF): Se la fee l'è insufficiente, si può sostituire la transazion con ona che paga de più, purché marcata con el flag RBF. Ona proposta suggerisce che tutte i transazion siano implicitamente sostituibili, poiché i miner preferiscono comunque fee più alte.
+- Child Pays for Parent (CPFP): Se minga si può doprà RBF (es. transazion minga propria o fond esauriti), si spende on output de la transazion bloccata con ona nuova transazion che paga fee elevate, rendendo entrambe appetibili per i miner. Serve che la somma di fee copra entrambe. Problemi sorgono se i nodi scartano la prima transazion, interrompendo la catena; on protocollo in sviluppo mira a trasmettere pacchetti de transazion per evitarlo.
+
+## Conferma finale
+Ona transazion l'è considerata definitiva domà con più conferme (blocchi sopra el suo). Ona sola conferma minga basta, poiché fork o doppie spese potrebbero invalidarla. El White Paper suggerisce 6 conferme (circa 60 minuti, con blocchi ogni 10 minuti in media), ma el numero varia in base all’importo e al rischio. La varianza nei tempi de blocco l'è alta, ma la media si mantiene grazie a la difficoltà de mining.
+
+## Conclusione
+El ciclo si chiude con la transazion "scolpita" nella blockchain, registrando per semper el spostamento de valore.
+
+## Programma
+Questa lezion l'è stata realizzata per on Satoshi Spritz Connect.
+

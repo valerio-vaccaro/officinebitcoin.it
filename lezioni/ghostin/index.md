@@ -1,4 +1,16 @@
-# Ghostinbox.it: Use email without having an email 
+---
+layout: default
+title: "Ghostinbox.it: usare l'email senza avere un'email"
+---
+
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezione Bitcoin-only</span> <span>This project is maintained by valerio-vaccaro</span></p>
+
+## 🌍 Traduzioni
+
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
+
+# Ghostinbox.it: usare l'email senza avere un'email
+
 Ghostinbox è una piattaforma web che consente agli utenti di creare indirizzi email temporanei per ricevere messaggi senza rivelare il proprio indirizzo email reale. Il servizio è ideale per registrazioni rapide, verifiche di account, test di deliverability delle email o qualsiasi situazione in cui si desideri evitare spam o proteggere la propria identità.
 
 A differenza dei servizi email tradizionali, Ghostinbox non richiede registrazione né memorizza dati personali, rendendolo una scelta eccellente per chi prioritizza la privacy. Inoltre, il supporto per la rete Tor consente di accedere al servizio in modo anonimo, nascondendo l’indirizzo IP dell’utente. La natura open-source del progetto garantisce trasparenza e permette agli sviluppatori di esaminare il codice per eventuali vulnerabilità o personalizzazioni.

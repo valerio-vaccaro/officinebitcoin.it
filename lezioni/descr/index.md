@@ -1,4 +1,18 @@
-#Descriptor
+---
+layout: default
+title: "Descriptor Bitcoin"
+---
+
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezione Bitcoin-only</span> <span>This project is maintained by valerio-vaccaro</span></p>
+
+## 🌍 Traduzioni
+
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
+
+# Descriptor Bitcoin
+
+## Introduzione
+
 I descriptor sono un concetto relativamente nuovo e non ancora molto diffuso, ma utile per descrivere la struttura dei wallet Bitcoin. I descriptor sono stringhe di caratteri leggibili (alfanumerici, esadecimali e alcuni simboli come parentesi), progettate per rappresentare in modo chiaro e standardizzato un wallet, ovvero l’insieme di chiavi pubbliche e private necessarie per calcolare saldi, ricevere e spendere Bitcoin.
 
 ## Evoluzione della gestione dei wallet
@@ -51,5 +65,5 @@ Esperimenti possono essere fatti con:
 - [Bitcoin Improvement Proposal 380](https://github.com/bitcoin/bips/blob/master/bip-0380.mediawiki)
 - [Bitcoin Improvement Proposal 380](https://github.com/bitcoin/bips/blob/master/bip-0380.mediawiki)
 
-# Programma
+## Programma
 Questa lezione è stata realizzata per un Satoshi Spritz Connect.

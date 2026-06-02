@@ -1,71 +1,85 @@
+---
+layout: default
+title: "Officine Bitcoin"
+---
+
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezioni online Bitcoin-only</span> <span>This project is maintained by valerio-vaccaro</span></p>
+
 # Officine Bitcoin
 
-## What is Officine Bitcoin?
-A series of online, free, and regularly scheduled events on topics related to Bitcoin or similar to it.
+## 🌍 Languages
 
-The events are organized to occupy a maximum of 30 minutes, of which a first part is intended for the lesson (for example, initial 10 minutes) and the remaining part is intended for questions and support to participants.
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
 
-Lessons will be held on Telegram in the [Officine Bitcoin](https://t.me/officinebitcoin) group.
+## ₿ What Is Officine Bitcoin
 
-Remember to NEVER share personal information/mnemonics and other secrets with the class or instructor.
+Officine Bitcoin is a series of free recurring online lessons dedicated to Bitcoin and related technical topics.
 
-## Languages
-Given the interest in Officine Bitcoin lessons, lesson notes will also be translated into other languages; for now, the following translations are available:
-- [Italiano](./index.html)
-- [English](./index.en.html)
-- [Milanés](./index.mi.html)
-- [Veneto](./index.ve.html)
+Each meeting lasts up to 30 minutes: the first part is dedicated to the lesson, while the remaining time is for questions, discussion and participant support.
 
-## Who holds the lessons?
-Anyone who has the skills. Do you have a topic you want to talk about? Create your lesson.
+Lessons take place on Telegram in the [Officine Bitcoin](https://t.me/officinebitcoin) group.
 
-## How can I contribute
-- Have you followed the lessons and feel particularly ready on a topic? Great, you can follow a series of lessons on the same topic to transfer knowledge to other people,
-- You can also suggest new topics and themes, perhaps finding a suitable instructor to maintain the lessons
-- Obviously, you can also help us make the Officine Bitcoin project known
+![Officine Bitcoin](img/splash.png){: .splash-image }
 
-## Recordings
-Lessons and debate are deliberately NOT recorded, but it doesn't matter much; if you miss a meeting, you can always wait for the next one to learn or ask your questions.
+## 🔐 Security and Privacy
 
-## Offtopics
-Everything that is not related to the lesson (even if interesting) is offtopic and can only be addressed by creating an ad-hoc event.
+Never share personal information, seed phrases, mnemonic phrases, private keys or other secrets with the class, the instructor or in private chat.
+
+Lessons and discussion are not recorded. If you miss a meeting, you can join the next one to learn or ask your questions.
+
+## 👨‍🏫 Who Holds the Lessons
+
+Lessons can be held by anyone with competence on a topic and the will to share it with the community. If you have a useful topic, you can propose or create a new lesson.
+
+## 🤝 How to Contribute
+
+- You can hold a series of lessons on a topic you know well, helping other people understand it.
+- You can suggest new topics and help find suitable instructors.
+- You can help make Officine Bitcoin known to people who want to study Bitcoin seriously and for free.
+
+## 🚫 Offtopic
+
+Anything unrelated to the lesson, even if interesting, is offtopic and can only be addressed by creating a dedicated event.
 
 It remains forbidden to create lessons on:
-- shitcoin/altcoin/token etc,
-- politics/parties/elections (obviously monetary policy is not forbidden),
-- sports/sports teams/sports competitions,
+
+- shitcoins, altcoins, tokens and similar topics;
+- politics, parties and elections, except for monetary policy;
+- sports, teams and sporting competitions;
 - sex.
 
-## Fundraising/payments/offerings
-Fundraising and contributions and payment of offerings to follow lessons are prohibited activities; we keep Officine Bitcoin open to everyone and free.
+## 💸 Fundraising, Payments and Offerings
 
-## Licenses and attributions
-Material produced during Officine Bitcoin lessons is published under Creative Commons license [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode.it).
+Officine Bitcoin is free and open to everyone. Fundraising, mandatory contributions and payments to attend lessons are prohibited.
 
-The [official Officine Bitcoin logo](./logo/index.en.html) is also covered by the same license.
+## 📄 Licenses and Attribution
+
+Material produced during Officine Bitcoin lessons is published under the Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode.it) license.
+
+The [official Officine Bitcoin logo](./logo/index.en.html) is covered by the same license.
 
 ## Lessons
 
-| Topic                                                |
-|------------------------------------------------------|
-| [Mnemonics & dice: learn to create your mnemonic](./lezioni/mnedad/index.en.html)|
-| [Fullnode and hardware for a node](./lezioni/fulhar/index.en.html)|
-| [HAN SOLOminer/Nerdminer](./lezioni/hansol/index.en.html)|
-| [Character terminals](./lezioni/tercar/index.en.html)|
-| [Open source and licenses](./lezioni/openso/index.en.html)|
-| [Debian](./lezioni/debian/index.en.html)|
-| [Signatures](./lezioni/firme/index.en.html)|
-| [Jade Setup](./lezioni/jadeset/index.en.html)|
-| [Jade with Electrum Wallet](./lezioni/jadeele/index.en.html)|
-| [Jade airgapped with Sparrow Wallet](./lezioni/jadespa/index.en.html)|
-| [The transaction lifecycle](./lezioni/ciclo/index.en.html)|
-| [Mining](./lezioni/mining/index.en.html)|
-| [Descriptors](./lezioni/descr/index.en.html)|
-| [Mesh Networks](./lezioni/mesh/index.en.html)|
-| [Coin Control](./lezioni/coinco/index.en.html)|
-| [GPG and Yubico](./lezioni/gpg/index.en.html)| 
-| [MemPush](./lezioni/mempush/index.en.html)|
-| [Ghostinbox](./lezioni/ghostin/index.en.html)|
-| [Bitcoin Starter Kit](./lezioni/start/index.en.html)|
-| [APK verification](./lezioni/verifica/index.en.html)|
-| [Phoenix and LN channel](./lezioni/canale/index.en.html)|
+|  | Topic |
+|---|---|
+| <a href="./lezioni/mnedad/index.en.html"><img src="img/lesson-mnemonics-dice.png" alt="" class="lesson-thumb"></a> | [Mnemonics & dice: learn to create your mnemonic](./lezioni/mnedad/index.en.html) |
+| <a href="./lezioni/fulhar/index.en.html"><img src="img/lesson-fullnode-hardware.png" alt="" class="lesson-thumb"></a> | [Fullnode and hardware for a node](./lezioni/fulhar/index.en.html) |
+| <a href="./lezioni/hansol/index.en.html"><img src="img/lesson-han-solominer-nerdminer.png" alt="" class="lesson-thumb"></a> | [HAN SOLOminer/Nerdminer](./lezioni/hansol/index.en.html) |
+| <a href="./lezioni/tercar/index.en.html"><img src="img/lesson-character-terminals.png" alt="" class="lesson-thumb"></a> | [Character terminals](./lezioni/tercar/index.en.html) |
+| <a href="./lezioni/openso/index.en.html"><img src="img/lesson-open-source-licenses.png" alt="" class="lesson-thumb"></a> | [Open source and licenses](./lezioni/openso/index.en.html) |
+| <a href="./lezioni/debian/index.en.html"><img src="img/lesson-debian.png" alt="" class="lesson-thumb"></a> | [Debian](./lezioni/debian/index.en.html) |
+| <a href="./lezioni/firme/index.en.html"><img src="img/lesson-signatures.png" alt="" class="lesson-thumb"></a> | [Signatures](./lezioni/firme/index.en.html) |
+| <a href="./lezioni/jadeset/index.en.html"><img src="img/lesson-jade-setup.png" alt="" class="lesson-thumb"></a> | [Jade Setup](./lezioni/jadeset/index.en.html) |
+| <a href="./lezioni/jadeele/index.en.html"><img src="img/lesson-jade-electrum-wallet.png" alt="" class="lesson-thumb"></a> | [Jade with Electrum Wallet](./lezioni/jadeele/index.en.html) |
+| <a href="./lezioni/jadespa/index.en.html"><img src="img/lesson-jade-airgapped-sparrow-wallet.png" alt="" class="lesson-thumb"></a> | [Jade airgapped with Sparrow Wallet](./lezioni/jadespa/index.en.html) |
+| <a href="./lezioni/ciclo/index.en.html"><img src="img/lesson-transaction-lifecycle.png" alt="" class="lesson-thumb"></a> | [The transaction lifecycle](./lezioni/ciclo/index.en.html) |
+| <a href="./lezioni/mining/index.en.html"><img src="img/lesson-mining.png" alt="" class="lesson-thumb"></a> | [Mining](./lezioni/mining/index.en.html) |
+| <a href="./lezioni/descr/index.en.html"><img src="img/lesson-descriptors.png" alt="" class="lesson-thumb"></a> | [Descriptors](./lezioni/descr/index.en.html) |
+| <a href="./lezioni/mesh/index.en.html"><img src="img/lesson-mesh-networks.png" alt="" class="lesson-thumb"></a> | [Mesh Networks](./lezioni/mesh/index.en.html) |
+| <a href="./lezioni/coinco/index.en.html"><img src="img/lesson-coin-control.png" alt="" class="lesson-thumb"></a> | [Coin Control](./lezioni/coinco/index.en.html) |
+| <a href="./lezioni/gpg/index.en.html"><img src="img/lesson-gpg-yubico.png" alt="" class="lesson-thumb"></a> | [GPG and Yubico](./lezioni/gpg/index.en.html) |
+| <a href="./lezioni/mempush/index.en.html"><img src="img/lesson-mempush.png" alt="" class="lesson-thumb"></a> | [MemPush](./lezioni/mempush/index.en.html) |
+| <a href="./lezioni/ghostin/index.en.html"><img src="img/lesson-ghostinbox.png" alt="" class="lesson-thumb"></a> | [Ghostinbox](./lezioni/ghostin/index.en.html) |
+| <a href="./lezioni/start/index.en.html"><img src="img/lesson-bitcoin-starter-kit.png" alt="" class="lesson-thumb"></a> | [Bitcoin Starter Kit](./lezioni/start/index.en.html) |
+| <a href="./lezioni/verifica/index.en.html"><img src="img/lesson-apk-verification.png" alt="" class="lesson-thumb"></a> | [APK verification](./lezioni/verifica/index.en.html) |
+| <a href="./lezioni/canale/index.en.html"><img src="img/lesson-phoenix-ln-channel.png" alt="" class="lesson-thumb"></a> | [Phoenix and LN channel](./lezioni/canale/index.en.html) |

@@ -1,3 +1,8 @@
+---
+layout: default
+title: "The Officine Bitcoin Logo"
+---
+
 # The Officine Bitcoin Logo
 
 The Officine Bitcoin logo is a gear in which the classic Bitcoin monogram ₿ is inscribed.

@@ -1,3 +1,14 @@
+---
+layout: default
+title: "Introduction to Mining"
+---
+
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Bitcoin-only lesson</span> <span>This project is maintained by valerio-vaccaro</span></p>
+
+## 🌍 Traduzioni
+
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
+
 # Introduction to Mining
 Bitcoin mining is a fundamental process of the protocol that serves to propose an order among the transactions present in the mempool, selecting a subset to create a new block and update the blockchain state.
 

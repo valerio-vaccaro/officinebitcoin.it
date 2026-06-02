@@ -1,3 +1,14 @@
+---
+layout: default
+title: "MemPush: Inviare e gestire transazioni Bitcoin nella mempool con semplicità"
+---
+
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezione Bitcoin-only</span> <span>This project is maintained by valerio-vaccaro</span></p>
+
+## 🌍 Traduzioni
+
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
+
 # MemPush: Inviare e gestire transazioni Bitcoin nella mempool con semplicità
 
 MemPush (https://mempush.com/) è una piattaforma innovativa che rende l'invio e la gestione delle transazioni Bitcoin nella mempool semplice, sicura e accessibile. La mempool, il "serbatoio" temporaneo delle transazioni Bitcoin in attesa di conferma sulla blockchain, è il cuore di questo servizio, che elimina le complessità tecniche per utenti e sviluppatori.

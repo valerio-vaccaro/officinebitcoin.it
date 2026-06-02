@@ -1,11 +1,22 @@
 ---
-name: Comprendere il Coin Control manuale
-description: Guida esaustiva alla selezione manuale degli UTXO. Capire perché è importante e imparare come puoi farlo con diversi software wallet (desktop e mobile)
+layout: default
+name: "Comprendere il Coin Control manuale"
+description: "Guida esaustiva alla selezione manuale degli UTXO. Capire perché è importante e imparare come puoi farlo con diversi software wallet (desktop e mobile)"
+title: "Comprendere il Coin Control manuale"
 ---
+
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezione Bitcoin-only</span> <span>This project is maintained by valerio-vaccaro</span></p>
+
+## 🌍 Traduzioni
+
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
+
 ![cover](https://officinebitcoin.it/lezioni/coinco/cover.webp)
 
+# Comprendere il Coin Control manuale
 
-# Introduzione
+## Introduzione
+
 La solidità del protocollo Bitcoin è garantita da concetti cardine semplici. Tra questi, spicca la trasparenza: tutte le transazioni Bitcoin sono pubbliche e facilmente verificabili da chiunque. Sebbene questa caratteristica sia una pietra miliare del protocollo, perché previene frodi e garantisce la genuinità dei fondi, può rappresentare anche una sfida per la confidenzialità. **Ti sei domandato se tanta trasparenza può inficiare la tua privacy?
 
 Dovresti farlo. Se da una parte accumulare satoshi non-kyc è piuttosto semplice, la tua privacy è maggiormente a rischio proprio nella fase si spesa.
@@ -18,7 +29,7 @@ Consumando uno dei tuoi UTXO, infatti, devi soddisfare le condizioni imposte per
 
 Il momento della spesa è dunque il più critico: **spendere bitcoin è un atto da compiere in maniera consapevole e con il maggior controllo possibile**.
 
-# Coin Control
+## Coin Control
 Nel protocollo Bitcoin, elementi come "_conto_" o "_unità monetarie_" non esistono. Il concetto di UTXO non fa parte degli scopi di questa lezione, ma ti invito a fare le domande relative al tuo satoshi spritz di fiducia, o a richiedere una lezione qui su Officine Bitcoin.
 Ciò che devi sapere è che con Bitcoin ciò che accumuli e, in seguito spenderai, sono piccole o grandi unità di conto misurate in satoshi, rappresentati da `output di transazione non spesi`, gli **UTXO**, detti anche `coins`.
 Quando si utilizzano UTXO per creare una transazione, questi vengono completamente distrutti e si creano altri UTXO al loro posto.
@@ -47,7 +58,7 @@ Con una situazione finale, a livello di UTXO, nel tuo wallet che ha un aspetto d
 
 ![img](https://officinebitcoin.it/lezioni/coinco/05.webp)
 
-# Perché selezionare manualmente gli UTXO?
+## Perché selezionare manualmente gli UTXO?
 ![img](https://officinebitcoin.it/lezioni/coinco/06.webp)
 
 Nel nostro esempio, il saldo di fatto lo stesso: `108.280 sats`. Dopo la spesa di 24.000 sats, senza coin control avremmo 2 UTXO nel wallet; con il coin control manuale ne abbiamo 3 totali.
@@ -86,10 +97,10 @@ Il cold wallet è uno strumento con cui si può ragionevolmente ottenere un buon
 
 Il mio consiglio è quello di **non effettuare mai la spesa direttamente dal cold wallet, per evitare di ricevere il resto tra gli indirizzi dello stesso**. Impara a selezionare manualmente gli UTXO necessari a coprire la spesa, trasferiscili su un wallet hot e prepara la tua transazione da quest'ultimo. L'eventuale resto, poi, potrai rimandarlo su un indirizzo del cold wallet (se l'importo è adeguato), oppure utilizzarlo per altri scopi.
 
-# Presentazione pratica
+## Presentazione pratica
 Dopo questa lunga introduzione, vediamo come mettere in pratica il coin control con diversi software desktop e mobile. Useremo sempre lo stesso wallet HD, importato in ognuno degli strumenti scelti, in modo da mostrarti le piccole differenze che ci sono tra di loro.
 
-# Wallet Desktop
+## Wallet Desktop
 
 ## Sparrow
 Se usi Sparrow, apri il tuo wallet e seleziona _UTXOs_ dal menu a sinistra. Ti comparirà la lista dei tutti gli UTXO associati al tuo wallet.
@@ -165,7 +176,7 @@ Imposta l'importo e le fee e poi procedi normalmente con la tua transazione.
 
 ⚠️ N.B. Nel menu _Coins_ di Green sono presenti le voci _Lock_/_Unlock_ che prefigurano la possibilità di segregare UTXO. Questa possibilità è presente solo negli account cosiddetti multisig; inoltre la funzionalità si attiva solo selezionando UTXO di importo molto piccolo, vicino alla soglia del `Dust`.
 
-# Wallet mobile
+## Wallet mobile
 
 ## Blue Wallet
 Anche da mobile è possibile scegliere wallet che permettono di selezionare manualmente gli UTXO. Vediamo per primo Blue Wallet.
@@ -237,7 +248,7 @@ Bitcoin Keeper ti porta direttamente al menu _Send_, dove puoi costruire la tran
 
 ![img](https://officinebitcoin.it/lezioni/coinco/37.webp)
 
-# Hardware wallet
+## Hardware wallet
 Ognuno dei software wallet visti in questa guida può essere l'interfaccia watch-only di un tuo hardware wallet. Significa il coin control per dispositivo di firma offline si esegue con i passaggi visti fin qui.
 
 ## Raccomandazioni generali

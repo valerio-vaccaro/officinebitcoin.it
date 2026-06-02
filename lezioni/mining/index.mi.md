@@ -1,3 +1,14 @@
+---
+layout: default
+title: "Introduzion al Mining"
+---
+
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezion Bitcoin-only</span> <span>Quest progett l'e mantegnud da valerio-vaccaro</span></p>
+
+## 🌍 Traduzioni
+
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
+
 # Introduzion al Mining
 El mining de Bitcoin l'è un process fondamental del protocoll che serv a proponì un ordin tra le transazion present nella mempool, scernendon un sotinsem per creà un noeuv blocc e aggiornà l'stat de la blockchain.
 

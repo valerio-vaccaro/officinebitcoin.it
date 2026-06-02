@@ -1,55 +1,67 @@
-# Tutorial GPG:
+---
+layout: default
+title: "Tutorial GPG e YubiKey"
+---
 
-Questa lezion te guida nell'usà Gnu Privacy Guard (GPG):
-- per creà una noeuva coppia de claav,
-- aggiung subclaav per firmà e criptà,
-- fà backup de tutt le claav,
-- trasferì subclaav a un YubiKey, e
-- criptà/firmà un file doprand Yubikey.
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezion Bitcoin-only</span> <span>Quest progett l'e mantegnuu da valerio-vaccaro</span></p>
 
-L'è progettada per Linux con comand testaa su GPG 2.2.40/Debian 12. I stess comand poden funzionà similment su alter version de Linux e anca su MacOSX e Windows (eccett per filesystem criptaa).
+## 🌍 Traduzion
 
-El process seguiss le miglior pratiche de sicurezza, come la generazion de claav offline e backup sicur.
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
+
+# Tutorial GPG e YubiKey
+
+Questa lezion te guida attraverso l'uso de Gnu Privacy Guard (GPG):
+- per creare ona nuova coppia de ciav, 
+- aggiungere sottociav per firma e crittografia, 
+- fare el backup de tutte i ciav, 
+- trasferire i sottociav su on YubiKey e 
+- crittografare/firmare on file usando Yubikey.
+
+L'è progettato per Linux on comandi testati su GPG 2.2.40/Debian 12. I stessi comandi possono funzionare similmente su altre versioni de Linux e anca su MacOsX e Windows (ad eccezion di filesystem crittografati).
+
+El processo segue i migliori pratiche de sicurezza, come la generazion di ciav offline e backup sicuri.
 
 ## Installazion
-Installa gpg e i utilità necessari
+Installa gpg e i utilities necessarie
 
 ```bash
 sudo apt update
 sudo apt install gnupg scdaemon pcscd yubikey-manager
 ```
 
-Assicurass che la version sia 2.1.17 o pù recent (2.4.5 raccomandada).
+Assegurati che la version sia 2.1.17 o successiva (2.4.5 consigliata).
 
 ```bash
 gpg --version
 ```
 
-Controlla la funzionalità de YubiKey
+Verifica el funzionamento de la YubiKey
 
 ```bash
 ykman info
 ```
 
-Assicurass che l'applet OpenPGP sia abilità e el mode CCID sia attiv.
+Assegurati che l'applet OpenPGP sia abilitata e la modalità CCID attiva.
 
-Dopra una macchina air-gapped (minga internet) per generà claav e evità fughe.
+Usa ona macchina air-gapped (senza internet) per generà i ciav e prevenire perdite.
 
-Ricorda che i PIN predefinii de YubiKey minga hinn sicur e hinn:
-- PIN Utent predefinii: 123456
-- PIN Admin predefinii: 12345678
-Cambial prima de l'usà (vedi Pass 4).
+Ricorda che i PIN YubiKey de default minga hinn sicuri e hinn:
+- PIN Utente predefinito: 123456
+- PIN Admin predefinito: 12345678
+Cambiali prima dell'uso (vedi Passo 4).
 
-## Pass 1
-Genera una coppia de claav GPG primaria (pubblica e privada) per certificazion (C) domà; tutt le alter claav vegnarann derivada de questa.
+## Passo 1
+Genera ona coppia de ciav GPG primaria (pubblica e privata) per esclusivamente per certificazion (C), da queste discenderanno tutte i altre ciav che andremo a costruire.
 
-Inizia la generazion de claav doprand --expert per opzion avanzaa.
+Avvia la Generazion de la chiave usando --expert per accedere a le opzion avanzate.
 
 ```bash
 gpg --expert --full-gen-key
 ```
 
-Seleziona Tip de Claav:
+
+Seleziona el Tipo de Chiave:
 
 ```
 Please select what kind of key you want:
@@ -67,13 +79,13 @@ Please select what kind of key you want:
 Your selection? 8
 ```
 
-Scegli (8) RSA (set your own capabilities) per personalizzà el comportament de la claav.
+Scegli (8) RSA (set your own capabilities) per poter customizzare el comportamento de la chiave.
 
-Imposta le capacità:
+Imposta donca i funzionalità:
 
 ```
-Possible actions for a RSA key: Sign Certify Encrypt Authenticate
-Current allowed actions: Sign Certify Encrypt
+Possible actions for a RSA key: Sign Certify Encrypt Authenticate 
+Current allowed actions: Sign Certify Encrypt 
 
    (S) Toggle the sign capability
    (E) Toggle the encrypt capability
@@ -83,65 +95,65 @@ Current allowed actions: Sign Certify Encrypt
 Your selection? S
 ```
 
-Disabilita Sign e Encrypt (premi S, E).
+Disattiva Sign e Encrypt (premi S, E).
 
-Mantegn Certify (premi Q quand l'è fata).
+Mantieni Certify (premi Q quand finito).
 
-Come risultat, domà Certify resta tra le azion permess.
+Come risultato tra i azion attualmente consentite rimane domà Certify
 
-Imposta la Grandezza de la Claav:
+Imposta la Dimensione de la Chiave:
 
 ```
 RSA keys may be between 1024 and 4096 bits long.
 What keysize do you want? (3072) 4096
 ```
 
-Inseriss 4096 (massima supportada da YubiKey 4/5).
+Inserisci 4096 (massimo supportato da YubiKey 4/5).
 
 Imposta la Scadenza:
 
 ```
 Please specify how long the key should be valid.
-             0 = key does not expire
-          <n>  = key expires in n days
-          <n>w = key expires in n weeks
-          <n>m = key expires in n months
-          <n>y = key expires in n years
-Key is valid for? (0)
+         0 = key does not expire
+      <n>  = key expires in n days
+      <n>w = key expires in n weeks
+      <n>m = key expires in n months
+      <n>y = key expires in n years
+Key is valid for? (0) 
 ```
 
-Inseriss 3y (3 agn) o la tua preferenza. Conferma la data.
+Inserisci 3y (3 anni) o la tua preferenza. Conferma la data.
 
-Inseriss l'ID Utent:
+Inserisci l'ID Utente:
 
 ```
 GnuPG needs to construct a user ID to identify your key.
 
 Real name: Satoshi Spritz
 Email address: info@satoshispritz.it
-Comment:
+Comment: 
 You selected this USER-ID:
     "Satoshi Spritz <info@satoshispritz.it>"
 
 Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? o
 ```
 
-Forniss nom e email. Lassa el comment vöid. Conferma con O.
+Fornisci nome ed email. Lascia el commento vuoto. Conferma con O.
 
-Inseriss una passphrase fort (miscia letter, numer, simbol; evità parol comun).
+Inserisci ona passphrase forte (mescola lettere, numeri, simboli; evita paroll comuni).
 
-Esempi: Tr0ub4dor&3xplor3r!2025
+Esempio: Tr0ub4dor&3xplor3r!2025
 
-La passphrase protegg la tua claav privada.
+La passphrase consente de protegge la tua chiave privata.
 
-Genera entropia movend el mouse, scrivend a cas, o doprand rng-tools (Linux e domà se te la capiss ben):
+Genera entropia muovendo el mouse, digita casualmente o usa rng-tools (Linux e domà se ne comprendi ben el funzionamento):
 
 ```bash
 sudo apt install rng-tools
 sudo rngd -r /dev/urandom
 ```
 
-Aspetta che la generazion de claav se completa. Nota l'ID de la claav (es. C2033656849FC82BA3C365E33C9BF8B9CB86875D) de l'output:
+Attendi el completamento de la generazion de la chiave. Annota l'ID de la chiave (es. C2033656849FC82BA3C365E33C9BF8B9CB86875D) dall'output:
 
 ```
 gpublic and secret key created and signed.
@@ -152,28 +164,28 @@ uid                      Satoshi Spritz <info@satoshispritz.it>
 
 ```
 
-Crea un certificat de revoca in cas che la claav sia compromessa (el tuo client l'ha già creada):
+Crea on certificato per revocare la chiave se compromessa (anca se el tuo client potrebbe già averla creata):
 
 ```bash
 gpg --output revoke_master_satoshispritz.asc --gen-revoke C2033656849FC82BA3C365E33C9BF8B9CB86875D
 ```
 
-Scegli el motiv (es. 1 = claav compromessa) e salva.
+Scegli el motivo (es. 1 = chiave compromessa) e salva.
 
-## Pass 2
-Crea Subclaav de Firm e Criptazion. Do subclaav vegnarann aggiunt per firmà (S) e criptà (E).
+## Passo 2
+Creare Sottociav per Firma e Crittografia, verrano donca aggiunte due sottociav per firma (S) e crittografia (E). 
 
-La claav primaria resta per certificazion domà.
+La chiave primaria resta domà per certificazion.
 
-Edita la claav:
+Modifichiamo la chiave:
 
 ```bash
 gpg --expert --edit-key C2033656849FC82BA3C365E33C9BF8B9CB86875D
 ```
 
-Inseriss la passphrase se richiesta.
+Inserisci la passphrase se richiesto.
 
-Aggiung Subclaav de Firm:
+Aggiungi sottochiave per Firma:
 
 ```
 gpg> addkey
@@ -192,41 +204,41 @@ Please select what kind of key you want:
 Your selection? 4
 ```
 
-Scegli (4) RSA (sign only).
+Scegli (4) RSA (domà firma).
 
-Imposta grandezza: 4096.
+Imposta dimensione: 4096.
 
-Imposta scadenza: 2y (2 agn, le subclaav poden vess rotata pù frequentement).
+Imposta scadenza: 2y (2 anni, i sottociav possono essere ruotate più frequentemente).
 
-Conferma e inseriss la passphrase.
+Conferma e inserisci la passphrase.
 
-Aggiung Subclaav de Criptazion:
+Aggiungi sottochiave per Crittografia:
 
 ```
 gpg> addkey
 ```
 
-Scegli (6) RSA (encrypt only).
+Scegli (6) RSA (domà crittografia).
 
-Imposta grandezza: 4096.
+Imposta dimensione: 4096.
 
 Imposta scadenza: 2y.
 
-Conferma e inseriss la passphrase.
+Conferma e inserisci la passphrase.
 
-Salva i Cambiament:
+Salva i Modifiche:
 
 ```
 gpg> save
 ```
 
-Controlla le subclaav:
+Verifica i sottociav:
 
 ```bash
 gpg --list-keys --with-subkey-fingerprints C2033656849FC82BA3C365E33C9BF8B9CB86875D
 ```
 
-Esempi de output:
+Esempio de output:
 
 ```
 pub   rsa4096 2025-07-20 [C] [expires: 2028-07-20]
@@ -239,14 +251,14 @@ sub   rsa4096 2025-07-20 [E] [expires: 2027-07-20]
 
 ```
 
-Nota le impront digital de le subclaav de firm (S) e criptazion (E).
+Annota i impronte di sottociav per firma (S) e crittografia (E).
 
-## Pass 3
-Backup de Tutt le Claav. Fà backup de la claav primaria, subclaav, e claav pubblica a do drive USB criptaa per sicurezza.
+## Passo 3
+Backup de Tutte i ChiaviEsegui el backup de la chiave primaria, di sottociav e de la chiave pubblica su due unità USB crittografate per sicurezza.
 
-Prepara Drive USB: Inseriss do drive USB (es. /dev/sdb e /dev/sdc).
+Prepara i Unità USB:Inserisci due unità USB (es. /dev/sdb e /dev/sdc).
 
-Crea partizion criptaa (es. con LUKS):
+Crea partizion crittografate (es. con LUKS):
 
 ```bash
 sudo cryptsetup luksFormat /dev/sdb1
@@ -257,7 +269,7 @@ sudo mount /dev/mapper/backup1 /mnt/backup1
 
 Ripeti per /dev/sdc1 (es. monta su /mnt/backup2).
 
-Esporta Claav Privad: Esporta la claav primaria e le subclaav:
+Esporta i Chiavi Private:Esporta la chiave primaria e i sottociav:
 
 ```bash
 gpg --armor --export-secret-keys C2033656849FC82BA3C365E33C9BF8B9CB86875D! > /mnt/backup1/secret_master_satoshispritz.asc
@@ -265,7 +277,7 @@ gpg --armor --export-secret-keys 1E3C548D2CA2927D205C1A85426E4AB8E6D72AC3! > /mn
 gpg --armor --export-secret-keys 94C11C615BE049B97899FA3C8DC3736F499D6C3E! > /mnt/backup2/secret_encrypt_satoshispritz.asc
 ```
 
-Esporta claav pubbliche:
+Esporta i chiave pubbliche:
 
 ```bash
 gpg --armor --export C2033656849FC82BA3C365E33C9BF8B9CB86875D! > /mnt/backup1/public_master_satoshispritz.asc
@@ -273,85 +285,85 @@ gpg --armor --export 1E3C548D2CA2927D205C1A85426E4AB8E6D72AC3! > /mnt/backup2/pu
 gpg --armor --export 94C11C615BE049B97899FA3C8DC3736F499D6C3E! > /mnt/backup2/public_encrypt_satoshispritz.asc
 ```
 
-Esporta el Certificat de Revoca:
+Esporta el Certificato de Revoca:
 
 ```bash
 cp revoke_master_satoshispritz.asc /mnt/backup1/revoke_master_satoshispritz.asc
 cp revoke_master_satoshispritz.asc /mnt/backup2/revoke_master_satoshispritz.asc
 ```
 
-Smonta Sicurament:
+Smonta in Modo Sicuro:
 
 ```bash
 sudo umount /mnt/backup1
 sudo cryptsetup luksClose backup1
 ```
 
-Ripeti per backup2. Conserva i drive USB in locazion separad e sicur (es. cassafort).
+Ripeti per backup2. Conserva i unità USB in luoghi separati e sicuri (es. cassaforte).
 
-Cancella Claav Local (Opzional): Se dopri una macchina air-gapped, cancella la directory GPG:
+Elimina i Chiavi Locali (Facoltativo):Se usi ona macchina air-gapped, elimina la directory GPG:
 
 ```bash
 rm -rf ~/.gnupg
 ```
 
-Le claav vegnarann poi importada sulla macchina dove le doprarass.
+I ciav andranno poi importare sulla macchina in cui andrai a usarle.
 
-Se minga air-gapped, mantegn le claav fin al trasferiment a YubiKey.
+Se minga air-gapped, mantieni i ciav fino al trasferimento su YubiKey.
 
-## Pass 4
-Trasferiss subclaav de firm e criptazion al YubiKey, mantegnend la claav primaria offline.
+## Passo 4
+Trasferisci i sottociav de firma e crittografia sul YubiKey, mantenendo la chiave primaria offline.
 
-Inseriss Yubikey e controlla:
+Inserisci Yubikey e verifica:
 
 ```bash
 gpg --card-status
 ```
 
-L'output dovria mostrà l'applet OpenPGP (es. Version: 2.0).
+L'output dovrebbe mostrare l'applet OpenPGP (es. Version: 2.0).
 
-Cambia i PIN predefinii:
+Cambia i PIN predefiniti:
 
 ```bash
 gpg --change-pin
 ```
 
-PIN Utent: Imposta un noeuv PIN de 6-8 cifr (es. 654321).
-PIN Admin: Imposta un noeuv PIN de 8 cifr (es. 87654321).
+PIN Utente: Imposta on nuovo PIN de 6-8 cifre (es. 654321).
+PIN Admin: Imposta on nuovo PIN de 8 cifre (es. 87654321).
 
-Edita la Claav per el Trasferiment:
+Modifica la Chiave per el Trasferimento:
 
 ```bash
 gpg --expert --edit-key C2033656849FC82BA3C365E33C9BF8B9CB86875D
 ```
 
-Seleziona e Trasferiss Subclaav de Firm: Lista le claav per identificà i indici de le subclaav:
+Seleziona e Trasferisci la Sottochiave de Firma:Elenca i ciav per identificare i indici di sottociav:
 
 ```
 gpg> list
 ```
 
-Esempi:
+Esempio:
 
 ```
 sec  rsa4096/3C9BF8B9CB86875D
-     created: 2025-07-20  expires: 2028-07-20  usage: C
+     created: 2025-07-20  expires: 2028-07-20  usage: C   
      trust: ultimate      validity: ultimate
 ssb  rsa4096/426E4AB8E6D72AC3
-     created: 2025-07-20  expires: 2027-07-20  usage: S
+     created: 2025-07-20  expires: 2027-07-20  usage: S   
 ssb  rsa4096/8DC3736F499D6C3E
      created: 2025-07-20  expires: 2027-07-20  usage: E
 ```
 
-Seleziona la subclaav de firm:
+Seleziona la sottochiave de firma:
 
 ```
 gpg> key 1
 ```
 
-La subclaav de firm gh'avarà un asterisc (*).
+La sottochiave de firma avrà on asterisco (*).
 
-Trasferiss al YubiKey:
+Trasferisci su YubiKey:
 
 ```
 gpg> keytocard
@@ -361,21 +373,21 @@ Please select where to store the key:
 Your selection?
 ```
 
-Inseriss el PIN Admin (es. 87654321). La subclaav privada de firm vegn trasferida al YubiKey e sostituida da un stub nel keyring.
+Inserisci el PIN Admin (es. 87654321). La sottochiave privata de firma viene trasferita sul YubiKey e sostituita da uno stub nel portaciav.
 
-Seleziona e Trasferiss Subclaav de Criptazion: Deseleziona la subclaav de firm:
+Seleziona e Trasferisci la Sottochiave de Crittografia:Deseleziona la sottochiave de firma:
 
 ```
 gpg> key 1
 ```
 
-Seleziona la subclaav de criptazion:
+Seleziona la sottochiave de crittografia:
 
 ```
 gpg> key 2
 ```
 
-Trasferiss al YubiKey:
+Trasferisci su YubiKey:
 
 ```
 gpg> keytocard
@@ -384,151 +396,152 @@ Please select where to store the key:
 Your selection? 2
 ```
 
-Inseriss el PIN Admin de noeuv.
+Inserisci de nuovo el PIN Admin.
 
-Salva i Cambiament:
+Salva i Modifiche:
 
 ```
 gpg> save
 ```
 
-Le subclaav privad hinn ora sul YubiKey, con stub local.
+I sottociav private hinn ora sul YubiKey, con stub locali.
 
-Controlla YubiKey:
+Verifica YubiKey:
 
 ```bash
 gpg --card-status
 ```
 
-Controlla che i slot Signature key e Encryption key mostren le impront digital de le subclaav.
+Controlla che i slot Signature key e Encryption key mostrino i impronte digitali di sottociav.
 
-Esporta subclaav privad (per verificà el backup):
+Esporta i sottociav private (per verifica del backup):
 
 ```bash
 gpg --armor --export-secret-subkeys C2033656849FC82BA3C365E33C9BF8B9CB86875D > secret-subkeys-satoshispritz.asc
 ```
 
-Cancella la directory GPG local:
+Elimina la directory GPG locale:
 
 ```bash
 rm -rf ~/.gnupg
 ```
 
-Re-importa la claav pubblica e i stub:
+Reimporta la chiave pubblica e i stub:
 
 ```bash
 gpg --import public.asc
 gpg --import secret-subkeys-satoshispritz.asc
 ```
 
-La claav privada primaria minga l'è pù sul computer.
+La chiave primaria privata minga l'è più sul computer.
 
-## Pass 5
-Dopra YubiKey per criptà e firmà un file per un destinatari.
+## Passo 5
+Usa YubiKey per crittografare e firmare on file per on destinatario.
 
-Prepara un File de Test:
+Prepara on File de Prova:
 
 ```bash
-echo "This is a secret message." > test.txt
+echo "Questo è un messaggio segreto." > test.txt
 ```
 
-Oten la claav pubblica del destinatari (es. bob@example.com):
+Ottieni la chiave pubblica del destinatario (es. bob@example.com):
 
 ```bash
 gpg --keyserver hkps://keys.openpgp.org --search-keys bob@example.com
 ```
 
-O importa de un file:
+Oppur importa da on file:
 
 ```bash
 gpg --import bob_public.asc
 ```
 
-Cripta e Firma: Cripta per bob@example.com e firma con Yubikey:
+Crittografa e Firma:Crittografa per bob@example.com e firma con Yubikey:
 
 ```bash
 gpg --encrypt --sign --recipient bob@example.com test.txt
 ```
 
-Inseriss el PIN Utent (es. 654321) quand richiest.
+Inserisci el PIN Utente (es. 654321) quand richiesto. 
 
-Se YubiKey richied conferma touch (opzional, impostada via ykman openpgp keys set-touch), tocca el YubiKey.
+Se YubiKey richiede la conferma tattile (opzionale, impostata tramite ykman openpgp keys set-touch), tocca YubiKey.
 
-L'output sarà test.txt.gpg
+L'output generato sarà test.txt.gpg
 
-Decripta el file (richied YubiKey):
+Decrittografa el file (richiede YubiKey):
 
 ```bash
 gpg --decrypt test.txt.gpg > test_decrypted.txt
 ```
 
-Inseriss el PIN Utent e tocca Yubikey se necessari.
+Inserisci el PIN Utente e tocca Yubikey se necessario. 
 
-Controlla che test_decrypted.txt corrisponda a test.txt.
+Verifica che test_decrypted.txt corrisponda a test.txt.
 
-Bob pö decriptà con la so claav privada e verificà la tua firma:
+Bob può decriptare con la sua chiave privata e verificà la tua firma:
 
 ```bash
 gpg --decrypt test.txt.gpg
 ```
 
-Se te vöret domà firmà el file, te pödet doprà i comand seguent.
+Se invece vuoi domà firmare el file te pödet doprà i seguenti comandi.
 
 ```bash
 gpg --detach-sign test.txt
 ```
 
-Quest generarà un file de output ciamaa test.txt.sig
+Verrà generato on file de output chiamato test.txt.sig
 
-Per verificall:
+Per verificarlo:
 
 ```bash
 gpg --verify test.txt.sig test.txt
 ```
 
-## Pratiche de Sicurezza
-- Semper genera claav su una macchina offline per evità esposizion.
-- Conserva i drive USB con claav privad in locazion separad e sicur (es. cassafort o banca).
-- Dopera PIN fort e unic. Se i tentativ de PIN vegnen superaa (3 per Utent, 3 per Admin), Yubikey se blocca e richied un reset, perdend tutt le claav.
-- Mantegn revoke.asc accessibil ma sicur per revocà la claav se compromessa.
-- Crea noeuv subclaav prima de la scadenza (es. ogni agn) come seguiss:
+## Pratiche de sicurezza
+- Genera semper i ciav su ona macchina offline per evitare esposizion.
+- Conserva i unità USB con i ciav private in luoghi separati e sicuri (es. cassaforte o banca).
+- Usa PIN forti e unici. Se i tentativi de PIN hinn superati (3 per Utente, 3 per Admin), Yubikey si blocca e richiede on reset, perdendo tutte i ciav.
+- Mantieni revoke.asc accessibile ma segur per revocare la chiave se compromessa.
+- Crea nuove sottociav prima de la scadenza (es. ogni anno) in queta maniera:
 
 ```bash
 gpg --expert --edit-key C2033656849FC82BA3C365E33C9BF8B9CB86875D
 gpg> addkey
 ```
 
-Trasferiss noeuv subclaav al YubiKey e aggiorna la claav pubblica sui server:
+Trasferisci i nuove sottociav sul YubiKey e aggiorna la chiave pubblica sui server:
 
 ```bash
 gpg --keyserver hkps://keys.openpgp.org --send-keys C2033656849FC82BA3C365E33C9BF8B9CB86875D
 ```
 
-Dopera un segond YubiKey per ridondanza:
+Usa on secondo YubiKey per ridondanza:
 
 ```bash
 gpg --import secret.asc
 gpg --expert --edit-key C2033656849FC82BA3C365E33C9BF8B9CB86875D
 ```
 
-Ripeti i pass de keytocard per el segond YubiKey.
+Ripeti i passaggi keytocard per el secondo YubiKey.
 
-Se te gh'hee besogn de resettà Yubikey:
+Se fosse necessario resettare Yubikey:
 
 ```bash
 ykman openpgp reset
 ```
 
-Per restaurà subclaav de backup:
+Mentre per ripristina i sottociav dal backup:
 
 ```bash
 gpg --import secret.asc
 ```
 
-"Public Key Not Usable": Assicurass che la claav pubblica del destinatari sia importada e fidada:
+“Chiave Pubblica Minga Utilizzabile”:Assegurati che la chiave pubblica del destinatario sia importata e fidata:
 
 ```bash
 gpg --edit-key bob@example.com
 gpg> trust
 ```
-Imposta a 5 = Ultimate trust. 
+Imposta a 5 = Fiducia massima.
+

@@ -1,7 +1,16 @@
 ---
-name: Bitcoin Starter Kit
-description: A simple and easy-to-implement starter kit for using Bitcoin correctly. Learn to download and install a mobile wallet, configure a POS for payment requests, and discover advanced wallet settings.
+layout: default
+name: "Bitcoin Starter Kit"
+description: "A simple and easy-to-implement starter kit for using Bitcoin correctly. Learn to download and install a mobile wallet, configure a POS for payment requests, and discover advanced wallet settings."
+title: "Initial Glossary"
 ---
+
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Bitcoin-only lesson</span> <span>This project is maintained by valerio-vaccaro</span></p>
+
+## 🌍 Traduzioni
+
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
+
 ![cover](assets/cover.webp)
 
 
@@ -42,6 +51,10 @@ For the starter kit we'll download Blockstream App, an `open source` wallet whos
 ⚠️ The following instructions are for downloading and installing the app for Android. For iOS, you must use the official store.
 
 ---
+
+## 🌍 Traduzioni
+
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
 
 Go to the link https://github.com/Blockstream/green_android which is the official Github repository of the developer.
 

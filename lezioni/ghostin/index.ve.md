@@ -1,4 +1,16 @@
-# Ghostinbox.it: Usar email sensa aver email 
+---
+layout: default
+title: "Ghostinbox.it: usar email sensa aver email"
+---
+
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezion Bitcoin-only</span> <span>Sto progetto xe manteniu da valerio-vaccaro</span></p>
+
+## 🌍 Traduzioni
+
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
+
+# Ghostinbox.it: usar email sensa aver email
+
 Ghostinbox xe na piataforma web che permete ai utenti de crear indirisi email temporanei par ricever messagi sensa revelar el so indirisso email vero. El servisio xe ideale par registrazion rapidi, verifiche de account, test de deliverability de le email o qualsìa situasion in cui se vogia evitar spam o proteger la propria identità.
 
 A diferensa dei servisi email tradisionali, Ghostinbox no richiede registrasion nì memoriza dati personali, rendendelo na scelta eccelente par chi prioritiza la privacy. Inoltre, el suporto par la re Tor permete de aceder al servisio in modo anonimo, nascondendo l'indirisso IP de l'utente. La natura open-source del progeto garantise trasparensa e permete ai svilupatori de esaminar el codice par eventual vulnerabilità o personalizasion.

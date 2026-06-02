@@ -1,246 +1,257 @@
 ---
-name: Capì el Controll Manual de le Moned
-description: Guida completa a la selezion manual de UTXO. Capiss perchè l'è important e impara a fàll con vari wallet software (desktop e mobile)
+layout: default
+name: "Capì el Coin Control manual"
+description: "Guida completa a la selezion manual de UTXO. Capì perchè l'è important e imparà come fàll con divers software wallet (desktop e mobile)"
+title: "Capì el Coin Control manual"
 ---
+
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezion Bitcoin-only</span> <span>Quest progett l'e mantegnuu da valerio-vaccaro</span></p>
+
+## 🌍 Traduzion
+
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
+
 ![cover](https://officinebitcoin.it/lezioni/coinco/cover.webp)
 
-# Introduzion
-La robustezza del protocoll Bitcoin l'è garantita da concett core sempliz. Tra questi, la trasparenza se disting: tutt le transazion Bitcoin hinn pubbliche e facilment verificabil da chiunque. Menter questa caratteristica l'è una pietra angolar del protocoll, poiché previen frod e assicura l'autenticità de le fond, la pö anca presentà una sfida per la confidenzialità. **Te hè mai domandat se tanta trasparenza pö influenzà la tua privacy?**
+# Capì el Coin Control manual
 
-Te dovriess. Menter accumulà satoshi non-KYC l'è assai sempliz, la tua privacy l'è pù a risch durant la fase de spesa.
+## Introduzion
 
-## Cossa succed quand te spend un UTXO
-Spend Bitcoin minga l'è semplizment trasferì valor a qualchun alter.
+La solidità del protocollo Bitcoin l'è garantita da concetti cardine semplici. Tra questi, spicca la trasparenza: tutte i transazion Bitcoin hinn pubbliche e facilmente verificabili da chiunque. Sebbene questa caratteristica sia ona pietra miliare del protocollo, perché previene frodi e garantisce la genuinità di fond, può rappresentare anca ona sfida per la confidenzialità. **Te sei domandato se tanta trasparenza può inficiare la tua privacy?
 
-Consumand un de i tò UTXO, te devi soddisfà le condizion impost per la trasparenza del protocoll, poiché te devi provà la proprietà de quei fond. Te devi quindi:
-- espon la tua claav pubblica;
-- produc una firma digital.
+Dovresti farlo. Se da ona parte accumulare satoshi minga-kyc l'è piuttosto sempliz, la tua privacy l'è maggiormente a rischio proprio nella fase si spesa.
+## Cosa succede quand spendi on UTXO
+Spendere Bitcoin minga l'è semplizmente el trasferimento de valore a qualcun altro. 
 
-El moment de la spesa l'è quindi el pù critic: **spend bitcoin l'è un att da fà consciament e con el massim controll possibil**.
+Consumando uno di tò UTXO, infatti, te gh'heet de soddisfare i condizion imposte per la trasparenza del protocollo, perché te gh'heet de dimostrare de essere el proprietario de quei fond. Devi pertanto:
+- esporre la tua chiave pubblica;
+- produrre ona firma digitale.
 
-# Coin Control
-Nel protocoll Bitcoin, element come "account" o "unità monetaria" minga esist. El concett de UTXO minga l'è el focus de questa lezion, ma te inviti a fà domand al tuo Satoshi Spritz fidà o richied una lezion qui su Officine Bitcoin.
-Quell che te devi savè l'è che con Bitcoin, quell che te accumul e poi spend hinn piccol o grand unità contabil misurad in satoshi, rappresentad da `unspent transaction outputs`, i **UTXO**, ciamad anca `moned`.
-Quand te dopri UTXO per creà una transazion, vegnen completament distrutt e noeuv UTXO vegnen cread in la so posizion.
+El momento de la spesa l'è dunque el più critico: **spend bitcoin l'è on atto da compiere in maniera consapevole e con el maggior controllo possibile**.
 
-I wallet software hinn sviluppad per fà questa scelta automaticament, doprand moned selezionad "a cas" con l'unic criterio de coprì l'import de spesa richiest.
+## Coin Control
+Nel protocollo Bitcoin, elementi come "_conto_" o "_unità monetarie_" minga esistono. El concetto de UTXO minga fa parte di scopi de questa lezion, ma te invito a fare i domande relative al tuo satoshi spritz de fiducia, o a richiedere ona lezion qui su Officine Bitcoin.
+Ciò che te gh'heet de sapere l'è che con Bitcoin ciò che accumuli e, in seguito spenderai, hinn piccole o grandi unità de conto misurate in satoshi, rappresentati da `output di transazione non spesi`, i **UTXO**, detti anca `coins`.
+Quand si utilizzano UTXO per creare ona transazion, questi vengono completamente distrutti e si creano altri UTXO al loro posto.
 
-`Coin Control`, ciamad anca `Coin Selection`, l'è una funzionalità de qualch wallet software che te permet de **selezionà manualment i UTXO da spend quand costruiss la tua transazion**.
+I software wallet hinn sviluppati per fare questa scelta in maniera automatica, utilizzando coins selezionate in maniera "casuale" con l'unico criterio de coprire l'importo necessario a la spesa.
 
-Suppon che te gh'hee un wallet con 3 UTXO, rispettivament 21,000, 42,000, e 63,000 satoshi.
+El `Coin Control`, che te pödet trovare anca denominato `Coin Selection`, l'è ona funzion caratteristica de alcuni software wallet, che te permette de **selezionare manualmente i UTXO da spend quand costruisci la tua transazion**.
+
+Supponiamo de avere on wallet con 3 UTXO, rispettivamente da 21.000, 42.000 e 63.000 satoshi.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/01.webp)
 
-Se te gh'hee besogn de spend 24,000 sats e lassi che el software selezioni automaticament, un bon wallet podaria scegli de combinà UTXO1 + UTXO2 per pagà i 24k sats e le fee de miner, creand un change che torna a un indirizz intern del wallet originari.
+Se te gh'heet de spend 24.000 sats e lasci fare al software la selezion automatica, on buon wallet potrebbe sernissere de combinare l'UTXO1 + l'UTXO2 per pagare i 24k sats e i fee del miner, creando on resto che torna su on indirizzo interno del wallet de partenza.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/02.webp)
 
-Dopo la transazion, la noeuva situazion nel wallet, contand domà i UTXO, pö vess riassunta come seguiss.
+Dopo la transazion la nuova situazion nel wallet, contando domà i UTXO, si può così riassumere.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/03.webp)
 
-Con el software giust e la tua consapevolezza, però, te podariess avè fà una scelta diversa e pù corretta. Per esempi, selezionand domà UTXO2 (42,000 sats).
+Con el giusto software e la tua consapevolezza, invece, avresti potuto compiere ona scelta diversa e più corretta. Ad esempio selezionando domà l'UTXO2 (da 42.000 sats).
 
 ![img](https://officinebitcoin.it/lezioni/coinco/04.webp)
 
-Con una situazion final de UTXO nel tuo wallet che la guarda diversa.
+Con ona situazion finale, a livello de UTXO, nel tuo wallet che ha on aspetto differente.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/05.webp)
 
-# Perchè selezionà manualment i UTXO?
+## Perché selezionare manualmente i UTXO?
 ![img](https://officinebitcoin.it/lezioni/coinco/06.webp)
 
-Nel nost esempi, el saldo l'è in realtà el stess: `108,280 sats`. Dopo spend 24,000 sats, sensa coin control avriess 2 UTXO nel wallet; con controll manual de moned avess 3 in total.
+Nel nostro esempio, el saldo de fatto el stesso: `108.280 sats`. Dopo la spesa de 24.000 sats, senza coin control avremmo 2 UTXO nel wallet; con el coin control manuale ne abbiamo 3 totali.
 
-**Perchè fà tutt quest?**
+**Perché fare tutto quest?**
 
-Hinn, o podarien vess, divers motiv per cui minga hann doprà `UTXO1` **e hinn tutt alla radice del perchè - quand spend - attivà el controll manual de moned l'è una bon pratica da seguì**.
+Ci hinn, o potrebbero esserci, diversi motivi per cui minga abbiamo usato l'`UTXO1` **e hinn tutti a la base del perché - in fase de spesa - attivare el coin control manuale l'è ona di buone pratiche da seguire**.
 
 ## Privacy
-El vantagg principal, quand se parla de selezion manual de moned, l'è **maggior privacy per chi spend**.
+El vantaggio principale, quand si parla de manual coin selection, l'è ona **maggiore privacy per chi spende**.
 
-Pigliem el nost esempi de noeuv: spend 24,000 satoshi _sensa coin control_. Poiché la blockchain Bitcoin l'è un registro pubblic, un osservator estern pö affermà, sensa dubbi, che i input `UTXO1 de 21,000 sats` e `UTXO2 de 42,000 sats`, come anca el change, `UTXO5 de 38,280 sats` **tutt appartegnen al stess utent**.
+Prendiamo semper el nostro esempio: la spesa de 24.000 satoshi _senza coin control_. Essendo la blockchain de Bitcoin on registro pubblico, on osservatore esterno può dichiarare, senza ombra de dubbio, che i input `UTXO1 di 21.000 sats` e `UTXO2 di 42.000 sats`, nonché el resto, l'`UTXO5 da 38.280 sats` **appartengono tutti e tre allo stesso utent**.
 
-Selezionand manualment `UTXO2`, invece, `UTXO1` resta completament privat, sedend nel set UTXO aspettand de vess spess a un temp pù approprià.
+Selezionando manualmente l'`UTXO2`, invece, rimane completamente riservato l'`UTXO1`, fermo nell'UTXO set in attesa de essere speso in on momento più appropriato.
 
-`UTXO1` podaria vegnì de una fonte KYC, per esempi un pagament ricevuu per beni e servizzi, menter i alter UTXO minga.
+L'`UTXO1` potrebbe provenire da ona fonte KYC, ad esempio on pagament ricevuto in cambio de beni e servizi, mentre i altri UTXO no.
 
-**Se l'è stada la tua wallet, te vorriess che un osservator estern pössa traccià la tua identità con tanta certezza?** I wallet che implementen selezion manual de UTXO permetten, per esempi, la **segregazion de un o pù UTXO**, una funzion da doprà quand situazion del genere sörgen.
+**Se fosse el tò wallet, vorresti che on osservatore esterno possa risalire a la tua identità con ona certezza così assoluta?** I wallet che implementano la selezion manuale di UTXO, permettono ad esempio la **segregazion de uno o più UTXO**, ona funzion da doprà quand si presentano situazion de quest tipo.
 
-Anche se credo che fond KYC dovriessen vess tenuu in un wallet separà da bitcoin non-KYC, se questa l'è la tua situazion, segregà qualch de i tò indirizz l'è un aiut fondamental, che te podariess otten imparand a selezionà manualment i tò input de spesa.
+Sebbene io sia convinta che fond KYC dovrebbero essere conservati in on wallet separato rispetto a bitcoin acquistati senza kyc, se quest l'è el tuo caso la segregazion de alcuni tò indirizzi l'è on aiuto fondamentale, che potresti ricevere imparando a selezionare manualmente i tò input de spesa.
 
-## Risparmi de fee
-Selezionà l'UTXO corrett per una spesa te permet de ottimizzà le fee. De noeuv, nel nost esempi, el wallet software ha selezionà do UTXO per coprì la spesa. Do UTXO significan do firm per mostrà la ret, quindi un pes de transazion pù alt in termin de vBytes.
+## Risparmio sulle fee
+Selezionare l'UTXO corretto per effettuare ona spesa consente de ottimizzare i fee. Semper partendo dal nostro esempio, el software wallet ha selezionato due UTXO per coprire la la spesa da fare. Due UTXO implicano due firme da mostrare a la rete, donca on peso maggiore de la transazion stessa in termini de vByte.
 
-Doprand controll manual de moned, te pödet selezionà domà un che basta per coprì l'import, risparmiand fee poiché el "pes" de la transazion diminuiss.
+Usando el coin control manuale, invece, te pödet selezionarne uno domà che sia sufficiente a coprire l'importo, risparmiando fee perché diminuisce el "peso" de la transazion.
 
-Quand le fee hinn alt, ma te sei forzà a spend bitcoin on-chain (es. per aprì un canàl Lightning Network), el coin control deventa l'incentiv economic giust da doprà.
+In periodi in cui i fee hinn alte, ma sei costretto a spend bitcoin on-chain (ad esempio per aprire on canale Lightning Network), ecco che el coin control si rivela el giusto incentivo economico a cui ricorrere.
 
-## Aggregazion de change
-Quand fà un pagament e doprà Bitcoin on-chain, la possibilità de ricev change deventa quasi semper una certezza. Ogni change l'è de per sè una piccola perdita de privacy, poiché la rivela alla ret un de i tò indirizz che pö vess associà al tuo input originari.
+## Aggregazion di resti
+Quand si fa on pagament e si usano Bitcoin on-chain, la possibilità de ricevere on resto diventa quasi semper ona certezza. Ogni resto l'è de per sé ona piccola perdita de privacy, in quanto svela a la rete on tuo indirizzo che si può associare al tuo input de partenza.
 
-Considerand che i miglior wallet HD generen indirizz special per change, te pödet facilment recognossli e "segregà" tutt el change de vari transazion; quand questi raggiungen un cert import te pödet selezionà manualment e consolidàli, o scambiàli sulla Lightning Network (el metòd che preferiss) per riguadagnà la privacy perduda durant la spesa.
+Considerando che i migliori wallet HD generano di indirizzi appositi per i resti, te pödet riconoscerli facilmente e "segregare" tutti i resti di varie transazion effettuate; quand questi hanno raggiunto on certo importo te pödet selezionarli manualmente e consolidarli, o fare swap su Lightning Network (el mio metodo preferito) e trattarli così da riguadagnare la privacy perduta in fase de spesa.
 
-## Spesa de un wallet fredd
-Un wallet fredd l'è un strument con cui te pödet ragionevolment raggiung un bon gradi de sicurezza, per conservà qualsivoglia import de fond da tenì da part per un long temp. Tuttavia, event imprevist podarien succed, richiedend de acced ai tò risparmi e coprì spes imprevist.
+## Spesa da on cold wallet
+El cold wallet l'è uno strument con cui si può ragionevolmente ottenere on buon grado de sicurezza, per conservà ona qualsiasi quantità de fond da tenere da parte per on lungo periodo de tempo. Possono però capitare di imprevisti, in cui l'è necessario mettere mano ai risparmi e far fronte a qualche spesa inaspettata.
 
-El mio consigli l'è **mai spend direttament de un wallet fredd, per evità de ricev change tra i stess indirizz del wallet**. Impara a selezionà manualment i UTXO necessari per coprì la spesa, trasferissli a un wallet cald, e prepara la tua transazion de là. Qualsivoglia change, allora, te pödet invià de noeuv a un indirizz de wallet fredd (se l'import l'è approprià), o dopràll per alter scop.
+El mio consiglio l'è quello de **minga effettuare mai la spesa direttamente dal cold wallet, per evitare de ricevere el resto tra i indirizzi dello stesso**. Impara a selezionare manualmente i UTXO necessari a coprire la spesa, trasferiscili su on wallet hot e prepara la tua transazion da quest'ultimo. L'eventuale resto, poi, potrai rimandarlo su on indirizzo del cold wallet (se l'importo l'è adeguato), oppur utilizzarlo per altri scopi.
 
-# Dimostrazion pratica
-Dopo questa longa introduzion, vedem come mett el coin control in pratica con vari software desktop e mobile. Doprarass semper el stess wallet HD, importà in ognun de i strument scelt, per mostrà le piccole differenz tra questi.
+## Presentazion pratica
+Dopo questa lunga introduzion, vediamo come mettere in pratica el coin control con diversi software desktop e mobile. Useremo semper el stesso wallet HD, importato in ognuno di strument scelti, in modo da mostrarti i piccole differenze che ci hinn tra de loro.
 
-# Wallet Desktop
+## Wallet Desktop
 
 ## Sparrow
-Se te dopri Sparrow, vèrt el tuo wallet e seleziona _UTXOs_ dal menu de sinistra. Vedarass la lista de tutt i UTXO associad al tuo wallet.
+Se usi Sparrow, apri el tò wallet e seleziona _UTXOs_ dal menu a sinistra. Te comparirà la lista di tutti i UTXO associad al tuo wallet.
 
-Semplizment clicca su un e poi scegli _Send Selected_. Sparrow te mostra anca el total selezionà per spesa, accant al comand.
+Clicca semplizmente con el mouse su uno de loro e poi serniss _Send Selected_. Sparrow te mostra anca el totale selezionato per la spesa, accanto al comando.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/07.webp)
 
-Te pödet anca selezionà pù de un. Dopera la claav _CTRL_ per selezionà UTXO non adiacend nella lista.
+Puoi anca selezionarne più de uno. Aiutati con el tasto _CTRL_ per selezionare UTXO minga adiacenti nella lista.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/08.webp)
 
-Dopo aver selezionà manualment i UTXO, Sparrow te mostrarà chiarament, graficament, come la tua transazion l'è costruida, che te pödet finalizzà e completà.
+Dopo aver selezionato manualmente i UTXO, Sparrow te mostrerà ben, graficamente, come l'è costruita la tua transazion, che te pödet finalizzare e concludere.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/09.webp)
 
-### Segregazion UTXO
-Segregà fond significà "bloccàli" denter el wallet così che minga poden vess doprad come input de transazion.
+### Segregazion dell'UTXO
+Segregare di fond significa "bloccarli" all'interno del wallet, affinché minga possano essere usati come input de ona transazion. 
 
-Sparrow permet questa funzionalità, accessibil dal menu _UTXOs_. Passa sopra l'UTXO da "bloccà" e clicca de destra. Tra le opzion, trovarass _Freeze_. Quest l'è come te pödet segregà un UTXO con Sparrow Wallet.
+Sparrow permette questa funzionalità, cui si accede semper dal menu _UTXOs_. Si posiziona el mouse sull'UTXO da "bloccare" e si clicca el tasto destro del mouse. Tra i funzionalità de questa procedura comparirà el comando _Freeze_. L'è così che potrai segregare on UTXO con Sparrow Wallet.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/29.webp)
 
 ## Electrum
-Se el tuo wallet desktop l'è Electrum, te pödet selezionà manualment UTXO sia dal menu _Addresses_ che _Coins_.
-In entramb i menu, la selezion se fà puntand el mouse sull'UTXO e scegliend _Add to coin control_ dopo aver cliccà de destra.
+Se el tò wallet desktop l'è Electrum, te gh'heet de sapere che te pödet selezionare manualmente i UTXO sia dal menu _Addresses_ sia dal menu _Coins_.
+In entrambi i menu la selezion avviene puntando el mouse sull'UTXO da sernissere e sernissendo _Add to coin control_ dopo aver cliccato el tasto destro.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/10.webp)
 
-Te pödet anca selezionà pù de un UTXO, doprand la claav _CTRL_ se minga hinn adiacend.
+Anca con quest software te pödet selezionare più de on UTXO, aiutandoti con el tasto _CTRL_ de la tastiera se minga hinn adiacenti tra loro.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/11.webp)
 
-Electrum evidenziarà graficament i UTXO selezionad in verd, e in bass, una barra evidenziada del stess color mostra el saldo disponibil dopo coin control.
+Graficamente Electrum te mostrerà la selezion evidenziando in verde i UTXO selezionati, mentre in basso te compare ona barra, evidenziata dello stesso colore, che mostra el saldo disponibile dopo el coin control.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/12.webp)
 
-Una volta che l'output (o i output) hinn selezionad, te pödet costruì la tua transazion come al solit dal menu _Send_.
+Ona volta selezionato l'output o i output, te pödet costruire la tua transazion come semper, dal menu _Send_.
 
-### Segregazion UTXO
-Electrum fornis questa opzion nel menu _Coins_ selezionand un UTXO specific e poi scegliend _Freeze_ con el botton de destra del mouse. Te pödet anca "bloccà" un indirizz sensa fond dal menu _Addresses_, o la "moneda" per evità spesa.
+### Segregazion dell'UTXO
+Electrum mette a disposizion questa possibilità, andando nel menu _Coins_ e selezionando on determinato UTXO e poi sernissendo _Freeze_ con el tasto destro del mouse. Si può "freezare" l'indirizzo anca senza fond dal menu _Addresses_, oppur la "coin" per minga spenderla.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/28.webp)
 
 ## Nunchuk
-Nunchuk te permet de selezionà UTXO dal menu principal una volta vèrt.
+Nunchuk permette de selezionare i UTXO dal menu principale, ona volta aperto.
 Lancia Nunchuk e clicca _View coins_.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/13.webp)
 
-Se vèrt una finestra con tutt i UTXO del tuo wallet, dove te pödet selezionà un o pù spuntand la casella accant a ogni import. Dopo la selezion, continua con _Create transaction_.
+Si apre la finestra che contiene tutti i UTXO del tò wallet, indoe te pödet selezionarne uno o più, attivando la spunta accanto ad ogni importo. Dopo aver effettuato la selezion, continua con _Create transaction_.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/14.webp)
 
-Poi te pödet inserì l'indirizz de destinazion, impostà l'import e le fee.
+Dopodiché potrai inserire l'indirizzo de destinazion e impostare l'importo e i fee.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/15.webp)
 
 ## Blockstream App
-Blockstream App desktop, precedentement ciamad Green, permet selezion de moned una volta che te hè iniziat a costruì la transazion. Vèrt el tuo wallet e clicca _Send_.
+Blockstream App desktop, già conossuto come Green, permette de fare coin selection quand si l'è già iniziata a costruire la transazion. Apri pertanto el tò wallet e clicca su _Send_.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/16.webp)
 
-Incolla l'indirizz de destinazion nel camp approprià e poi seleziona _Manual coin selection_.
+Incolla l'indirizzo de destinazion nel campo apposito e poi seleziona _Manual coin selection_.
 ![img](https://officinebitcoin.it/lezioni/coinco/17.webp)
-Se vèrt una finestra dove te pödet selezionà un o pù UTXO. Nel seguent esempi, hann selezionà do moned. Poi conferma la scelta cliccand _Confirm Coin Selection_.
+Si apre la finestra indoe te pödet selezionare uno o più UTXO. Nell'esempio che segue, abbiamo selezionato due coins. Dopodiché conferma la scelta cliccando su _Confirm Coin Selection_.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/18.webp)
 
-Imposta l'import e le fee, poi procedi come al solit con la tua transazion.
+Imposta l'importo e i fee e poi procedi normalmente con la tua transazion.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/19.webp)
 
-⚠️ Nota: Nel menu _Coins_ de Green, hinn opzion _Lock_/_Unlock_ che suggerissen la possibilità de segregà UTXO. Quest l'è domà disponibil in cosiddett account multisig; la funzionalità l'è domà attivada per UTXO molt piccol, vicin al soglia `Dust`.
+⚠️ N.B. Nel menu _Coins_ de Green hinn presenti i voci _Lock_/_Unlock_ che prefigurano la possibilità de segregare UTXO. Questa possibilità l'è presente domà negli account cosiddetti multisig; inoltre la funzionalità si attiva domà selezionando UTXO de importo assai piccolo, vicino a la soglia del `Dust`.
 
-# Wallet Mobile
+## Wallet mobile
 
 ## Blue Wallet
-Anca su mobile, te pödet scegli wallet che permeten selezion manual de UTXO. Guardem Blue Wallet prima.
+Anca da mobile l'è possibile sernissere wallet che permettono de selezionare manualmente i UTXO. Vediamo per primo Blue Wallet.
 
-Se te dopri questo software, vèrt el tuo wallet e clicca per entrà nelle schermate de comand per un de i tò wallet. Per acced al coin control, te devi entrà nella fase de spesa, quindi clicca _Send_.
+Se sei on utent de quest software, apri el tò wallet e clicca per entrare nelle schermate di comandi relativi ad uno di tò wallet. Per accedere al coin control si deve entrare nella fase de spesa, donca clicca _Send_.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/21.webp)
 
-Nella prossima schermata, scegli el menu indicà dai tre punt in alt a destra. Se vèrt una finestra a tendina con divers comand. Scegli l'ultim: _Coin Control_.
+Nella successiva schermata serniss i menu segnalati dai tre pallini in alto a destra. Si apre ona finestra a tendina con ona serie de comandi. Scegli l'ultimo: _Coin Control_.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/22.webp)
 
-A quest punt, Blue Wallet mostra tutt i tò UTXO. Oltra agli import, vegnen differenzad graficament da color divers.
+A quest punto Blue Wallet mostra tutti i tò UTXO. Oltre che dagli importi, hinn differenziati graficamente da colori diversi.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/27.webp)
 
-Seleziona l'UTXO, poi seleziona _Use Coin_.
+Scegli l'UTXO da selezionare dopodiché seleziona _Use Coin_.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/23.webp)
 
-Blue Wallet te porta de noeuv alla finestra _Send_ per continuà a costruì la transazion. Aggiusta l'import e le fee, poi scegli _Next_.
+Blue Wallet te riporta nella finestra de _Send_ per continuare a costruire la transazion. Aggiusta l'importo e i fee, dopodiché serniss _Next_.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/24.webp)
 
-Ora te pödet completà la transazion come al solit.
+A quest punto te pödet terminare la transazion, come fai de solito.
 
-### Segregazion UTXO
-Blue Wallet permet anca de segregà UTXO, rendendli non disponibil per spesa, che l'è una bella funzionalità per un wallet mobile.
+### Segregazion de on UTXO
+Anca Blue Wallet permette de segregare i UTXO, rendendoli minga disponibili per la spesa, el che minga l'è male come funzion per on wallet da dispositivo mobile.
 
-Acced al coin control come spiegà sopra e, dopo aver selezionà l'UTXO, scegli _Freeze_ invece de _Use Coin_.
+Si accede al coin control con la procedura appena spiegata e, dopo aver selezionato l'UTXO, serniss _Freeze_ al posto de _Use Coin_.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/26.webp)
 
 ## Nunchuk
-La version mobile de Nunchuk permet anca agli utent de fà coin control. Se te dopri questa app su mobile, vèrtla e va al menu _Wallet_. De qui, scegli _View coins_.
+Anca la version mobile de Nunchuk prevede la possibilità per l'utent de effettuare el coin control. Se usi questa app da mobile, aprilo e vai nel menu _Wallet_. Da qui serniss _View coins_.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/30.webp)
 
-Nella finestra con la lista de UTXO, clicca _Select_.
+Nella finestra indoe compare la lista di UTXO clicca _Select_.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/38.webp)
 
-Accant a ogni UTXO, appare la funzion de selezion. Come nella version desktop, su Nunchuk mobile, la selezion manual se fà spuntand la casella accant all'import. La schermata mostra el numer de UTXO selezionad e l'import total disponibil. Una volta finida, el simbol ₿ in bass a sinistra l'è el comand per inizià a costruì la transazion.
+Accanto ad ogni UTXO appare la funzion de selezion. Come nella version desktop, anca su Nunchuk mobile la selezion manuale avviene spuntando el quadratino accanto all'importo. La schermata riporta el numero de UTXO selezionati e l'importo totale a disposizion. Ona volta finito, el simbolo ₿ in basso a sinistra, che l'è el comando per inizià a costruire la transazion.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/31.webp)
 
-Ora te pödet completà la transazion, scegliend l'import e cliccand _Continue_.
+Ora te pödet completare la transazion, sernissendo l'importo e cliccando su _Continue_.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/32.webp)
 
-Continua come al solit, incolland un indirizz de destinazion, una descrizion, e personalizzand le impostazion de fee.
+Continua come fai semper, incollando on indirizzo de destinazion, ona descrizion e personalizzando i impostazion di fee.
 
 ## Bitcoin Keeper
-Bitcoin Keeper l'è l'ultim wallet che vedarass in questa guida. Vedem la so funzionalità de coin control con un wallet single-sig, anche se un us del genere minga l'è el scop principal de questa app particolar.
+Bitcoin Keeper l'è l'ultimo wallet che vedremo in questa guida. Vediamo la sua funzionalità applicata al coin control con on wallet single-sig, anca se on tale 'uso  minga l'è el scopo de questa app assai particolare.
 
-Dopo aver configurà Keeper sul tuo telefon, lancial e vèrt un wallet che contien qualch UTXO. Al center de la schermata principal, clicca _View All Coins_.
+Dopo aver impostato Keeper sul tò telefon, lancialo e apri on wallet contenente alcuni UTXO. Al centro de la schermata principale clicca _View All Coins_.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/34.webp)
 
-Keeper mostra una panoramica de le UTXO. Per acced alla schermata de selezion, clicca _Select To Control_.
+Keeper mostra ona panoramica di UTXO. Per accedere a la schermata de selezion clicca _Select To Control_.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/35.webp)
 
-Te pödet selezionà moned spuntandle, cliccand el comand approprià. Quand l'è fata, clicca _Send_.
+Puoi selezionare i coins, spuntandole, cliccando sull'apposito comando. A la fin, clicca _Send_.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/36.webp)
 
-Bitcoin Keeper te porta direttament al menu _Send_, dove te pödet costruì la transazion con i UTXO selezionad.
+Bitcoin Keeper te porta direttamente al menu _Send_, indoe te pödet costruire la transazion con i UTXO selezionati.
 
 ![img](https://officinebitcoin.it/lezioni/coinco/37.webp)
 
-# Hardware wallet
-Ognun de i wallet software vedud in questa guida pö vess l'interfaccia watch-only per el tuo hardware wallet. Quest significà che el coin control per un dispositiv de firm offline se fà con i pass vedud finora.
+## Hardware wallet
+Ognuno di software wallet visti in questa guida può essere l'interfaccia watch-only de on tuo hardware wallet. Significa el coin control per dispositivo de firma offline si esegue con i passaggi visti fin qui.
 
-## Raccomandazion general
-El coin control l'è una pratica molt efficace per selezionà i tò input de transazion. La selezion manual l'è anca pù efficient se, quand ricev i tò fond, te hè ben etichettà l'origin de i tò satoshi. Se te vöret padroneggià questa tecnica, raccomandi el tutorial:
+## Raccomandazion generali
+El coin control l'è ona pratica assai efficace per selezionare i input deli tò transazion. La selezion manuale l'è ancor più efficiente se, in fase de acquisto/ricezion di tò fond, hai etichettato ben la provenienza di tò satoshi. Se desideri imparare ben questa tecnica, te consiglio el tutorial:
 
-https://planb.network/tutorials/privacy/on-chain/utxo-labelling-d997f80f-8a96-45b5-8a4e-a3e1b7788c52 
+https://planb.network/tutorials/privacy/on-chain/utxo-labelling-d997f80f-8a96-45b5-8a4e-a3e1b7788c52

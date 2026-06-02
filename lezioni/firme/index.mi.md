@@ -1,278 +1,83 @@
-# Firme Digitali in Bitcoin (ECDSA)
+---
+layout: default
+title: "Firme"
+---
 
-## Introduzion
-Le firme digitali hann un rol fondamental nel protocoll Bitcoin, permettend di autenticà transazion e assicurà che solt i proprietari de le claav privad possen spend i fond associad. In questa lezion, esplorerem i concett fondamental de le firme digitali, con particolare attenzion a l'algoritmo ECDSA (Elliptic Curve Digital Signature Algorithm) doprad da Bitcoin.
+<p class="site-kicker"><strong>Officine Bitcoin</strong> <span>Lezion Bitcoin-only</span> <span>Quest progett l'e mantegnuu da valerio-vaccaro</span></p>
 
-## Cossa hinn le Firme Digitali?
+## 🌍 Traduzion
 
-Una **firma digital** l'è un meccanism matematic che permet de:
-1. **Verificà l'autenticità** de un messagg o documento
-2. **Assicurà l'integrità** de i dat (che minga sien staa alterad)
-3. **Garantì la non-repudiazione** (l'autor minga pö negà de aver firmà)
+[🇨🇳 中文](./index.zh.html) [🇬🇧 English](./index.en.html) [🇪🇸 Español](./index.es.html) [🇵🇹 Português](./index.pt.html) [🇷🇺 Русский](./index.ru.html) [🇫🇷 Français](./index.fr.html) [🇩🇪 Deutsch](./index.de.html) [🇮🇹 Italiano](./index.html) [🇭🇺 Magyar](./index.hu.html) [🏳️ Milanés](./index.mi.html) [🏳️ Veneto](./index.ve.html)
 
-### Differenz con le firme tradizional
+# Firme
+L'argomento de questa lezion saranno i firme digitali e come si applicano a Bitcoin.
 
-| Aspett | Firma tradizional | Firma digital |
-|--------|-------------------|---------------|
-| **Supporto fisic** | Carta, penna | Dat digital |
-| **Copiabilità** | Difficil da copià | Facil da copià |
-| **Verifica** | Confronto visivo | Algoritmo matematic |
-| **Sicurezza** | Basad su caratteristiche fisiche | Basad su crittografia |
-| **Scalabilità** | Limitada | Alta |
+## Cosa l'è ona firma?
+Dobbiamo capire che cosa intendiamo per firma digitale. Quand pensiamo ad ona normale firma pensiamo normalmente ad altro, siccome parliamo de documenti digitali la firma digitale lega sia l'identità dell'autore che el stato del documento firmato, donca sostanzialmente la firma dipende anca dal documento che andiamo a firmare.
 
-## Criptografia a Claav Pubblica/Privada
+Quest l'è ona differenza assai grande con el mond fisico, indoe invece la firma noi la poniamo praticamente senza curarci del supporto su cui el facciamo. Certo che magari minga andremo a firmare assegni o altri documenti senza preoccuparcene però sostanzialmente la firma che andiamo ad apporre minga varia.
 
-Le firme digitali hann basad su la **criptografia asimmetrica**, che dopra do claav matematicament correlad:
+I firme digitali invece hinn hinn ona cosa on po' differente, i firme de digitali normalmente si basano su algoritmi a chiave pubblica e privato. Vuol dire che el nostro portafoglio da qualche parte nel mond c'è ona coppia de ciav, pubblica e privata e la nostra (pseudo-)identità l'è collegata a la chiave pubblica che tutti conoscono o che renderemo nota a tutti.
 
-### Claav Privada
-- **Segreta**: Domà el proprietari la conoss
-- **Firma**: Usada per firmà messagg
-- **Sicurezza**: Deve vess protetta a ogni cost
+Noi utilizzeremo la nostra chiave privata, che l'è on numero, e con qualche magia matematica produrremo ona firma che l'è on numero diverso e che dimostra che on certo stato de on certo documento appartiene o l'è conossuto da ona certa identità connessa ad ona chiave pubblica. Quello che vado a firmare l'è l'impronta (o HASH) de on certo documento (o PAYLOAD).
 
-### Claav Pubblica
-- **Pubblica**: Chiunque la pö conoss
-- **Verifica**: Usada per verificà le firme
-- **Distribuzion**: Pö vess condivisa liberament
+Mi serve anca qualche on generatore de numeri casuali, butto tutti questi dati all'interno de uno "scatolone nero" che mi produce ona firma, la firma donca l'è on qualcosa che dimostra el possesso perché io sto firmando con el mio segreto ma dimostra anca che quello che io sto firmando minga sia stato modificato.
 
-### Funzionament
+Se modifico el PAYLOAD modifico l'HASH e ovviamente quest invalida la firma.
 
-```
-Messaggio + Claav Privada → Firma Digital
-Messaggio + Firma + Claav Pubblica → Verifica (Vera/Falsa)
-```
+Donca sostanzialmente perché l'è stata introdotta questa firma più complessa nel mond digitale? Beh perché nel mond digitale, a differenza de quello de quello fisico (e magari chi ha marinato a scuola se ne ricorda) copiare ona firma l'è assai più sempliz.
 
-## ECDSA in Bitcoin
+La firma digitale invece ha informazion sul documento e donca cambia per ogni documento e minga può essere incollata e riutilizzata su de on documento divergo.
 
-Bitcoin dopra **ECDSA** (Elliptic Curve Digital Signature Algorithm) con la curva **secp256k1** per generà e verificà le firme.
+La firma digitale serve donca a:
+- dimostrare che io ho creato on certo messaggio o sto chiedendo ona certa azion o sto dichiarando on certo stato de on sistema e
+- dimostrare che quel messaggio o quel documento o quella stringa de dati minga sia stata manipolata, ovver che sia effettivamente quella che io volevo firmare.
+- rendere irripudiabile ona certa azion, se ho prodotto ona firma hinn stato proprio io a farla per quello specifico documento.
 
-### Vantagg de ECDSA
+## Firme in Bitcoin
+Questa tecnologia l'è utilizzata in Bitcoin sotto l'acronimo ECDSA (Electronic Curve Digital Signature Algorithm) che l'è on algoritmo per la produzion de firme digitali su curva ellittica, per ora minga tratteremo altri schemi de firma.
 
-1. **Efficienza**: Le claav ECDSA hann pù cort de quelle RSA per la stess sicurezza
-2. **Velocità**: Le operazion de firm e verifica hann pù veloci
-3. **Sicurezza**: La sicurezza l'è basad su la difficoltà del problema del logaritmo discreto su curve ellittiche
+Ricordiamo che in Bitcoin si possono produrre firme per:
+- testo arbitrario, poco important e usato
+- nuove transazion, con el scopo de autorizzare la spesa de ona certa UTXO
 
-### Process de Firm
+Ma queste firme come si legano a la transazion? Ogni indirizzo ha on meccanismo de spesa, di script che devono essere eseguiti per sapere se ona spesa può essere autorizzata. All'interno de questi script ci hinn comandi (o OPCODE) destinati al controllo di firme digitali quali OP_CHECKSIG, OP_CHECKSIGVERIFY, OP_CHECKMULTISIG, OP_CHECKMULTISIGVERIFY
 
-1. **Hash del messaggio**: El messaggio vegn convertì in un hash (SHA-256)
-2. **Generazion di parametri**: Se generen parametri casual per la firma
-3. **Calcolo della firma**: Se calcola la firma doprand la claav privada
-4. **Output**: La firma consist in do numer (r, s)
+Ricordiamo che ona transazion in Bitcoin l'è costituita da:
+- Input, ovver i fond che vado a spend e per cui devo produrre uno script de spesa
+- Output, ovver i nuovi indirizzi in cui andranno i fond (e per ogni indirizzo l'è connessa ona modalità de spesa ben definita.
 
-### Process de Verifica
+In sostanza, nella maggioranza di casi dovrò donca produrre Per OGNI INPUT la/i firma/e necessarie a completare el script de spesa.
 
-1. **Hash del messaggio**: Se calcola l'hash del messaggio original
-2. **Calcolo di parametri**: Se calcolen parametri derivad dalla firma
-3. **Verifica**: Se verifica se la firma l'è valida doprand la claav pubblica
-4. **Risultat**: Vera o Falsa
+Ricordiamo che questa azion ci permette de dimostrare che quell'input l'è nostro e che la vogliamo spend (vogliamo passare la proprietà in toto o vogliamo dividerlo o vogliamo unirlo con altri input).
 
-## Applicazion in Bitcoin
+Ovviamente la transazion l'è valida se tutti i input hinn correttamente firmati mentre se anca uno no di input minga l'è firmato quella la transazion minga può considerarsi valida.
 
-### Autenticazion de Transazion
+La firma l'è controllabile da tutti e minga l'è ripudiabile, ma per flessibilità Satoshi in maniera assai assai furba ha introdotto varie modalità de firma, cioè la firma l'è semper la stessa ma cambia el PAYLOAD cioè la porzion de transazion oggetto de la firma, quest consente ad esempio de generà schemi e protocolli complessi in cui pezzi de transazion possono essere combinate tra de loro, Satoshi ha chiamato queste modalità (veri e propri flag nel linguaggio de scripting) SIGHASH.
 
-In Bitcoin, le firme digitali hann doprad per autenticà le transazion:
+## SIGHASH
+El più sempliz SIGHASH l'è SIGHASH_ALL che vuol dire de generà ona firma con TUTTI i INPUT e TUTTI i OUTPUT, questa l'è la modalità più sempliz e più usata per fare ona firma.
 
-```
-Transazione + Claav Privada → Firma Digital
-Transazione + Firma + Claav Pubblica → Verifica
-```
+Ona prima differenza si può avere con SIGHASH_NONE che firma TUTTI i INPUT, ma NESSUNO di OUTPUT, consentendo de aggiungere output o modificare i fee a posteriori. ATTENZIONE che con quest schema, se minga protetti da multisig o altre funzionalità, on miner o chiunque veda ona transazion con quest schema de firma può sostituire i output redirigendo i fond verso on proprio indirizzo.
 
-### UTXO e Firme
+On flag più interessante l'è SIGHASH_SINGLE in cui si firma ona coppia de input ed output purché vengano inseriti in ona transazion allo stesso livello (e.g. quinto input e quinto output), quest consentirebbe de comporre transazion più grandi basate su queste coppie ma minga da ona possibilità de introdurre on change ovver richiede la spesa totale dell'input.
 
-Ogni UTXO (Unspent Transaction Output) l'è associà a una claav pubblica. Per spend un UTXO, te devi:
+Parallelamente tutti questi SIGHASH possono essere combinati con el flag ANYONECANPAY che limita la firma domà all'input per cui si sta producendo firma dando donca possibilità a chiunque de aggiungere input a la transazion.
 
-1. **Creà una transazion** che referenzia l'UTXO
-2. **Firmà la transazion** con la claav privada corrispondent
-3. **Includ la firma** nella transazion
-4. **Includ la claav pubblica** per permet la verifica
+Queste firme hinn tutte firme valide indipendentemente dal tipo de indirizzo e dagli script lasciando massima flessibilità de espressione al wallet, normalmente userà SIGHASH_ALL ma potrebbe pure seguire protocolli più complessi che richiedono schemi de firma differenti. In caso de multisig poi minga c'è necessità de doprà el medesimo tipo de firma, on wallet 2di2 potrebbe firmare alcuni suoi UTXO con SIGHASH_NONE e ANYONECANPAY al fine de dare pieno controllo al secondo firmatario che potrà, ad esempio, raccogliere tutti questi input in ona transazion da firmare con SIGHASH_ALL.
 
-### Esempi pratici
+## Firme su testo arbitrario
+Per per completezza i stesse firme che vengono utilizzate per i input di transazion potete doprà anca per firmare del testo arbitrario.
 
-#### Transazion P2PKH (Pay to Public Key Hash)
+Bitcoin propone uno schema in cui viene viene aggiunta del testo per evitare che questa funzionalità venga utilizzata per firmare a parte de transazion, donca se avete Bitcoin core o anca alcuni Wallet potete cercare ona funzionalità de firma de messaggi de testo sulla base de on certo vostro indirizzo.
 
-```
-Input:
-  - UTXO: 0.1 BTC
-  - ScriptSig: <Firma> <Claav Pubblica>
+El wallet userà la chiave privata associata a la chiavetta pubblica che ha generato quell'indirizzo per fare di firme de messaggi testuali 
 
-Output:
-  - ScriptPubKey: OP_DUP OP_HASH160 <Hash Claav Pubblica> OP_EQUALVERIFY OP_CHECKSIG
-```
+All'atto de la verifica si ottiene la chiave pubblica che può essere può donca utilizzata per rigenerà l'indirizzo, donca se io ho el testo e la firma mi tiro fuori la chiave pubblica che ha firmato e dalla chiave pubblica posso ricalcolarmi l'indirizzo e controllarlo ad esempio con quello fornito.
 
-#### Process de Verifica
+## Programma
+La lezion sulle firme può essere ripetuta, qui on elenco de quelle già tenute:
 
-1. Se estrae la claav pubblica dal ScriptSig
-2. Se calcola l'hash de la claav pubblica
-3. Se confronta con l'hash nel ScriptPubKey
-4. Se verifica la firma doprand la claav pubblica
-
-## SIGHASH Flags
-
-Bitcoin supporta divers tip de firme attraverso i **SIGHASH flags**, che determinan quell part de la transazion vegn firmada:
-
-### SIGHASH_ALL (Default)
-- **Cosa se firma**: Tutti i input e output
-- **Flessibilità**: Bass
-- **Sicurezza**: Alt
-- **Uso**: Transazion standard
-
-### SIGHASH_NONE
-- **Cosa se firma**: Tutti i input, nissun output
-- **Flessibilità**: Alt
-- **Sicurezza**: Bass
-- **Uso**: Transazion malleabil
-
-### SIGHASH_SINGLE
-- **Cosa se firma**: Tutti i input, un output specific
-- **Flessibilità**: Media
-- **Sicurezza**: Media
-- **Uso**: Transazion con output multipl
-
-### SIGHASH_ANYONECANPAY
-- **Cosa se firma**: Domà l'input specific
-- **Flessibilità**: Molt alt
-- **Sicurezza**: Bass
-- **Uso**: CoinJoin, transazion collaborativ
-
-### Combinazion
-
-I flag poden vess combinad:
-- `SIGHASH_ALL | SIGHASH_ANYONECANPAY`: Firma domà l'input specific
-- `SIGHASH_NONE | SIGHASH_ANYONECANPAY`: Firma domà l'input, permet modifiche a output
-
-## Firmà Messagg Arbitrari
-
-Oltra a firmà transazion, te pödet anca firmà messagg arbitrari con le tue claav Bitcoin:
-
-### Format de Messagg
-
-Bitcoin usa un format standard per i messagg da firmà:
-
-```
-Bitcoin Signed Message:
-<Messaggio>
-```
-
-### Esempi de Codice
-
-#### Firmà un Messaggio (Python)
-
-```python
-import hashlib
-from bitcoin import *
-
-# Messaggio da firmare
-message = "Hello, Bitcoin!"
-
-# Claav privada (in formato WIF)
-private_key = "5KJvsngHeMpm884wtkJNzQGaCErckhHJBGFsvd3VyK5qMZXj3hS"
-
-# Formatta il messaggio
-formatted_message = f"Bitcoin Signed Message:\n{message}"
-message_hash = hashlib.sha256(formatted_message.encode()).digest()
-
-# Firma il messaggio
-signature = ecdsa_raw_sign(message_hash, private_key)
-
-print(f"Firma: {signature}")
-```
-
-#### Verificà una Firma (Python)
-
-```python
-import hashlib
-from bitcoin import *
-
-# Messaggio originale
-message = "Hello, Bitcoin!"
-
-# Claav pubblica
-public_key = "04a1b2c3d4e5f6..."
-
-# Firma
-signature = "3045022100..."
-
-# Formatta il messaggio
-formatted_message = f"Bitcoin Signed Message:\n{message}"
-message_hash = hashlib.sha256(formatted_message.encode()).digest()
-
-# Verifica la firma
-is_valid = ecdsa_raw_verify(message_hash, signature, public_key)
-
-print(f"Firma valida: {is_valid}")
-```
-
-## Sicurezza e Best Practices
-
-### Minacce Comuni
-
-1. **Replay Attack**: Reinvio de transazion firmad
-2. **Malleability**: Modifiche non autorizzad a transazion
-3. **Key Reuse**: Doprà la stess claav per pù transazion
-4. **Side-channel Attack**: Attacc basad su caratteristiche fisiche
-
-### Misure de Sicurezza
-
-1. **Claav Uniche**: Usa claav divers per ogni transazion
-2. **Hardware Wallet**: Conserva claav privad su dispositiv sicur
-3. **Backup Sicur**: Fà backup de claav in locazion sicur
-4. **Verifica**: Semper verifica le transazion prima de firmàle
-
-### Validazion de Firma
-
-Prima de accettà una transazion, Bitcoin Core verifica:
-
-1. **Formato**: La firma l'è nel format corrett
-2. **Curva**: La firma l'è generata con secp256k1
-3. **Verifica**: La firma l'è matematicament valida
-4. **Autorizzazion**: La claav pubblica autorizza la spesa
-
-## Limitazion e Considerazion
-
-### Limitazion de ECDSA
-
-1. **Malleability**: Le firme ECDSA poden vess malleabil
-2. **Quantum Resistance**: ECDSA minga l'è resistent a computer quantistic
-3. **Determinismo**: Le firme ECDSA hann non-deterministiche
-
-### Alternative
-
-1. **Schnorr Signatures**: Firma pù efficient e sicur
-2. **Taproot**: Implementazion de Schnorr in Bitcoin
-3. **Multi-signature**: Firma con pù claav
-
-## Implementazion Pratica
-
-### Firmà Transazion con Bitcoin Core
-
-```bash
-# Crea una transazione raw
-bitcoin-cli createrawtransaction '[{"txid":"...","vout":0}]' '{"address":0.1}'
-
-# Firma la transazione
-bitcoin-cli signrawtransactionwithwallet "raw_transaction_hex"
-
-# Invia la transazione
-bitcoin-cli sendrawtransaction "signed_transaction_hex"
-```
-
-### Verificà Firma con Bitcoin Core
-
-```bash
-# Verifica una transazione
-bitcoin-cli getrawtransaction "txid" true
-
-# Verifica un messaggio firmato
-bitcoin-cli verifymessage "address" "signature" "message"
-```
-
-## Conclusión
-
-Le firme digitali ECDSA hann un component fondamental del protocoll Bitcoin, permettend di autenticà transazion e assicurà la sicurezza de la rete. La comprension de come funzionen l'è essenzial per sviluppator e utent che vören interagì con Bitcoin a livell avanzà.
-
-Con l'evoluzion de Bitcoin e l'introduzion de tecnologie come Schnorr signatures e Taproot, le capacità de firm digital continuen a migliorà, offrend maggior sicurezza, efficienza e flessibilità.
-
-Per approfondì l'argoment, raccomandi de:
-1. Studiar la matematica de le curve ellittiche
-2. Sperimentar con librerie crittografiche
-3. Implementar sistemi de firm personalizzad
-4. Seguì gli sviluppi de Bitcoin Core 
+| Data        | Note                                           |
+|-------------|------------------------------------------------|
+|||
