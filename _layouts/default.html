@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="{% assign inferred_lang = page.lang %}{% if inferred_lang == nil %}{% if page.path contains '.en.md' %}{% assign inferred_lang = 'en' %}{% elsif page.path contains '.es.md' %}{% assign inferred_lang = 'es' %}{% elsif page.path contains '.pt.md' %}{% assign inferred_lang = 'pt' %}{% elsif page.path contains '.ru.md' %}{% assign inferred_lang = 'ru' %}{% elsif page.path contains '.fr.md' %}{% assign inferred_lang = 'fr' %}{% elsif page.path contains '.de.md' %}{% assign inferred_lang = 'de' %}{% elsif page.path contains '.hu.md' %}{% assign inferred_lang = 'hu' %}{% elsif page.path contains '.mi.md' %}{% assign inferred_lang = 'mi' %}{% elsif page.path contains '.ve.md' %}{% assign inferred_lang = 've' %}{% elsif page.path contains '.zh.md' %}{% assign inferred_lang = 'zh' %}{% else %}{% assign inferred_lang = site.lang | default: 'it' %}{% endif %}{% endif %}{{ inferred_lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% assign seo_title = page.title | default: site.title %}
+    {% assign seo_description = page.description | default: page.excerpt | markdownify | strip_html | normalize_whitespace | default: site.description | truncate: 160 %}
+    {% assign canonical_url = page.url | absolute_url %}
+    <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ seo_description | escape }}">
+    <link rel="icon" type="image/png" href="{{ site.favicon | relative_url }}">
+    <link rel="apple-touch-icon" href="{{ site.favicon | relative_url }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ seo_title | escape }}">
+    <meta property="og:description" content="{{ seo_description | escape }}">
+    <meta property="og:url" content="{{ canonical_url }}">
+    <meta property="og:image" content="{{ page.image | default: site.image | absolute_url }}">
+    <meta property="og:locale" content="{{ inferred_lang }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ seo_title | escape }}">
+    <meta name="twitter:description" content="{{ seo_description | escape }}">
+    <meta name="twitter:image" content="{{ page.image | default: site.image | absolute_url }}">
+    {% assign alternate_base = page.path | remove: '.md' | remove: '.en' | remove: '.es' | remove: '.pt' | remove: '.ru' | remove: '.fr' | remove: '.de' | remove: '.hu' | remove: '.mi' | remove: '.ve' | remove: '.zh' %}
+    {% assign default_href = '' %}
+    {% for alt in site.pages %}
+      {% assign alt_base = alt.path | remove: '.md' | remove: '.en' | remove: '.es' | remove: '.pt' | remove: '.ru' | remove: '.fr' | remove: '.de' | remove: '.hu' | remove: '.mi' | remove: '.ve' | remove: '.zh' %}
+      {% if alt_base == alternate_base %}
+        {% assign alt_lang = alt.lang %}
+        {% if alt_lang == nil %}
+          {% if alt.path contains '.en.md' %}{% assign alt_lang = 'en' %}
+          {% elsif alt.path contains '.es.md' %}{% assign alt_lang = 'es' %}
+          {% elsif alt.path contains '.pt.md' %}{% assign alt_lang = 'pt' %}
+          {% elsif alt.path contains '.ru.md' %}{% assign alt_lang = 'ru' %}
+          {% elsif alt.path contains '.fr.md' %}{% assign alt_lang = 'fr' %}
+          {% elsif alt.path contains '.de.md' %}{% assign alt_lang = 'de' %}
+          {% elsif alt.path contains '.hu.md' %}{% assign alt_lang = 'hu' %}
+          {% elsif alt.path contains '.mi.md' %}{% assign alt_lang = 'mi' %}
+          {% elsif alt.path contains '.ve.md' %}{% assign alt_lang = 've' %}
+          {% elsif alt.path contains '.zh.md' %}{% assign alt_lang = 'zh' %}
+          {% else %}{% assign alt_lang = site.lang | default: 'it' %}
+          {% endif %}
+        {% endif %}
+        {% if alt_lang == site.lang and default_href == '' %}
+          {% assign default_href = alt.url | absolute_url %}
+        {% endif %}
+        <link rel="alternate" hreflang="{{ alt_lang }}" href="{{ alt.url | absolute_url }}">
+      {% endif %}
+    {% endfor %}
+    {% if default_href != '' %}
+      <link rel="alternate" hreflang="x-default" href="{{ default_href }}">
+    {% endif %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": {{ seo_title | jsonify }},
+        "headline": {{ page.title | default: site.title | jsonify }},
+        "description": {{ seo_description | jsonify }},
+        "inLanguage": {{ inferred_lang | jsonify }},
+        "url": {{ canonical_url | jsonify }},
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": {{ site.title | jsonify }},
+          "url": {{ site.url | jsonify }}
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <section>
+        {{ content }}
+      </section>
+    </div>
+  </body>
+</html>

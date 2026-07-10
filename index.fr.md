@@ -63,25 +63,24 @@ Le [logo officiel d'Officine Bitcoin](./logo/index.en.html) est couvert par la m
 
 |  | Sujet |
 |---|---|
-| <a href="./lezioni/mnedad/index.en.html"><img src="img/lesson-mnemonics-dice.png" alt="" class="lesson-thumb"></a> | [Mnemonics & dice: learn to create your mnemonic](./lezioni/mnedad/index.en.html) |
-| <a href="./lezioni/fulhar/index.en.html"><img src="img/lesson-fullnode-hardware.png" alt="" class="lesson-thumb"></a> | [Fullnode and hardware for a node](./lezioni/fulhar/index.en.html) |
-| <a href="./lezioni/hansol/index.en.html"><img src="img/lesson-han-solominer-nerdminer.png" alt="" class="lesson-thumb"></a> | [HAN SOLOminer/Nerdminer](./lezioni/hansol/index.en.html) |
-| <a href="./lezioni/tercar/index.en.html"><img src="img/lesson-character-terminals.png" alt="" class="lesson-thumb"></a> | [Character terminals](./lezioni/tercar/index.en.html) |
-| <a href="./lezioni/openso/index.en.html"><img src="img/lesson-open-source-licenses.png" alt="" class="lesson-thumb"></a> | [Open source and licenses](./lezioni/openso/index.en.html) |
-| <a href="./lezioni/debian/index.en.html"><img src="img/lesson-debian.png" alt="" class="lesson-thumb"></a> | [Debian](./lezioni/debian/index.en.html) |
-| <a href="./lezioni/firme/index.en.html"><img src="img/lesson-signatures.png" alt="" class="lesson-thumb"></a> | [Signatures](./lezioni/firme/index.en.html) |
-| <a href="./lezioni/jadeset/index.en.html"><img src="img/lesson-jade-setup.png" alt="" class="lesson-thumb"></a> | [Jade Setup](./lezioni/jadeset/index.en.html) |
-| <a href="./lezioni/jadeele/index.en.html"><img src="img/lesson-jade-electrum-wallet.png" alt="" class="lesson-thumb"></a> | [Jade with Electrum Wallet](./lezioni/jadeele/index.en.html) |
-| <a href="./lezioni/jadespa/index.en.html"><img src="img/lesson-jade-airgapped-sparrow-wallet.png" alt="" class="lesson-thumb"></a> | [Jade airgapped with Sparrow Wallet](./lezioni/jadespa/index.en.html) |
-| <a href="./lezioni/ciclo/index.en.html"><img src="img/lesson-transaction-lifecycle.png" alt="" class="lesson-thumb"></a> | [The transaction lifecycle](./lezioni/ciclo/index.en.html) |
-| <a href="./lezioni/mining/index.en.html"><img src="img/lesson-mining.png" alt="" class="lesson-thumb"></a> | [Mining](./lezioni/mining/index.en.html) |
-| <a href="./lezioni/descr/index.en.html"><img src="img/lesson-descriptors.png" alt="" class="lesson-thumb"></a> | [Descriptors](./lezioni/descr/index.en.html) |
-| <a href="./lezioni/mesh/index.en.html"><img src="img/lesson-mesh-networks.png" alt="" class="lesson-thumb"></a> | [Mesh Networks](./lezioni/mesh/index.en.html) |
-| <a href="./lezioni/coinco/index.en.html"><img src="img/lesson-coin-control.png" alt="" class="lesson-thumb"></a> | [Coin Control](./lezioni/coinco/index.en.html) |
-| <a href="./lezioni/gpg/index.en.html"><img src="img/lesson-gpg-yubico.png" alt="" class="lesson-thumb"></a> | [GPG and Yubico](./lezioni/gpg/index.en.html) |
-| <a href="./lezioni/mempush/index.en.html"><img src="img/lesson-mempush.png" alt="" class="lesson-thumb"></a> | [MemPush](./lezioni/mempush/index.en.html) |
-| <a href="./lezioni/ghostin/index.en.html"><img src="img/lesson-ghostinbox.png" alt="" class="lesson-thumb"></a> | [Ghostinbox](./lezioni/ghostin/index.en.html) |
-| <a href="./lezioni/start/index.en.html"><img src="img/lesson-bitcoin-starter-kit.png" alt="" class="lesson-thumb"></a> | [Bitcoin Starter Kit](./lezioni/start/index.en.html) |
-| <a href="./lezioni/verifica/index.en.html"><img src="img/lesson-apk-verification.png" alt="" class="lesson-thumb"></a> | [APK verification](./lezioni/verifica/index.en.html) |
-| <a href="./lezioni/canale/index.en.html"><img src="img/lesson-phoenix-ln-channel.png" alt="" class="lesson-thumb"></a> | [Phoenix and LN channel](./lezioni/canale/index.en.html) |
-
+| <a href="./lezioni/mnedad/index.fr.html"><img src="img/lesson-mnemonics-dice.png" alt="" class="lesson-thumb"></a> | [Mnemonics & dice: learn to create your mnemonic](./lezioni/mnedad/index.fr.html) |
+| <a href="./lezioni/fulhar/index.fr.html"><img src="img/lesson-fullnode-hardware.png" alt="" class="lesson-thumb"></a> | [Fullnode and hardware for a node](./lezioni/fulhar/index.fr.html) |
+| <a href="./lezioni/hansol/index.fr.html"><img src="img/lesson-han-solominer-nerdminer.png" alt="" class="lesson-thumb"></a> | [HAN SOLOminer/Nerdminer](./lezioni/hansol/index.fr.html) |
+| <a href="./lezioni/tercar/index.fr.html"><img src="img/lesson-character-terminals.png" alt="" class="lesson-thumb"></a> | [Character terminals](./lezioni/tercar/index.fr.html) |
+| <a href="./lezioni/openso/index.fr.html"><img src="img/lesson-open-source-licenses.png" alt="" class="lesson-thumb"></a> | [Open source and licenses](./lezioni/openso/index.fr.html) |
+| <a href="./lezioni/debian/index.fr.html"><img src="img/lesson-debian.png" alt="" class="lesson-thumb"></a> | [Debian](./lezioni/debian/index.fr.html) |
+| <a href="./lezioni/firme/index.fr.html"><img src="img/lesson-signatures.png" alt="" class="lesson-thumb"></a> | [Signatures](./lezioni/firme/index.fr.html) |
+| <a href="./lezioni/jadeset/index.fr.html"><img src="img/lesson-jade-setup.png" alt="" class="lesson-thumb"></a> | [Jade Setup](./lezioni/jadeset/index.fr.html) |
+| <a href="./lezioni/jadeele/index.fr.html"><img src="img/lesson-jade-electrum-wallet.png" alt="" class="lesson-thumb"></a> | [Jade with Electrum Wallet](./lezioni/jadeele/index.fr.html) |
+| <a href="./lezioni/jadespa/index.fr.html"><img src="img/lesson-jade-airgapped-sparrow-wallet.png" alt="" class="lesson-thumb"></a> | [Jade airgapped with Sparrow Wallet](./lezioni/jadespa/index.fr.html) |
+| <a href="./lezioni/ciclo/index.fr.html"><img src="img/lesson-transaction-lifecycle.png" alt="" class="lesson-thumb"></a> | [The transaction lifecycle](./lezioni/ciclo/index.fr.html) |
+| <a href="./lezioni/mining/index.fr.html"><img src="img/lesson-mining.png" alt="" class="lesson-thumb"></a> | [Mining](./lezioni/mining/index.fr.html) |
+| <a href="./lezioni/descr/index.fr.html"><img src="img/lesson-descriptors.png" alt="" class="lesson-thumb"></a> | [Descriptors](./lezioni/descr/index.fr.html) |
+| <a href="./lezioni/mesh/index.fr.html"><img src="img/lesson-mesh-networks.png" alt="" class="lesson-thumb"></a> | [Mesh Networks](./lezioni/mesh/index.fr.html) |
+| <a href="./lezioni/coinco/index.fr.html"><img src="img/lesson-coin-control.png" alt="" class="lesson-thumb"></a> | [Coin Control](./lezioni/coinco/index.fr.html) |
+| <a href="./lezioni/gpg/index.fr.html"><img src="img/lesson-gpg-yubico.png" alt="" class="lesson-thumb"></a> | [GPG and Yubico](./lezioni/gpg/index.fr.html) |
+| <a href="./lezioni/mempush/index.fr.html"><img src="img/lesson-mempush.png" alt="" class="lesson-thumb"></a> | [MemPush](./lezioni/mempush/index.fr.html) |
+| <a href="./lezioni/ghostin/index.fr.html"><img src="img/lesson-ghostinbox.png" alt="" class="lesson-thumb"></a> | [Ghostinbox](./lezioni/ghostin/index.fr.html) |
+| <a href="./lezioni/start/index.fr.html"><img src="img/lesson-bitcoin-starter-kit.png" alt="" class="lesson-thumb"></a> | [Bitcoin Starter Kit](./lezioni/start/index.fr.html) |
+| <a href="./lezioni/verifica/index.fr.html"><img src="img/lesson-apk-verification.png" alt="" class="lesson-thumb"></a> | [APK verification](./lezioni/verifica/index.fr.html) |
+| <a href="./lezioni/canale/index.fr.html"><img src="img/lesson-phoenix-ln-channel.png" alt="" class="lesson-thumb"></a> | [Phoenix and LN channel](./lezioni/canale/index.fr.html) |

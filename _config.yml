@@ -1,3 +1,15 @@
 theme: jekyll-theme-dinky
 title: Officine Bitcoin
 description: Lezioni online Bitcoin-only
+url: https://officinebitcoin.it
+lang: it
+timezone: Europe/Rome
+favicon: /logo/OBorange.png
+plugins:
+  - jekyll-sitemap
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      image: /img/splash.png
