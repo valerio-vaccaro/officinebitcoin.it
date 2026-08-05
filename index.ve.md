@@ -62,7 +62,7 @@ El [logo ufissiale de Officine Bitcoin](./logo/index.ve.html) xe coperto da la s
 
 |  | Argomento |
 |---|---|
-| <a href="./lezioni/mnedad/index.ve.html"><img src="img/lesson-mnemonics-dice.png" alt="" class="lesson-thumb"></a> | [Mnemoniche & dadi: impara a crear la tua mnemonica](./lezioni/mnedad/index.ve.html) |
+| <a href="./lezioni/mnedad/index.md"><img src="img/lesson-mnemonics-dice.png" alt="" class="lesson-thumb"></a> | [Mnemoniche & dadi: impara a crear la tua mnemonica](./lezioni/mnedad/index.md) |
 | <a href="./lezioni/fulhar/index.ve.html"><img src="img/lesson-fullnode-hardware.png" alt="" class="lesson-thumb"></a> | [Fullnode e hardware par un nodo](./lezioni/fulhar/index.ve.html) |
 | <a href="./lezioni/hansol/index.ve.html"><img src="img/lesson-han-solominer-nerdminer.png" alt="" class="lesson-thumb"></a> | [HAN SOLOminer/Nerdminer](./lezioni/hansol/index.ve.html) |
 | <a href="./lezioni/tercar/index.ve.html"><img src="img/lesson-character-terminals.png" alt="" class="lesson-thumb"></a> | [Terminal a caratteri](./lezioni/tercar/index.ve.html) |
