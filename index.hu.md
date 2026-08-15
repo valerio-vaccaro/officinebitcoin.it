@@ -73,6 +73,9 @@ Az [Officine Bitcoin hivatalos logójára](./logo/index.en.html) ugyanez a licen
 | <a href="./lezioni/jadeset/index.hu.html"><img src="img/lesson-jade-setup.png" alt="" class="lesson-thumb"></a> | [Jade Setup](./lezioni/jadeset/index.hu.html) |
 | <a href="./lezioni/jadeele/index.hu.html"><img src="img/lesson-jade-electrum-wallet.png" alt="" class="lesson-thumb"></a> | [Jade with Electrum Wallet](./lezioni/jadeele/index.hu.html) |
 | <a href="./lezioni/jadespa/index.hu.html"><img src="img/lesson-jade-airgapped-sparrow-wallet.png" alt="" class="lesson-thumb"></a> | [Jade airgapped with Sparrow Wallet](./lezioni/jadespa/index.hu.html) |
+| 🔐 | [Jade SSH-kulcsként](./lezioni/jadssh/index.hu.html) |
+| 🔏 | [Jade GPG-vel](./lezioni/jadgpg/index.hu.html) |
+| 🔢 | [Jade OTP-hitelesítőként](./lezioni/jadotp/index.hu.html) |
 | <a href="./lezioni/ciclo/index.hu.html"><img src="img/lesson-transaction-lifecycle.png" alt="" class="lesson-thumb"></a> | [The transaction lifecycle](./lezioni/ciclo/index.hu.html) |
 | <a href="./lezioni/mining/index.hu.html"><img src="img/lesson-mining.png" alt="" class="lesson-thumb"></a> | [Mining](./lezioni/mining/index.hu.html) |
 | <a href="./lezioni/descr/index.hu.html"><img src="img/lesson-descriptors.png" alt="" class="lesson-thumb"></a> | [Descriptors](./lezioni/descr/index.hu.html) |

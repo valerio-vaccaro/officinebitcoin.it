@@ -72,6 +72,9 @@ El [logo ufficial de Officine Bitcoin](./logo/index.mi.html) l'è copert de la s
 | <a href="./lezioni/jadeset/index.mi.html"><img src="img/lesson-jade-setup.png" alt="" class="lesson-thumb"></a> | [Jade Setup](./lezioni/jadeset/index.mi.html) |
 | <a href="./lezioni/jadeele/index.mi.html"><img src="img/lesson-jade-electrum-wallet.png" alt="" class="lesson-thumb"></a> | [Jade con Electrum Wallet](./lezioni/jadeele/index.mi.html) |
 | <a href="./lezioni/jadespa/index.mi.html"><img src="img/lesson-jade-airgapped-sparrow-wallet.png" alt="" class="lesson-thumb"></a> | [Jade airgapped con Sparrow Wallet](./lezioni/jadespa/index.mi.html) |
+| 🔐 | [Jade come ciav SSH](./lezioni/jadssh/index.mi.html) |
+| 🔏 | [Jade con GPG](./lezioni/jadgpg/index.mi.html) |
+| 🔢 | [Jade come autenticador OTP](./lezioni/jadotp/index.mi.html) |
 | <a href="./lezioni/ciclo/index.mi.html"><img src="img/lesson-transaction-lifecycle.png" alt="" class="lesson-thumb"></a> | [El cicl de vita de una transazion](./lezioni/ciclo/index.mi.html) |
 | <a href="./lezioni/mining/index.mi.html"><img src="img/lesson-mining.png" alt="" class="lesson-thumb"></a> | [Mining](./lezioni/mining/index.mi.html) |
 | <a href="./lezioni/descr/index.mi.html"><img src="img/lesson-descriptors.png" alt="" class="lesson-thumb"></a> | [Descriptor](./lezioni/descr/index.mi.html) |

@@ -73,6 +73,9 @@ Officine Bitcoin бесплатен и открыт для всех. Сборы 
 | <a href="./lezioni/jadeset/index.ru.html"><img src="img/lesson-jade-setup.png" alt="" class="lesson-thumb"></a> | [Jade Setup](./lezioni/jadeset/index.ru.html) |
 | <a href="./lezioni/jadeele/index.ru.html"><img src="img/lesson-jade-electrum-wallet.png" alt="" class="lesson-thumb"></a> | [Jade with Electrum Wallet](./lezioni/jadeele/index.ru.html) |
 | <a href="./lezioni/jadespa/index.ru.html"><img src="img/lesson-jade-airgapped-sparrow-wallet.png" alt="" class="lesson-thumb"></a> | [Jade airgapped with Sparrow Wallet](./lezioni/jadespa/index.ru.html) |
+| 🔐 | [Jade как ключ SSH](./lezioni/jadssh/index.ru.html) |
+| 🔏 | [Jade с GPG](./lezioni/jadgpg/index.ru.html) |
+| 🔢 | [Jade как OTP-аутентификатор](./lezioni/jadotp/index.ru.html) |
 | <a href="./lezioni/ciclo/index.ru.html"><img src="img/lesson-transaction-lifecycle.png" alt="" class="lesson-thumb"></a> | [The transaction lifecycle](./lezioni/ciclo/index.ru.html) |
 | <a href="./lezioni/mining/index.ru.html"><img src="img/lesson-mining.png" alt="" class="lesson-thumb"></a> | [Mining](./lezioni/mining/index.ru.html) |
 | <a href="./lezioni/descr/index.ru.html"><img src="img/lesson-descriptors.png" alt="" class="lesson-thumb"></a> | [Descriptors](./lezioni/descr/index.ru.html) |

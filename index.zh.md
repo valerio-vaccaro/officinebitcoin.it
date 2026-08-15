@@ -73,6 +73,9 @@ Officine Bitcoin 课程期间产生的材料以 Creative Commons [CC BY-SA 4.0](
 | <a href="./lezioni/jadeset/index.zh.html"><img src="img/lesson-jade-setup.png" alt="" class="lesson-thumb"></a> | [Jade Setup](./lezioni/jadeset/index.zh.html) |
 | <a href="./lezioni/jadeele/index.zh.html"><img src="img/lesson-jade-electrum-wallet.png" alt="" class="lesson-thumb"></a> | [Jade with Electrum Wallet](./lezioni/jadeele/index.zh.html) |
 | <a href="./lezioni/jadespa/index.zh.html"><img src="img/lesson-jade-airgapped-sparrow-wallet.png" alt="" class="lesson-thumb"></a> | [Jade airgapped with Sparrow Wallet](./lezioni/jadespa/index.zh.html) |
+| 🔐 | [将 Jade 用作 SSH 密钥](./lezioni/jadssh/index.zh.html) |
+| 🔏 | [Jade 与 GPG](./lezioni/jadgpg/index.zh.html) |
+| 🔢 | [将 Jade 用作 OTP 验证器](./lezioni/jadotp/index.zh.html) |
 | <a href="./lezioni/ciclo/index.zh.html"><img src="img/lesson-transaction-lifecycle.png" alt="" class="lesson-thumb"></a> | [The transaction lifecycle](./lezioni/ciclo/index.zh.html) |
 | <a href="./lezioni/mining/index.zh.html"><img src="img/lesson-mining.png" alt="" class="lesson-thumb"></a> | [Mining](./lezioni/mining/index.zh.html) |
 | <a href="./lezioni/descr/index.zh.html"><img src="img/lesson-descriptors.png" alt="" class="lesson-thumb"></a> | [Descriptors](./lezioni/descr/index.zh.html) |
